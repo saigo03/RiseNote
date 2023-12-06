@@ -1,0 +1,23 @@
+<div class="link1">
+  <%= link_to 'アカウント情報', userInfo_select_path%>
+  <%= link_to 'ノート一覧・作成', memos_path %>
+</div>
+
+<div class="link1">
+  <a href="#">チュートリアル</a>
+  <a href="#">アチーブメント</a>
+</div>
+
+<%# 管理者権限の判定を行う %>
+<!-- if current_user.admin? -->
+  <!-- 管理者用のコンテンツを表示 -->
+  <div class="administrator">
+    <div class="link1">
+      <a href="#">ユーザー管理</a>
+      <a href="#">タグ管理</a>
+    </div>
+    <div class="link1">
+      <!-- link_to 'お問合せ管理', posts_path -->
+    </div>
+  </div>
+<!-- end -->
