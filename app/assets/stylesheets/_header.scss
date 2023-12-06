@@ -1,0 +1,58 @@
+header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	line-height: 60px;
+	display: inline-block;
+	vertical-align: middle;
+  background: rgba(60, 60, 60, 0.8); /* 背景色に透明度を追加 */
+}
+/* ロゴ */
+header .system-name {
+padding: 0 20px;
+font-size: 18px;
+color: #fff;
+letter-spacing: .2em;
+}
+#fixed-header {
+position: fixed;
+width: 100%;
+top: 0;
+z-index: 1000;
+}
+.header-container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.header-buttons {
+display: flex;
+align-items: center;
+}
+.header-buttons a {
+font-weight:bold;
+position: relative;
+display: inline-block;
+transition: .3s;
+text-decoration: none;
+color:#fff;
+margin-right: 20px;
+}
+.header-buttons a::after {
+position: absolute;
+bottom: 20px;
+left: 0;
+content: '';
+width: 0;
+height: 1px;/*下線の太さ*/
+background-color:rgb(249, 212, 112);/*下線の色*/
+transition: .3s;
+}
+.header-buttons a:hover::after {
+width: 100%;
+}
+.header-buttons a:hover{
+color:rgb(249, 212, 112);/*ホバー時の文字色*/
+}
