@@ -2,16 +2,14 @@ class TagsController < ApplicationController
 
   def index
     @tags = Tag.all
-  end
-
-  def new
+    # Tag.newをしなければフォームからデータ保存ができない
     @tag = Tag.new
   end
 
   def create
     @tag = Tag.new(tag_params)
     if @tag.save
-      redirect_to new_tag_path, notice: 'Tag was successfully created.'
+      redirect_to tags_path, notice: 'Tag was successfully created.'
     else
       render :new
     end

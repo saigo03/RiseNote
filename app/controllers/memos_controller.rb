@@ -42,7 +42,7 @@ class MemosController < ApplicationController
   def update
     @memo = Memo.find(params[:id])
     if @memo.update(memo_params)
-      redirect_to memos_path
+      redirect_to folder_memos_path(@folder)
     else
       render :edit
     end
@@ -51,7 +51,7 @@ class MemosController < ApplicationController
   def destroy
     @memo = Memo.find(params[:id])
     @memo.destroy
-    redirect_to memos_path
+    redirect_to folder_memos_path(@folder)
   end
 
   private

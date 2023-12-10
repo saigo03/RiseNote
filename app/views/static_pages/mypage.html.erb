@@ -1,6 +1,6 @@
 <div class="link1">
-  <%# link_to 'アカウント情報', userInfo_select_path %>
-   <%# link_to 'ノート一覧・作成', memos_path %>
+  <%= link_to 'アカウント情報', userInfo_select_path %>
+  <%= link_to 'ノート一覧・作成', folders_path %>
 </div>
 
 <div class="link1">
@@ -14,10 +14,10 @@
   <div class="administrator">
     <div class="link1">
       <a href="#">ユーザー管理</a>
-      <a href="#">タグ管理</a>
+      <%= link_to 'タグ管理', tags_path %>
     </div>
     <div class="link1">
-      <!-- link_to 'お問合せ管理', posts_path -->
+      <%# link_to 'お問合せ管理', posts_path %>
     </div>
   </div>
 <% end %>

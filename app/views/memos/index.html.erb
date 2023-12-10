@@ -39,9 +39,11 @@
         <td><%= memo.created_at.strftime("%Y/%m/%d %H:%M") %></td>
         <td>
           <%= link_to '編集', edit_folder_memo_path(@folder, memo) %>
-          <%= link_to '削除', folder_memo_path(@folder, memo), method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to '削除', folder_memo_path(@folder, memo), data: { turbo_method: :delete } %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<p><%= link_to 'ノート一覧へ戻る', folders_path %><p>

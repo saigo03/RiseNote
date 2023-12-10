@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'tags/index'
-  get 'tags/new'
-  get 'tags/create'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions'
@@ -18,5 +15,5 @@ Rails.application.routes.draw do
   end
 
   # タグに関連するルートを追加
-  resources :tags, only: [:index,:new, :create]
+  resources :tags, only: [:index, :create]
 end
