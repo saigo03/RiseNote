@@ -1,0 +1,29 @@
+.memo-form {
+  max-width: 800px; /* コンテンツエリアの幅を広げる */
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.label {
+  display: block; /* ラベルをブロック要素にして上部に配置 */
+  margin-bottom: 5px; /* ラベルと入力フィールドの間に余白を設定 */
+}
+
+.input, .textarea, .select {
+  width: 100%; /* 入力フィールドの幅を広げる */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.textarea {
+  height: auto; /* テキストエリアの高さを自動調整 */
+}
+
+.error-messages {
+  background-color: #ffdddd;
+  border: 1px solid #ff0000;
+  padding: 10px;
+  margin-bottom: 20px; /* エラーメッセージとフォームとの間に余白を設定 */
+}

@@ -1,10 +1,9 @@
 <h1>New Memo</h1>
 
-<%= form_with(model: @memo, local: true) do |form| %>
+<%= form_with(model: @memo, local: true, html: { class: 'memo-form' }) do |form| %>
   <% if @memo.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="error-messages">
       <h2><%= pluralize(@memo.errors.count, "error") %> prohibited this memo from being saved:</h2>
-
       <ul>
         <% @memo.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -14,24 +13,23 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :memo_title %>
+    <%= form.label :title, "タイトル", class: 'label' %>
+    <%= form.text_field :title, id: :memo_title, class: 'input' %>
   </div>
 
   <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content, id: :memo_content %>
+    <%= form.label :content, "内容", class: 'label' %>
+    <%= form.text_area :content, id: :memo_content, class: 'textarea', cols: "50", rows: "10" %>
   </div>
 
-  <!-- タグ選択フィールドの追加 -->
   <div class="field">
-    <%= form.label :tag_ids, "タグ" %>
-    <%= form.collection_select :tag_ids, Tag.all, :id, :name, {}, { multiple: true, size: 5 } %>
+    <%= form.label :tag_ids, "タグ", class: 'label' %>
+    <%= form.collection_select :tag_ids, Tag.all, :id, :name, {}, { multiple: true, size: 1, class: 'select' } %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit '保存する', class: 'button' %>
   </div>
 <% end %>
 
-<%= link_to 'Back', memos_path %>
+<%= link_to 'Back', memos_path, class: 'back-link' %>
