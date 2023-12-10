@@ -1,16 +1,16 @@
-<h1>メモ一覧</h1>
+<h1>メモ一覧/<%= @folder.name %></h1>
 
-<p><%= link_to "メモ作成", new_memo_path %></p>
+<p><%= link_to 'New Memo', new_folder_memo_path(@folder) %></p>
 
 <%# title検索フォームを追加 %>
-<%= form_with(url: memos_path, method: :get, local: true) do |form| %>
+<%= form_with(url: folder_memos_path(@folder), method: :get, local: true) do |form| %>
   <%= form.label :search, "メモ検索" %>
   <%= form.text_field :search %>
   <%= form.submit "検索" %>
 <% end %>
 
 <!-- タグ検索フォームの追加 -->
-<%= form_with(url: memos_path, method: :get, local: true) do |form| %>
+<%= form_with(url: folder_memos_path(@folder), method: :get, local: true) do |form| %>
   <%= form.label :tag_id, "タグで検索" %>
   <%= form.collection_select :tag_id, Tag.all, :id, :name, include_blank: true %>
   <%= form.submit "検索" %>
@@ -21,8 +21,9 @@
     <tr>
       <th>ID</th>
       <th>タイトル</th>
-       <th>タグ</th> 
+      <th>タグ</th>
       <th>作成時間</th>
+      <th>操作</th>
     </tr>
   </thead>
   <tbody>
@@ -36,8 +37,10 @@
           <% end %>
         </td>
         <td><%= memo.created_at.strftime("%Y/%m/%d %H:%M") %></td>
-        <td><%= link_to '編集', edit_memo_path(memo) %></td>
-        <td><%= link_to '削除', memo_path(memo), data: { turbo_method: :delete } %></td>
+        <td>
+          <%= link_to '編集', edit_folder_memo_path(@folder, memo) %>
+          <%= link_to '削除', folder_memo_path(@folder, memo), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>

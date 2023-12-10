@@ -1,33 +1,38 @@
 class MemosController < ApplicationController
+  before_action :set_folder
+  before_action :set_memo, only: [:show, :edit, :update, :destroy]
+
   def index
     if params[:tag_id].present?
       # 単一のタグIDに基づいてメモをフィルタリング
       @memos = Memo.joins(:tags).where(tags: { id: params[:tag_id] }).distinct
     elsif params[:search].present?
       # テキストでの検索
-      @memos = current_user.memos.where("title LIKE ?", "%#{params[:search]}%")
+      @memos = @folder.memos.where('title LIKE ?', "%#{params[:search]}%")
     else
       # すべてのメモを表示
-      @memos = current_user.memos
+      @memos = current_user.memos.where(folder: @folder)
     end
   end
 
   def show
-    @memo = Memo.find(params[:id])
   end
 
   def new
-    @memo = Memo.new
+    @memo = @folder.memos.build
   end
 
   def create
-    @memo = current_user.memos.new(memo_params)
+    @memo = @folder.memos.new(memo_params)
+    @memo.user = current_user  # ログインしているユーザーをメモに関連付け
+
     if @memo.save
-      redirect_to memos_path
+      redirect_to folder_memos_path(@folder), notice: 'Memo was successfully created.'
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
+
 
 
   def edit
@@ -51,7 +56,16 @@ class MemosController < ApplicationController
 
   private
 
-  def memo_params
-    params.require(:memo).permit(:title, :content, tag_ids: [])
-  end
+    def set_folder
+      @folder = Folder.find(params[:folder_id])
+    end
+
+
+    def set_memo
+      @memo = @folder.memos.find(params[:id])
+    end
+
+    def memo_params
+      params.require(:memo).permit(:title, :content, tag_ids: [])
+    end
 end
