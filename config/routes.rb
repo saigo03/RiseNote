@@ -15,5 +15,5 @@ Rails.application.routes.draw do
   end
 
   # タグに関連するルートを追加
-  resources :tags, only: [:index, :create]
+  resources :tags, only: [:index, :create, :destroy]
 end

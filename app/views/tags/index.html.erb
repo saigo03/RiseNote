@@ -13,10 +13,23 @@
 <% end %>
 
 <h2>現在のタグ一覧</h2>
-<ul>
-  <% @tags.each do |tag| %>
-    <li><%= tag.name %></li>
-  <% end %>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>タグ名</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tags.each do |tag| %>
+      <tr>
+        <td><%= tag.name %></td>
+        <td>
+          <%= link_to '削除', tag_path(tag), data: { turbo_method: :delete } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <%= link_to 'マイページへ', mypage_path %>
