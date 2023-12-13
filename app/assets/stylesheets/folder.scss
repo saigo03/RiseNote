@@ -1,0 +1,24 @@
+
+.folder-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.folder-item {
+  border: 1px solid #e1e1e1;
+  padding: 10px;
+  text-align: center;
+  background-color: #BFD7FF;
+  height: 120px;
+  width: 100px;
+  color: #333333;
+}
+
+.folder-name {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
