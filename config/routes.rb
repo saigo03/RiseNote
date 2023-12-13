@@ -7,7 +7,9 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     sessions: 'users/sessions'
   }
-  
+
+  # カスタムユーザーコントローラのルーティング
+  resources :users, only: [:index, :destroy]
   
   root to: "home#index"
   get 'mypage', to: 'static_pages#mypage'
