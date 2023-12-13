@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   # メモとの関連付け
-  has_many :memos
+  #dependent: :destroyでアカウント削除時に関連づいたメモも削除する
+  has_many :memos, dependent: :destroy
 end

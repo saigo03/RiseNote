@@ -1,4 +1,4 @@
-<div class="raizu">
+<div class="user-status">
   <% if user_signed_in? %>
     <p><%= current_user.email %></p>
   <% else %>
@@ -6,9 +6,17 @@
   <% end %>
 </div>
 
-<div class="henkouSakuzyo">
-  <div class="but"><button onclick="パスワード変更.html">パスワードの変更</button></div>
-  <div class="but"><button onclick="メールアドレス変更.html">メールアドレスの変更</button></div>
-  <div class="but"><button @click="accountDelete">アカウント削除</button></div>
-   <%# link_to "メモを作成", memos_path %>
+
+<div class="account-options">
+  <div class="option">
+    <%= link_to 'パスワードの変更', edit_user_registration_path, class: "btn" %>
+  </div>
+  <div class="option">
+    <%# 実装時はdeviseでのメールアドレスの認証が必要のため後回し %>
+    <%= link_to 'メールアドレスの変更', mypage_path, class: "btn" %>
+  </div>
+  <div class="option">
+    <%= link_to "アカウント削除", registration_path(:user), data: { turbo_method: :delete, confirm: '本当に削除しますか？' } %>
+  </div>
 </div>
+
