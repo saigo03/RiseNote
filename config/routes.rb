@@ -1,5 +1,6 @@
 # 今後実装すること
 # 新規登録時の実際のメールアドレスに確認メールを送る(deviseを使って実装可能)
+# ユーザーIDの自動番号の変更（デフォルトで４桁など)
 
 Rails.application.routes.draw do
   devise_for :users, controllers: {

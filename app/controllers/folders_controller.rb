@@ -3,8 +3,8 @@ class FoldersController < ApplicationController
 
   # GET /folders
   def index
-    @folders = Folder.all
-    @folder = Folder.new  # 新しいフォルダ用
+    @folders = current_user.folders
+    @folder = Folder.new
   end
 
   # GET /folders/1
@@ -17,7 +17,8 @@ class FoldersController < ApplicationController
 
   # POST /folders
   def create
-    @folder = Folder.new(folder_params)
+    # @folder = Folder.new(folder_params)
+    @folder = current_user.folders.new(folder_params) # 新しいフォルダ用
 
     if @folder.save
       redirect_to folders_path, notice: 'Folder was successfully created.'
