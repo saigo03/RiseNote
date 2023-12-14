@@ -1,4 +1,5 @@
 
+// フォルダ一覧デザイン
 .folder-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
@@ -21,4 +22,5 @@
   margin-bottom: 10px;
   font-weight: bold;
 }
+
 

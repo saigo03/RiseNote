@@ -1,26 +1,38 @@
 <h1>Folders</h1>
 
-<%= form_with(model: @folder, local: true) do |form| %>
-  <% if @folder.errors.any? %>
-    <div class="error_explanation">
-      <h2><%= pluralize(@folder.errors.count, "error") %> prohibited this folder from being saved:</h2>
-      <ul>
-        <% @folder.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+<!-- ファイル名作成用ポップアップの背景オーバーレイ -->
+<%# この書き方だと他のファイルでjavascriptファイルの読み込みを防げる %>
+<div class="overlay" id="overlay"></div>
+
+<!-- プラスボタン -->
+<button id="create-folder-btn">➕ フォルダ作成</button>
+
+<!-- フォルダ作成フォーム（初期状態では非表示） -->
+<div id="create-folder-form" style="display: none;">
+  <%= form_with(model: @folder, local: true) do |form| %>
+    <% if @folder.errors.any? %>
+      <div class="error_explanation">
+        <h2><%= pluralize(@folder.errors.count, "error") %> prohibited this folder from being saved:</h2>
+        <ul>
+          <% @folder.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :name, 'フォルダ名'%>
+      <%= form.text_field :name, class: "folder-input-field" %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit "Create Folder", class: "folder-submit-button" %>
     </div>
   <% end %>
+</div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, class: "input-field" %>
-  </div>
 
-  <div class="actions">
-    <%= form.submit "Create Folder", class: "submit-button" %>
-  </div>
-<% end %>
 
 <h2>Existing Folders</h2>
 
