@@ -24,6 +24,34 @@
   z-index: 1000;
   max-height: 80%;
   max-width: 80%;
-  height: 150px;
-  width: 500px;
+  width: 60%; /* フォームの幅を調整 */
+  box-sizing: border-box;
 }
+
+/* ノート名前作成ポップアップ用のスタイル */
+// フォームデザイン
+#create-folder-form input[type="text"] {
+  width: 100%; /* フィールドの幅を最大に */
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ddd; /* 枠線のスタイル */
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+//ノート作成ボタンデザイン
+.folder-submit-button {
+  width: 20%; /* ボタンの幅を最大に */
+  padding: 10px 0; /* 上下の余白 */
+  background-color: #007bff; /* ボタンの背景色 */
+  color: white; /* テキストの色 */
+  border: none; /* 枠線を削除 */
+  border-radius: 4px; /* 角を丸く */
+  cursor: pointer; /* カーソルを指に */
+  margin-top: 10px; /* 上の要素からの間隔 */
+}
+
+.folder-submit-button:hover {
+  background-color: #0056b3; /* ホバー時の色 */
+}
+

@@ -41,5 +41,6 @@
     <%= link_to folder_memos_path(folder), class: "folder-item" do %>
       <div class="folder-name"><%= folder.name %></div>
     <% end %>
+    <%= link_to '削除', folder_path(folder),data: { turbo_method: :delete } %>
   <% end %>
 </div>
