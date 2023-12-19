@@ -23,6 +23,9 @@ class MemosController < ApplicationController
   end
 
   def create
+    # タイトルが空白の場合、自動的に「無題」を設定
+    params[:memo][:title] = '無題' if params[:memo][:title].blank?
+    
     @memo = @folder.memos.new(memo_params)
     @memo.user = current_user  # ログインしているユーザーをメモに関連付け
 
@@ -40,6 +43,9 @@ class MemosController < ApplicationController
   end
 
   def update
+    # タイトルが空白の場合、自動的に「無題」を設定
+    params[:memo][:title] = '無題' if params[:memo][:title].blank?
+
     @memo = Memo.find(params[:id])
     if @memo.update(memo_params)
       redirect_to folder_memos_path(@folder)

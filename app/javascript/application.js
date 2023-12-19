@@ -8,4 +8,5 @@ import "@hotwired/turbo-rails"
 // import { Turbo } from "@hotwired/turbo-rails"
 // Turbo.session.drive = false
 import "controllers/folder"
+import "./memo/memo_form"
 
