@@ -1,5 +1,16 @@
-<h1>New Memo for <%= @folder.name %></h1>
+<div class="container-fluid vh-100">
+  <div class="row h-100">
 
-<%= render 'form', memo: @memo %>
+    <!-- ナビゲーションパーシャルを読み込む -->
+    <%= render 'shared/navbar' %>
 
-<%= link_to 'Back to Folder', folder_memos_path(@folder) %>
+    <div class="col-md-10">
+
+      <h1>New Memo for <%= @folder.name %></h1>
+
+      <%= render 'form', memo: @memo %>
+
+      <%= link_to 'Back to Folder', folder_memos_path(@folder) %>
+    </div>
+  </div>
+</div>

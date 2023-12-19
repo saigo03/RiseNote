@@ -1,49 +1,62 @@
-<h1>メモ一覧/<%= @folder.name %></h1>
+<div class="container-fluid vh-100">
+  <div class="row h-100">
 
-<p><%= link_to 'New Memo', new_folder_memo_path(@folder) %></p>
+    <!-- ナビゲーションパーシャルを読み込む -->
+    <%= render 'shared/navbar' %>
 
-<%# title検索フォームを追加 %>
-<%= form_with(url: folder_memos_path(@folder), method: :get, local: true) do |form| %>
-  <%= form.label :search, "メモ検索" %>
-  <%= form.text_field :search %>
-  <%= form.submit "検索" %>
-<% end %>
+    <!-- メモ一覧 -->
+    <!-- ナビの幅が2、メモ一覧幅を10に設定 -->
+    <div class="col-md-10">
+      <h1>メモ一覧/<%= @folder.name %></h1>
 
-<!-- タグ検索フォームの追加 -->
-<%= form_with(url: folder_memos_path(@folder), method: :get, local: true) do |form| %>
-  <%= form.label :tag_id, "タグで検索" %>
-  <%= form.collection_select :tag_id, Tag.all, :id, :name, include_blank: true %>
-  <%= form.submit "検索" %>
-<% end %>
+      <p><%= link_to 'New Memo', new_folder_memo_path(@folder) %></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>タイトル</th>
-      <th>タグ</th>
-      <th>作成時間</th>
-      <th>操作</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @memos.each do |memo| %>
-      <tr>
-        <td><%= memo.id %></td>
-        <td><%= memo.title %></td>
-        <td>
-          <% memo.tags.each do |tag| %>
-            <%= tag.name %><% unless tag == memo.tags.last %>、<% end %>
+      <%# title検索フォームを追加 %>
+      <%= form_with(url: folder_memos_path(@folder), method: :get, local: true) do |form| %>
+        <%= form.label :search, "メモ検索" %>
+        <%= form.text_field :search %>
+        <%= form.submit "検索" %>
+      <% end %>
+
+      <!-- タグ検索フォームの追加 -->
+      <%= form_with(url: folder_memos_path(@folder), method: :get, local: true) do |form| %>
+        <%= form.label :tag_id, "タグで検索" %>
+        <%= form.collection_select :tag_id, Tag.all, :id, :name, include_blank: true %>
+        <%= form.submit "検索" %>
+      <% end %>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>タイトル</th>
+            <th>タグ</th>
+            <th>作成時間</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @memos.each do |memo| %>
+            <tr>
+              <td><%= memo.id %></td>
+              <td><%= memo.title %></td>
+              <td>
+                <% memo.tags.each do |tag| %>
+                  <%= tag.name %><% unless tag == memo.tags.last %>、<% end %>
+                <% end %>
+              </td>
+              <td><%= memo.created_at.strftime("%Y/%m/%d %H:%M") %></td>
+              <td>
+                <%= link_to '編集', edit_folder_memo_path(@folder, memo) %>
+                <%= link_to '削除', folder_memo_path(@folder, memo), data: { turbo_method: :delete } %>
+              </td>
+            </tr>
           <% end %>
-        </td>
-        <td><%= memo.created_at.strftime("%Y/%m/%d %H:%M") %></td>
-        <td>
-          <%= link_to '編集', edit_folder_memo_path(@folder, memo) %>
-          <%= link_to '削除', folder_memo_path(@folder, memo), data: { turbo_method: :delete } %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        </tbody>
+      </table>
 
-<p><%= link_to 'ノート一覧へ戻る', folders_path %><p>
+      <p><%= link_to 'ノート一覧へ戻る', folders_path %></p>
+    </div>
+
+  </div>
+</div>
