@@ -1,0 +1,20 @@
+/* その他のスタイリングは維持 */
+
+.table-responsive {
+  max-width: 100%; /* テーブルの最大幅を親要素の幅に合わせる */
+  overflow-x: auto; /* 横スクロールを有効にする */
+}
+
+/* ボタンのスタイル調整 */
+.btn-primary {
+  margin-top: 0.5rem; /* ボタンの上にスペースを追加 */
+}
+
+.btn-danger {
+  margin-top: 0.5rem; /* ボタンの上にスペースを追加 */
+}
+
+/* タグ名のセルのパディング調整 */
+td {
+  padding-right: 2rem; /* 右のセルとのスペースを開ける */
+}

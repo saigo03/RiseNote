@@ -11,22 +11,6 @@
   </head>
 
   <body>
-    <header>
-      <div class="header-container">
-        <div class="system-name">Rise note</div> 
-
-        <%# ログイン、ログアウト処理 %>
-        <% if user_signed_in? %>
-          <%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete } %>
-          <%= link_to 'マイページ', mypage_path %>
-        <% else %>
-          <div class="header-buttons">
-            <%= link_to 'Login', new_user_session_path  %>
-          </div>
-        <% end %>
-      </div>
-    </header>
-
     <div class="container-fluid">
       <div class="row">
         <!-- ログイン中のみナビバーを表示する -->

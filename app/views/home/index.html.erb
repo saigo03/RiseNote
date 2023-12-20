@@ -1,3 +1,19 @@
+<header>
+  <div class="header-container">
+    <div class="system-name">Rise note</div> 
+
+    <%# ログイン、ログアウト処理 %>
+    <% if user_signed_in? %>
+      <%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete } %>
+      <%= link_to 'マイページ', mypage_path %>
+    <% else %>
+      <div class="header-buttons">
+        <%= link_to 'Login', new_user_session_path  %>
+      </div>
+    <% end %>
+  </div>
+</header>
+
 <div class="home-body">
     <div class="home-input-container">
       <h2 class="input-title">R I S E 🖋 N O T E</h2>

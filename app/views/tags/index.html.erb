@@ -1,35 +1,43 @@
 <h1>タグ管理</h1>
 
-<%= form_with(model: @tag, local: true) do |form| %>
-  <h2>新しいタグを作成</h2>
-  <div class="field">
-    <%= form.label :name, 'タグ名' %>
-    <%= form.text_field :name, autocomplete: 'off' %>
+<div class="card mt-4">
+  <div class="card-header">
+    <h2>新しいタグを作成</h2>
   </div>
-
-  <div class="actions">
-    <%= form.submit "作成" %>
-  </div>
-<% end %>
-
-<h2>現在のタグ一覧</h2>
-<table>
-  <thead>
-    <tr>
-      <th>タグ名</th>
-      <th>操作</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @tags.each do |tag| %>
-      <tr>
-        <td><%= tag.name %></td>
-        <td>
-          <%= link_to '削除', tag_path(tag), data: { turbo_method: :delete } %>
-        </td>
-      </tr>
+  <div class="card-body">
+    <%= form_with(model: @tag, local: true, class: "form-inline") do |form| %>
+      <div class="form-group mb-3"> <!-- ここでマージンボトムを追加 -->
+        <%= form.label :name, 'タグ名', class: "mr-2" %>
+        <%= form.text_field :name, autocomplete: 'off', class: "form-control mr-2" %>
+        <%= form.submit "作成", class: "btn btn-primary" %>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
+</div>
 
-<%= link_to 'マイページへ', mypage_path %>
+<!-- 現在のタグ一覧 -->
+<div class="mt-5">
+  <h2>現在のタグ一覧</h2>
+  <div class="table-responsive"> <!-- ここでtable-responsiveを追加 -->
+    <table class="tag-table">
+      <thead>
+        <tr>
+          <th>タグ名</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @tags.each do |tag| %>
+          <tr>
+            <td><%= tag.name %></td>
+            <td>
+              <%= link_to '削除', tag_path(tag), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "btn btn-danger btn-sm" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<%= link_to 'マイページへ', mypage_path, class: "btn btn-link mt-4" %>
