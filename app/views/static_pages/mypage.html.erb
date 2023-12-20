@@ -1,22 +1,22 @@
-<div class="link1">
-  <%= link_to 'アカウント情報', userInfo_select_path %>
-  <%= link_to 'ノート一覧・作成', folders_path %>
+<div class="links-container">
+  <div class="link-column">
+    <%= link_to 'アカウント情報', userInfo_select_path %>
+    <%= link_to 'ノート一覧・作成', folders_path %>
+  </div>
+
+  <div class="link-column">
+    <a href="#">チュートリアル</a>
+    <a href="#">アチーブメント</a>
+  </div>
 </div>
 
-<div class="link1">
-  <a href="#">チュートリアル</a>
-  <a href="#">アチーブメント</a>
-</div>
-
-<%# 管理者権限の判定を行う %>
 <% if current_user.admin? %>
-  <!-- 管理者用のコンテンツを表示 -->
-  <div class="administrator">
-    <div class="link1">
+  <div class="links-container administrator">
+    <div class="link-column">
       <%= link_to 'ユーザー管理', users_path %>
-      <%= link_to 'タグ管理', tags_path %>
     </div>
-    <div class="link1">
+    <div class="link-column">
+      <%= link_to 'タグ管理', tags_path %>
       <%# link_to 'お問合せ管理', posts_path %>
     </div>
   </div>

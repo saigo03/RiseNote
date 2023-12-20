@@ -27,6 +27,19 @@
       </div>
     </header>
 
-    <%= yield %>
+    <div class="container-fluid">
+      <div class="row">
+        <!-- ログイン中のみナビバーを表示する -->
+        <% if user_signed_in? %>
+          <!-- ナビゲーションパーシャルを読み込む -->
+          <%= render 'shared/navbar' %>
+          <div class="<%= 'col-md-10' %>">
+        <% else %>
+          <div class="<%= 'col-md-12'%>">
+        <% end %>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

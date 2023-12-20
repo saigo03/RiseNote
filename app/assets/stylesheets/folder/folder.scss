@@ -1,26 +1,49 @@
-
-// フォルダ一覧デザイン
-.folder-grid {
+/* フォルダ一覧コンテナ */
+.folders-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 20px;
-  padding-left: 15px;
-  padding-right: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
 }
 
-.folder-item {
-  border: 1px solid #e1e1e1;
-  padding: 10px;
-  text-align: center;
-  background-color: #BFD7FF;
-  height: 120px;
-  width: 100px;
-  color: #333333;
+/* 各フォルダカード */
+.folder-card {
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  background-color: #e0f7fa; /* 薄い水色 */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 内容を上下に均等に分布 */
+  height: 180px;
+}
+
+.folder-link {
+  display: block;
+  padding: 1rem;
+  color: inherit; /* リンクの色を親要素から継承 */
+  text-decoration: none; /* 下線を消す */
 }
 
 .folder-name {
-  margin-bottom: 10px;
-  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
+.folder-actions {
+  text-align: center;
+  padding: 0.5rem 0;
+  background-color: #fafafa; /* ノートの下側の色 */
+  border-top: 1px solid #ccc; /* 上の線を表す */
+}
 
+.folder-delete-link {
+  font-size: 0.8rem;
+  color: #dc3545;
+  text-decoration: none; /* 下線を消す */
+}
+
+.folder-delete-link:hover {
+  text-decoration: underline;
+}

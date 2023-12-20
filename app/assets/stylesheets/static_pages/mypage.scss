@@ -1,17 +1,28 @@
-
-  
-.link1 {
+.links-container {
   display: flex;
-  margin: 0px 440px;
+  justify-content: center;
+  margin-top: 30px;
 }
 
-.link1 a {
+.link-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 10px; /* 左右の余白 */
+}
+
+.link-column a {
   text-decoration: none;
-  color:#333;
-  font-weight: bold;
-  margin: 50px 30px;
+  color: #333;
+  margin: 10px 0; /* 上下の余白 */
+  text-align: center;
+  display: block; /* ブロック要素として表示 */
 }
 
-.administrator a {
-  color: blue;
+.administrator .link-column a {
+  color: #0056b3; /* 管理者用リンクの色 */
+}
+
+.administrator .link-column a:hover {
+  color: #003d82; /* ホバー時の色 */
 }

@@ -1,11 +1,9 @@
 <nav class="col-md-2 d-none d-md-block bg-dark sidebar vh-100">
   <div class="position-sticky pt-3 h-100">
     <!-- ログインしているユーザーのメールアドレスを表示 -->
-    <% if user_signed_in? %>
-      <div class="px-3 text-white">
-        <p><%= current_user.email %></p>
-      </div>
-    <% end %>
+    <div class="px-3 text-white">
+      <p><%= current_user.email %></p>
+    </div>
 
     <ul class="nav flex-column text-white">
       <li class="nav-item">
@@ -14,9 +12,13 @@
       <li class="nav-item">
         <%= link_to 'フォルダー一覧', folders_path, class: 'nav-link text-white' %>
       </li>
-      <li class="nav-item">
-        <%= link_to '新しいメモ', new_folder_memo_path(@folder), class: 'nav-link text-white' %>
-      </li>
+
+      <!-- ノート内のみ表示する -->
+      <% if @folder && @folder.persisted? %>
+        <li class="nav-item">
+          <%= link_to '新しいメモ', new_folder_memo_path(@folder), class: 'nav-link text-white' %>
+        </li>
+      <% end %>
       <!-- 他のナビゲーションリンク -->
     </ul>
   </div>

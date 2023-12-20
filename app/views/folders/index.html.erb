@@ -36,11 +36,17 @@
 
 <h2>Existing Folders</h2>
 
-<div class="folder-grid">
+<div class="folders-container">
   <% @folders.each do |folder| %>
-    <%= link_to folder_memos_path(folder), class: "folder-item" do %>
-      <div class="folder-name"><%= folder.name %></div>
-    <% end %>
-    <%= link_to '削除', folder_path(folder),data: { turbo_method: :delete } %>
+    <div class="folder-card">
+      <%= link_to folder_memos_path(folder), class: "folder-link" do %>
+        <div class="folder-content">
+          <div class="folder-name"><%= folder.name %></div>
+        </div>
+      <% end %>
+      <div class="folder-actions">
+        <%= link_to '削除', folder_path(folder), method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'folder-delete-link' %>
+      </div>
+    </div>
   <% end %>
 </div>

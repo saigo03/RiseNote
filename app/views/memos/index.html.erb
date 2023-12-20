@@ -1,66 +1,57 @@
-<div class="container-fluid">
-  <div class="row">
-
-    <!-- ナビゲーションパーシャルを読み込む -->
-    <%= render 'shared/navbar' %>
-
-    <!-- メモ一覧 -->
-    <div class="col-md-10">
-      <h1 class="my-4">メモ一覧/<%= @folder.name %></h1>
-
-      <%= link_to 'New Memo', new_folder_memo_path(@folder), class: 'btn btn-primary mb-3' %>
+  <!-- メモ一覧 -->
+  <div class="col-md-10">
+    <h1 class="my-4">メモ一覧/<%= @folder.name %></h1>
 
       <!-- 検索フォーム -->
-    <div class="d-flex justify-content-between mb-3">
-      <%= form_with(url: folder_memos_path(@folder), method: :get, local: true, class: "d-flex flex-grow-1 me-2") do |form| %>
+      <div class="d-flex justify-content-between mb-3">
+        <%= form_with(url: folder_memos_path(@folder), method: :get, local: true, class: "d-flex flex-grow-1 me-2") do |form| %>
         <%= form.label :search, "メモ検索", class: "visually-hidden" %>
         <%= form.text_field :search, class: "form-control me-2", placeholder: "タイトルで検索", style: "max-width: 200px;" %> <!-- 幅をカスタムで調整 -->
         <%= form.submit "検索", class: "btn btn-outline-secondary" %>
       <% end %>
 
-        <!-- タグ検索フォーム -->
-        <%= form_with(url: folder_memos_path(@folder), method: :get, local: true, class: "d-flex") do |form| %>
-          <%= form.label :tag_id, "タグで検索", class: "visually-hidden" %>
-          <%= form.collection_select :tag_id, Tag.all, :id, :name, { include_blank: true }, { class: "form-select me-2" } %>
-          <%= form.submit "検索", class: "btn btn-outline-secondary" %>
-        <% end %>
-      </div>
+      <!-- タグ検索フォーム -->
+      <%= form_with(url: folder_memos_path(@folder), method: :get, local: true, class: "d-flex") do |form| %>
+        <%= form.label :tag_id, "タグで検索", class: "visually-hidden" %>
+        <%= form.collection_select :tag_id, Tag.all, :id, :name, { include_blank: true }, { class: "form-select me-2" } %>
+        <%= form.submit "検索", class: "btn btn-outline-secondary" %>
+      <% end %>
+  </div>
 
-      <!-- メモ一覧テーブル -->
-      <div class="table-responsive">
-        <table class="table table-hover">
-          <thead class="table-light">
+    <!-- メモ一覧テーブル -->
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead class="table-light">
+          <tr>
+            <th>ID</th>
+            <th>タイトル</th>
+            <th>タグ</th>
+            <th>作成時間</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @memos.each do |memo| %>
             <tr>
-              <th>ID</th>
-              <th>タイトル</th>
-              <th>タグ</th>
-              <th>作成時間</th>
-              <th>操作</th>
+              <td><%= memo.id %></td>
+              <td><%= memo.title %></td>
+              <td>
+                <% memo.tags.each do |tag| %>
+                  <span class="badge bg-secondary"><%= tag.name %></span>
+                <% end %>
+              </td>
+              <td><%= memo.created_at.strftime("%Y/%m/%d %H:%M") %></td>
+              <td>
+                <%= link_to '編集', edit_folder_memo_path(@folder, memo), class: 'btn btn-sm btn-outline-primary' %>
+                <%= link_to '削除', folder_memo_path(@folder, memo), data: { turbo_method: :delete }, class: 'btn btn-sm btn-outline-danger' %>
+              </td>
             </tr>
-          </thead>
-          <tbody>
-            <% @memos.each do |memo| %>
-              <tr>
-                <td><%= memo.id %></td>
-                <td><%= memo.title %></td>
-                <td>
-                  <% memo.tags.each do |tag| %>
-                    <span class="badge bg-secondary"><%= tag.name %></span>
-                  <% end %>
-                </td>
-                <td><%= memo.created_at.strftime("%Y/%m/%d %H:%M") %></td>
-                <td>
-                  <%= link_to '編集', edit_folder_memo_path(@folder, memo), class: 'btn btn-sm btn-outline-primary' %>
-                  <%= link_to '削除', folder_memo_path(@folder, memo), data: { turbo_method: :delete }, class: 'btn btn-sm btn-outline-danger' %>
-                </td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
-
-      <%= link_to 'ノート一覧へ戻る', folders_path, class: 'btn btn-secondary mt-3' %>
+          <% end %>
+        </tbody>
+      </table>
     </div>
 
-  </div>
-</div>
+    <%= link_to 'ノート一覧へ戻る', folders_path, class: 'btn btn-secondary mt-3' %>
+
+
