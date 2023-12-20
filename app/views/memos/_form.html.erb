@@ -1,49 +1,50 @@
+<%= form_with(model: [@folder, memo], local: true, class: 'needs-validation', novalidate: true) do |form| %>
+  
+  <%# 現在のフォルダとメモのタイトルを表示 %>
+  <div class="mb-3">
+    <p><%= @folder.name %>/<%= memo.title.present? ? memo.title : '新規メモ' %></p>
+  </div>
 
-
-
-      <%= form_with(model: [@folder, memo], local: true, class: 'needs-validation', novalidate: true) do |form| %>
-        <% if memo.errors.any? %>
-          <!-- エラーメッセージをBootstrapのアラートスタイルで表示 -->
-          <div class="alert alert-danger" role="alert">
-            <h4 class="alert-heading"><%= pluralize(memo.errors.count, "error") %> prohibited this memo from being saved:</h4>
-            <ul>
-              <% memo.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-              <% end %>
-            </ul>
-          </div>
+  <% if memo.errors.any? %>
+    <!-- エラーメッセージをBootstrapのアラートスタイルで表示 -->
+    <div class="alert alert-danger" role="alert">
+      <h4 class="alert-heading"><%= pluralize(memo.errors.count, "error") %> prohibited this memo from being saved:</h4>
+      <ul>
+        <% memo.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
         <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-        <!-- Bootstrapのフォームグループを適用 -->
-        <div class="mb-3">
-          <%= form.label :title, class: 'form-label' %>
-          <%= form.text_field :title, class: 'form-control' %>
-        </div>
 
-        <div class="mb-3">
-          <%= form.label :content, class: 'form-label' %>
-          <%= form.text_area :content, id: 'memo_content', class: 'form-control custom-textarea', style: 'height: 60vh;' %>
-        </div>
+  <!-- Bootstrapのフォームグループを適用 -->
+  <div class="mb-3">
+    <%= form.label :title, class: 'form-label' %>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
 
-          <div class="field">
-        <%= form.label :tag_ids, "タグ", class: 'label' %>
+  <div class="mb-3">
+    <%= form.label :content, class: 'form-label' %>
+    <%= form.text_area :content, id: 'memo_content', class: 'form-control custom-textarea', style: 'height: 60vh;' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tag_ids, "タグ", class: 'label' %>
     <%= form.collection_select :tag_ids, Tag.all, :id, :name, {}, { multiple: true, size: 1, class: 'select' } %>
   </div>
 
-        <!-- 特定の文字列を挿入するボタンを追加 -->
-        <%= button_tag '白紙にする', type: 'button', id: 'clear_textarea', class: 'btn btn-secondary mb-3' %>
+  <!-- 特定の文字列を挿入するボタンを追加 -->
+  <%= button_tag '白紙にする', type: 'button', id: 'clear_textarea', class: 'btn btn-secondary mb-3' %>
 
-        <!-- 特定の文字列を挿入するボタンを追加 -->
-        <%= button_tag '貼り付け用テンプレート表示', type: 'button', id: 'insert_text2', class: 'btn btn-secondary mb-3' %>
+  <!-- 特定の文字列を挿入するボタンを追加 -->
+  <%= button_tag '貼り付け用テンプレート表示', type: 'button', id: 'insert_text2', class: 'btn btn-secondary mb-3' %>
 
-        <!-- 特定の文字列を挿入するボタンを追加 -->
-        <%= button_tag 'エラー用テンプレート表示', type: 'button', id: 'insert_text3', class: 'btn btn-secondary mb-3' %>
+  <!-- 特定の文字列を挿入するボタンを追加 -->
+  <%= button_tag 'エラー用テンプレート表示', type: 'button', id: 'insert_text3', class: 'btn btn-secondary mb-3' %>
 
-        <!-- Bootstrapのボタンスタイルを適用 -->
-        <div class="actions">
-          <%= form.submit class: 'btn btn-primary' %>
-        </div>
-      <% end %>
-    </div>
+  <!-- Bootstrapのボタンスタイルを適用 -->
+  <div class="actions">
+    <%= form.submit class: 'btn btn-primary' %>
   </div>
-</div>
+<% end %>

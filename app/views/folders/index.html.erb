@@ -1,4 +1,4 @@
-<h1>Folders</h1>
+<h2>ノート一覧</h2>
 
 <!-- ファイル名作成用ポップアップの背景オーバーレイ -->
 <%# この書き方だと他のファイルでjavascriptファイルの読み込みを防げる %>
@@ -32,10 +32,7 @@
   <% end %>
 </div>
 
-
-
-<h2>Existing Folders</h2>
-
+<%# 存在するノートを一覧で表示 %>
 <div class="folders-container">
   <% @folders.each do |folder| %>
     <div class="folder-card">
