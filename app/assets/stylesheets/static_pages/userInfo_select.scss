@@ -1,26 +1,28 @@
-.user-status {
-  margin-bottom: 20px;
+.links-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
 }
 
-.account-options {
+.link-column {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 10px; /* 左右の余白 */
 }
 
-.option {
-  margin: 10px 0;
+.link-column a {
+  text-decoration: none;
+  color: #333;
+  margin: 10px 0; /* 上下の余白 */
+  text-align: center;
+  display: block; /* ブロック要素として表示 */
 }
 
-button {
-  padding: 10px 15px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.administrator .link-column a {
+  color: #0056b3; /* 管理者用リンクの色 */
 }
 
-button:hover {
-  background-color: #0056b3;
+.administrator .link-column a:hover {
+  color: #003d82; /* ホバー時の色 */
 }

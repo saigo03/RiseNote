@@ -2,7 +2,7 @@
   <div class="position-sticky pt-3 h-100">
     <!-- ログインしているユーザーのメールアドレスを表示 -->
     <div class="px-3 text-white">
-      <p><%= current_user.email %></p>
+      <p><%= current_user.username %>さんがログイン中</p>
     </div>
 
     <ul class="nav flex-column text-white">
@@ -11,6 +11,9 @@
       </li>
       <li class="nav-item">
         <%= link_to 'マイページ', mypage_path, class: 'nav-link text-white' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'メニュー', userInfo_select_path, class: 'nav-link text-white' %>
       </li>
       <li class="nav-item">
         <%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete },class: 'nav-link text-white' %>

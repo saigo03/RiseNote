@@ -1,23 +1,27 @@
-<div class="links-container">
-  <div class="link-column">
-    <%= link_to 'アカウント情報', userInfo_select_path %>
-    <%= link_to 'ノート一覧・作成', folders_path %>
-  </div>
 
-  <div class="link-column">
-    <a href="#">チュートリアル</a>
-    <a href="#">アチーブメント</a>
+      <div class="card mb-3">
+        <div class="card-header">
+          プロフィール
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"><%= current_user.username %></h5>
+          <p class="card-text">ユーザー名: <%= current_user.username %></p>
+        </div>
+      </div>
+
+<div class="card mb-3">
+  <div class="card-header">
+    アカウント情報
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">メールアドレス</h5>
+    <p class="card-text"><%= current_user.email %></p>
+    <div class="account-options">
+      <p><%= link_to 'メールアドレスの変更', mypage_path %></p>
+      <p><%= link_to 'パスワードの変更', edit_user_registration_path %></p>
+      <p><%= link_to "アカウント削除", registration_path(:user), data: { turbo_method: :delete }, style: "color: red;" %></p>
+    </div>
   </div>
 </div>
 
-<% if current_user.admin? %>
-  <div class="links-container administrator">
-    <div class="link-column">
-      <%= link_to 'ユーザー管理', users_path %>
-    </div>
-    <div class="link-column">
-      <%= link_to 'タグ管理', tags_path %>
-      <%# link_to 'お問合せ管理', posts_path %>
-    </div>
-  </div>
-<% end %>
+      
