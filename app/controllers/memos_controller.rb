@@ -30,6 +30,9 @@ class MemosController < ApplicationController
     @memo.user = current_user  # ログインしているユーザーをメモに関連付け
 
     if @memo.save
+      #ミッション達成の判定
+      current_user.check_mission
+
       redirect_to folder_memos_path(@folder), notice: 'Memo was successfully created.'
     else
       render :new, status: :unprocessable_entity
