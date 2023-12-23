@@ -11,12 +11,16 @@
   </head>
 
   <body>
+    <!-- オーバーレイ -->
+    <div id="overlay" style="display: none;"></div>
+
     <div class="container-fluid">
       <div class="row">
         <!-- ログイン中のみナビバーを表示する -->
         <% if user_signed_in? %>
-          <!-- ナビゲーションパーシャルを読み込む -->
+          <!-- パーシャルを読み込む -->
           <%= render 'shared/navbar' %>
+          <%= render 'shared/mypage' %>
           <div class="<%= 'col-md-10' %>">
         <% else %>
           <div class="<%= 'col-md-12'%>">
