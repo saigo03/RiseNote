@@ -104,6 +104,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.12.0)
+      devise (>= 4.9.0)
     diff-lcs (1.5.0)
     e2mmap (0.1.0)
     erubi (1.12.0)
@@ -343,6 +345,7 @@ DEPENDENCIES
   capybara (= 3.38.0)
   debug (= 1.7.1)
   devise
+  devise-i18n
   guard (= 2.18.0)
   guard-minitest (= 2.4.6)
   importmap-rails (= 1.1.5)

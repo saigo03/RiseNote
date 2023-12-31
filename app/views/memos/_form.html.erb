@@ -18,20 +18,21 @@
   <% end %>
 
 
-  <!-- Bootstrapのフォームグループを適用 -->
-  <div class="mb-3">
-    <%= form.label :title, class: 'form-label' %>
-    <%= form.text_field :title, class: 'form-control' %>
+  <div class="row">
+    <div class="col-md-8 mb-3">
+      <%= form.label :title, class: 'form-label' %>
+      <%= form.text_field :title, class: 'form-control' %>
+    </div>
+
+    <div class="col-md-2 mb-3">
+      <%= form.label :tag_ids, "タグ", class: 'form-label' %>
+      <%= form.collection_select :tag_ids, Tag.all, :id, :name, {include_blank: 'タグを選択...'}, class: 'form-select' %>
+    </div>
   </div>
 
   <div class="mb-3">
     <%= form.label :content, class: 'form-label' %>
     <%= form.text_area :content, id: 'memo_content', class: 'form-control custom-textarea', style: 'height: 60vh;' %>
-  </div>
-
-  <div class="field">
-    <%= form.label :tag_ids, "タグ", class: 'label' %>
-    <%= form.collection_select :tag_ids, Tag.all, :id, :name, {}, { multiple: true, size: 1, class: 'select' } %>
   </div>
 
   <!-- 特定の文字列を挿入するボタンを追加 -->

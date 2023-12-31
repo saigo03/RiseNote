@@ -20,6 +20,8 @@ Rails.application.routes.draw do
     resources :memos
   end
 
+  resources :missions, only: [:index]
+
   # タグに関連するルートを追加
   resources :tags, only: [:index, :create, :destroy]
 end

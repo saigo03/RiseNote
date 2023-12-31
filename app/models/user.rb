@@ -15,6 +15,11 @@ class User < ApplicationRecord
   has_many :user_missions
   has_many :missions, through: :user_missions
 
+
+  # usernameに対するバリデーション
+  validates :username, presence: true, length: { minimum: 2 }
+
+
    # 新規登録時にデフォルトランクを設定
    before_create :set_default_rank
 

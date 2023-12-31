@@ -14,6 +14,7 @@ gem "puma",            "5.6.5"
 gem "bootsnap",        "1.16.0", require: false
 gem "sqlite3",         "1.6.1"
 gem 'devise'
+gem 'devise-i18n'
 gem 'bootstrap', '~> 5.3.0'
 gem 'mini_racer', '~> 0.8.0'
 gem 'jquery-rails', '~> 4.6'
