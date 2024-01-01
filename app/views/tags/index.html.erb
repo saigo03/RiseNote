@@ -31,7 +31,7 @@
           <tr>
             <td><%= tag.name %></td>
             <td>
-              <%= link_to '削除', tag_path(tag),  data: { turbo_method: :delete }, class: "btn btn-danger btn-sm" %>
+              <%= link_to '削除', tag_path(tag),  data: {turbo_method: "delete", turbo_confirm: "削除してよろしいですか？"}, class: "btn btn-danger btn-sm" %>
             </td>
           </tr>
         <% end %>

@@ -5,14 +5,14 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   # フォルダの関連づけ
-  has_many :folders
+  has_many :folders, dependent: :destroy
 
   # メモとの関連付け
   #dependent: :destroyでアカウント削除時に関連づいたメモも削除する
   has_many :memos, dependent: :destroy
 
   #ミッションとの関連付け
-  has_many :user_missions
+  has_many :user_missions, dependent: :destroy
   has_many :missions, through: :user_missions
 
 
