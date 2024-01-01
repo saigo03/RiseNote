@@ -18,7 +18,7 @@
   <% end %>
 
 
-  <div class="row">
+ <div class="row">
     <div class="col-md-8 mb-3">
       <%= form.text_field :title, class: 'form-control', placeholder: '無題' %>
     </div>
@@ -26,11 +26,15 @@
     <div class="col-md-2 mb-3">
       <%= form.collection_select :tag_ids, Tag.all, :id, :name, {include_blank: 'タグを選択...'}, class: 'form-select' %>
     </div>
+
+    <div class="col-md-2 mb-3 d-flex align-items-end">
+      <%= form.submit '保存', class: 'btn btn-primary' %>
+    </div>
   </div>
 
   <div class="mb-3">
     <%= form.label :content, class: 'form-label' %>
-    <%= form.text_area :content, id: 'memo_content', class: 'form-control custom-textarea', style: 'height: 60vh; border: none;' %>
+    <%= form.text_area :content, id: 'memo_content', class: 'form-control custom-textarea', style: 'height: 70vh; border: none;' %>
   </div>
 
   <!-- 特定の文字列を挿入するボタンを追加 -->
@@ -42,8 +46,4 @@
   <!-- 特定の文字列を挿入するボタンを追加 -->
   <%= button_tag 'エラー用テンプレート表示', type: 'button', id: 'insert_text3', class: 'btn btn-secondary mb-3' %>
 
-  <!-- Bootstrapのボタンスタイルを適用 -->
-  <div class="actions">
-    <%= form.submit class: 'btn btn-primary' %>
-  </div>
 <% end %>
