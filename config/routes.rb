@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get 'mypage', to: 'static_pages#mypage'
   get 'userInfo_select', to: 'static_pages#userInfo_select'
   get 'registration_complete', to: 'static_pages#registration_complete', as: 'registration_complete'
+  get 'learning_records', to: 'learning_records#show'
 
   resources :folders do
     resources :memos

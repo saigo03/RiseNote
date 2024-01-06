@@ -1,4 +1,5 @@
 <div class="popup" id="accounts-popup" style="display: none;">
   <p><%= current_user.username %> さんのNote</p>
   <p><%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete } %></p>
+    <p><%= link_to 'メモの記録をみる', learning_records_path %></p>
 </div>
