@@ -1,5 +1,6 @@
 class MemosController < ApplicationController
   before_action :set_folder
+  before_action :set_mission
   before_action :set_memo, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -73,6 +74,12 @@ class MemosController < ApplicationController
 
     def set_memo
       @memo = @folder.memos.find(params[:id])
+    end
+
+    # ミッションの確認のためにデータの取得
+    def set_mission
+      @missions = Mission.all
+      @completed_missions = current_user ? current_user.missions : []
     end
 
     def memo_params

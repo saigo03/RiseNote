@@ -1,5 +1,6 @@
 class FoldersController < ApplicationController
   before_action :set_folder, only: [:show, :edit, :update, :destroy]
+  before_action :set_mission
 
   # GET /folders
   def index
@@ -52,5 +53,11 @@ class FoldersController < ApplicationController
     # Only allow a list of trusted parameters through.
     def folder_params
       params.require(:folder).permit(:name)
+    end
+
+    # ミッションの確認のためにデータの取得
+    def set_mission
+      @missions = Mission.all
+      @completed_missions = current_user ? current_user.missions : []
     end
 end

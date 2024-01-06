@@ -1,0 +1,39 @@
+// overlayのデザイン
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+//ポップアップデザイン
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+  background-color: #ffffff;
+
+  // ポップアップの幅を少し広く設定
+  width: 90%; // 元の80%から変更
+  max-width: 600px; // 最大幅も少し広く設定
+
+  // ポップアップの内側の余白
+  padding: 20px;
+
+  // 角を丸くする
+  border-radius: 10px; // 角の丸みを指定
+
+  // ポップアップのボーダーと影
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25); // 影を強調
+
+  // テキストの整形（オプション）
+  text-align: center;
+  font-size: 16px;
+}
+

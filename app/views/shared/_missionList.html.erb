@@ -1,0 +1,30 @@
+<div class="missionList popup" id="mission-popup" style="display: none;">
+  <h1>Missions</h1>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Completion Criteria</th>
+        <th scope="col">Point Value</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @missions.each do |mission| %>
+        <tr>
+          <td><%= mission.id %></td>
+          <td><%= mission.name %></td>
+          <td><%= mission.description %></td>
+          <td><%= mission.completion_criteria %></td>
+          <td><%= mission.point_value %></td>
+          <td class="<%= @completed_missions.include?(mission) ? 'text-success' : 'text-danger' %>">
+            <%= @completed_missions.include?(mission) ? '達成済み' : '未達成' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

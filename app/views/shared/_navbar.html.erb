@@ -2,7 +2,7 @@
   <div class="position-sticky pt-3 h-100">
     <!-- ログインしているユーザーのメールアドレスを表示 -->
     <div class="px-3 text-white">
-      <p><%= current_user.username %>さんがログイン中</p>
+      <button id="accounts-link" class="btn text-white text-decoration-none"><%= current_user.username %>さんがログイン中</button>
     </div>
 
     <ul class="nav flex-column text-white">
@@ -10,22 +10,19 @@
         <%= link_to 'ノート一覧', folders_path, class: 'nav-link text-white' %>
       </li>
       <li class="nav-item">
-        <%= link_to 'マイページ', mypage_path, class: 'nav-link text-white' %>
+        <button id="mypage-link" class="btn text-white text-decoration-none">マイページ</button>
       </li>
       <li class="nav-item">
-        <button id="mypage-link" class="btn btn-link text-decoration-none">マイページ(POP)</button>
+        <button id="mission-link" class="btn text-white text-decoration-none">ミッション一覧</button>
       </li>
       <li class="nav-item">
         <%= link_to 'メニュー', userInfo_select_path, class: 'nav-link text-white' %>
-      </li>
-      <li class="nav-item">
-        <%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete },class: 'nav-link text-white' %>
       </li>
 
       <!-- ノート内のみ表示する -->
       <% if @folder && @folder.persisted? %>
         <li class="nav-item">
-          <%= link_to '新しいメモ', new_folder_memo_path(@folder), class: 'nav-link text-white' %>
+          <%= link_to '＋新規メモ', new_folder_memo_path(@folder), class: 'nav-link text-white' %>
         </li>
       <% end %>
 
