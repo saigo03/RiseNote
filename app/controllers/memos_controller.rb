@@ -30,10 +30,11 @@ class MemosController < ApplicationController
     @memo.user = current_user  # ログインしているユーザーをメモに関連付け
 
     if @memo.save
-      #ミッション達成の判定
-      current_user.check_mission
+      # ミッション達成のチェックとフラッシュメッセージの設定
+      mission_message = current_user.check_mission
+      flash[:notice] = mission_message if mission_message
 
-      redirect_to folder_memos_path(@folder), notice: 'Memo was successfully created.'
+      redirect_to folder_memos_path(@folder)
     else
       render :new, status: :unprocessable_entity
     end
@@ -60,7 +61,7 @@ class MemosController < ApplicationController
   def destroy
     @memo = Memo.find(params[:id])
     @memo.destroy
-    redirect_to folder_memos_path(@folder)
+    redirect_to folder_memos_path(@folder), alert: 'メモが削除されました。'
   end
 
   private

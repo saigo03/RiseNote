@@ -9,7 +9,7 @@ class TagsController < ApplicationController
   def create
     @tag = Tag.new(tag_params)
     if @tag.save
-      redirect_to tags_path, notice: 'Tag was successfully created.'
+      redirect_to tags_path, notice: '新しいタグを作成しました'
     else
       render :new
     end
@@ -18,7 +18,7 @@ class TagsController < ApplicationController
   def destroy
     @tag = Tag.find(params[:id])
     @tag.destroy
-    redirect_to tags_path, notice: 'Tag was successfully deleted.'
+    redirect_to tags_path, alert: 'タグを削除しました'
   end
 
   private

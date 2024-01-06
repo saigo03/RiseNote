@@ -21,7 +21,7 @@ class FoldersController < ApplicationController
     @folder = current_user.folders.new(folder_params) # 新しいフォルダ用
 
     if @folder.save
-      redirect_to folders_path, notice: 'Folder was successfully created.'
+      redirect_to folders_path
     else
       @folders = Folder.all  # フォルダ一覧を再取得
       render :index
@@ -31,7 +31,7 @@ class FoldersController < ApplicationController
   # PATCH/PUT /folders/1
   def update
     if @folder.update(folder_params)
-      redirect_to @folder, notice: 'Folder was successfully updated.'
+      redirect_to @folder
     else
       render :edit
     end
@@ -40,7 +40,7 @@ class FoldersController < ApplicationController
   # DELETE /folders/1
   def destroy
     @folder.destroy
-    redirect_to folders_url, notice: 'Folder was successfully destroyed.'
+    redirect_to folders_url, alert: 'ノートを削除しました'
   end
 
   private

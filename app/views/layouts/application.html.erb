@@ -21,7 +21,14 @@
           <!-- パーシャルを読み込む -->
           <%= render 'shared/navbar' %>
           <%= render 'shared/mypage' %>
+          
           <div class="<%= 'col-md-10' %>">
+            <!-- 通知を表示する -->
+            <% flash.each do |key, message| %>
+              <div class="alert alert-<%= key == 'notice' ? 'success' : 'danger' %>">
+                <%= message %>
+              </div>
+            <% end %>
         <% else %>
           <div class="<%= 'col-md-12'%>">
         <% end %>

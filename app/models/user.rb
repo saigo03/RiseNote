@@ -26,16 +26,19 @@ class User < ApplicationRecord
   # ユーザーのミッション達成状況をチェックし、必要に応じてポイントを加算する
   def check_mission
     self.points ||= 0
-
+  
+    # メモ作成時のミッションチェック
     # 初めてのメモ作成時のミッションチェック
-    check_and_complete_mission(1, 1) if self.memos.count == 1
+    message = check_and_complete_mission(1, 1) if self.memos.count == 1
 
-    # メモ作成回数が100回に達した時のミッションチェック
-    check_and_complete_mission(2, 3) if self.memos.count == 3
-
-    # ポイントの変更があった場合のみ保存
+    # メモ作成回数が3回に達した時のミッションチェック
+    message ||= check_and_complete_mission(2, 3) if self.memos.count == 3
+  
     self.save if self.points_changed?
+    message
   end
+
+
 
   private
 
@@ -48,15 +51,21 @@ class User < ApplicationRecord
     # 条件を満たしていればミッションを達成としてポイントを加算し、UserMissionを更新する
     def check_and_complete_mission(mission_id, required_count)
       user_mission = self.user_missions.find_or_initialize_by(mission_id: mission_id)
-      return if user_mission.completed
-
+      return nil if user_mission.completed
+    
       mission = Mission.find_by(id: mission_id)
-      return unless mission
-
+      return nil unless mission
+    
       if self.memos.count == required_count
         self.points += mission.point_value
         user_mission.completed = true
         user_mission.save
+    
+        # ミッション達成時のみメッセージを返す
+        "「#{mission.name}」を達成しました！"
+      else
+        # ミッション未達成の場合はnilを返す
+        nil
       end
     end
 end
