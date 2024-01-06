@@ -8,10 +8,19 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
 
+  #ログイン状態であればノート一覧へ
+  authenticated :user do
+    root to: 'folders#index', as: :authenticated_root
+  end
+
+  #ログインしていない場合はホームページへ
+  unauthenticated do
+    root to: 'home#index'
+  end
+
   # カスタムユーザーコントローラのルーティング
   resources :users, only: [:index, :destroy]
   
-  root to: "home#index"
   get 'mypage', to: 'static_pages#mypage'
   get 'userInfo_select', to: 'static_pages#userInfo_select'
   get 'registration_complete', to: 'static_pages#registration_complete', as: 'registration_complete'

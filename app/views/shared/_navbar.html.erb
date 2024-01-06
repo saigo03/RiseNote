@@ -29,6 +29,10 @@
       <%# メモの新規作成、編集ページ内のみ表示する %>
       <% if controller_name == 'memos' && (action_name == 'new' || action_name == 'edit') %>
         <li class="nav-item">
+          <%= link_to 'メモ一覧へ戻る', folder_memos_path(@folder), class: 'nav-link text-white' %>
+        </li>
+        
+        <li class="nav-item">
           <%= link_to 'テンプレート', '#', id: 'template-link', class: 'text-white', data: { bs_toggle: 'modal', bs_target: '#templateModal' } %>
         </li>
       <% end %>

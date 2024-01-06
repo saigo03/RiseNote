@@ -1,6 +1,5 @@
 class MemosController < ApplicationController
   before_action :set_folder
-  before_action :set_mission
   before_action :set_memo, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -35,7 +34,7 @@ class MemosController < ApplicationController
       mission_message = current_user.check_mission
       flash[:notice] = mission_message if mission_message
 
-      redirect_to folder_memos_path(@folder)
+      redirect_to edit_folder_memo_path(@folder, @memo)
     else
       render :new, status: :unprocessable_entity
     end
@@ -53,7 +52,7 @@ class MemosController < ApplicationController
 
     @memo = Memo.find(params[:id])
     if @memo.update(memo_params)
-      redirect_to folder_memos_path(@folder)
+      redirect_to edit_folder_memo_path(@folder, @memo)
     else
       render :edit
     end
@@ -74,12 +73,6 @@ class MemosController < ApplicationController
 
     def set_memo
       @memo = @folder.memos.find(params[:id])
-    end
-
-    # ミッションの確認のためにデータの取得
-    def set_mission
-      @missions = Mission.all
-      @completed_missions = current_user ? current_user.missions : []
     end
 
     def memo_params
