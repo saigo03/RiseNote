@@ -5,7 +5,7 @@ class MemosController < ApplicationController
   def index
     if params[:tag_id].present?
       # 単一のタグIDに基づいてメモをフィルタリング
-      @memos = Memo.joins(:tags).where(tags: { id: params[:tag_id] }).distinct
+      @memos = current_user.memos.joins(:tags).where(tags: { id: params[:tag_id] }).where(folder: @folder).distinct
     elsif params[:search].present?
       # テキストでの検索
       @memos = @folder.memos.where('title LIKE ?', "%#{params[:search]}%")
