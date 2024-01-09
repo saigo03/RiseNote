@@ -1,3 +1,5 @@
+  <%= render 'shared/contextMenu' %>
+  
   <!-- メモ一覧 -->
   <div class="col-md-12 px-3">
     <h1 class="my-4">メモ一覧/<%= @folder.name %></h1>
@@ -26,13 +28,12 @@
             <th>タイトル</th>
             <th>タグ</th>
             <th>作成時間</th>
-            <th>操作</th>
           </tr>
         </thead>
 
-        <tbody>
+        <tbody class="folder-group" data-folder-id="<%= @folder.id %>">
           <% @memos.each do |memo| %>
-            <tr>
+            <tr class="folder-group-item" data-memo-id="<%= memo.id %>">
               <td><%= link_to memo.title, edit_folder_memo_path(@folder, memo), class: 'text-dark text-decoration-none' %></td>
               <td>
                 <% memo.tags.each do |tag| %>
@@ -40,9 +41,6 @@
                 <% end %>
               </td>
               <td><%= memo.created_at.strftime("%Y/%m/%d %H:%M") %></td>
-              <td>
-                <%= link_to '削除', folder_memo_path(@folder, memo), data: {turbo_method: "delete", turbo_confirm: "削除してよろしいですか？"}, class: 'btn btn-sm btn-outline-danger' %>
-              </td>
             </tr>
           <% end %>
         </tbody>

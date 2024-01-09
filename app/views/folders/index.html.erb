@@ -1,3 +1,5 @@
+<%= render 'shared/contextMenu' %>
+
 <h2>ノート一覧</h2>
 
 <!-- ファイル名作成用ポップアップの背景オーバーレイ -->
@@ -35,7 +37,7 @@
 <%# 存在するノートを一覧で表示 %>
 <div class="folders-container">
   <% @folders.each do |folder| %>
-    <div class="folder-card">
+    <div class="folder-card" data-folder-id="<%= folder.id %>">
       <%= link_to folder_memos_path(folder), class: "folder-link" do %>
         <div class="folder-content">
           <div class="folder-name"><%= folder.name %></div>
