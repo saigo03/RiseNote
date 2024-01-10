@@ -41,8 +41,6 @@ class MemosController < ApplicationController
     end
   end
 
-
-
   def edit
     @memo = Memo.find(params[:id])
   end
@@ -62,7 +60,7 @@ class MemosController < ApplicationController
   def destroy
     @memo = Memo.find(params[:id])
     @memo.destroy
-    redirect_to folder_memos_path(@folder), alert: 'メモが削除されました。'
+    redirect_to folder_memos_path(@folder),alert: 'メモが削除されました。'
   end
 
   private
