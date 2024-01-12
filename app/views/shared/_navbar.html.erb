@@ -8,6 +8,13 @@
     <ul class="nav flex-column text-white">
       <li class="nav-item">
         <%= link_to 'ノート一覧', folders_path, class: 'nav-link text-white' %>
+        <ul class="nav flex-column text-white">
+          <% @folders.each do |folder| %>
+            <li class="nav-item">
+              <%= link_to folder.name, folder_memos_path(folder), class: 'nav-link text-white' %>
+            </li>
+          <% end %>
+        </ul>
       </li>
       <li class="nav-item">
         <button id="mypage-link" class="btn text-white text-decoration-none">マイページ</button>
