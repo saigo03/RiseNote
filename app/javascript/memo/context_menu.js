@@ -18,6 +18,7 @@ document.addEventListener("turbo:load", function() {
         deleteButton.href = `/folders/${folderId}/memos/${memoId}`;
         deleteButton.setAttribute('data-turbo-method', 'delete');
         deleteButton.setAttribute('data-turbo-confirm', '削除してよろしいですか？');
+        // deleteButton.setAttribute('data-turbo-frame', 'memo_list');
 
         menu.style.top = e.pageY + 'px';
         menu.style.left = e.pageX + 'px';

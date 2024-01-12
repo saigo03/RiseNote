@@ -33,9 +33,8 @@ class MemosController < ApplicationController
     if @memo.save
       # ミッション達成のチェックとフラッシュメッセージの設定
       mission_message = current_user.check_mission
-      flash[:notice] = mission_message if mission_message
 
-      redirect_to edit_folder_memo_path(@folder, @memo)
+      redirect_to edit_folder_memo_path(@folder, @memo),notice: 'メモが保存されました。'
     else
       render :new, status: :unprocessable_entity
     end
@@ -51,7 +50,7 @@ class MemosController < ApplicationController
 
     @memo = Memo.find(params[:id])
     if @memo.update(memo_params)
-      redirect_to edit_folder_memo_path(@folder, @memo)
+      redirect_to edit_folder_memo_path(@folder, @memo),notice: 'メモが保存されました。'
     else
       render :edit
     end
@@ -62,6 +61,7 @@ class MemosController < ApplicationController
     @memo.destroy
     redirect_to folder_memos_path(@folder),alert: 'メモが削除されました。'
   end
+  
 
   private
 

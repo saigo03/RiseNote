@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_folders, if: :user_signed_in?
   before_action :set_missions, if: :user_signed_in?
 
   protected
@@ -12,6 +13,11 @@ class ApplicationController < ActionController::Base
 
   # ミッションデータの設定
   private
+
+  
+  def set_folders
+    @folders = current_user.folders
+  end
   
   def set_missions
     @missions = Mission.all
