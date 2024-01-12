@@ -33,6 +33,7 @@ class MemosController < ApplicationController
     if @memo.save
       # ミッション達成のチェックとフラッシュメッセージの設定
       mission_message = current_user.check_mission
+      flash[:notice] = mission_message if mission_message
 
       redirect_to edit_folder_memo_path(@folder, @memo),notice: 'メモが保存されました。'
     else
