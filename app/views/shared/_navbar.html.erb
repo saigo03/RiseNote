@@ -8,12 +8,20 @@
     <ul class="nav flex-column text-white">
       <li class="nav-item">
         <%= link_to 'ノート一覧', folders_path, class: 'nav-link text-white' %>
+        <ul class="nav flex-column text-white">
+          <% @folders.each do |folder| %>
+            <li class="nav-item ms-4">
+              <%= link_to folder.name, folder_memos_path(folder), class: 'nav-link text-white'%>
+            </li>
+          <% end %>
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <button id="mypage-link" class="nav-link text-white text-decoration-none">マイページ</button>
       </li>
       <li class="nav-item">
-        <button id="mypage-link" class="btn text-white text-decoration-none">マイページ</button>
-      </li>
-      <li class="nav-item">
-        <button id="mission-link" class="btn text-white text-decoration-none">ミッション一覧</button>
+        <button id="mission-link" class="nav-link text-white text-decoration-none">ミッション一覧</button>
       </li>
       <li class="nav-item">
         <%= link_to 'メニュー', userInfo_select_path, class: 'nav-link text-white' %>
