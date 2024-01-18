@@ -8,7 +8,7 @@
     <ul class="nav flex-column text-white">
       <li class="nav-item">
         <%= link_to 'ノート一覧', folders_path, class: 'nav-link text-white' %>
-        <ul class="nav flex-column text-white">
+        <ul class="nav flex-column text-white" style="max-height: 200px; overflow-y: auto;">
           <% @folders.each do |folder| %>
             <li class="nav-item ms-4">
               <%= link_to folder.name, folder_memos_path(folder), class: 'nav-link text-white'%>
