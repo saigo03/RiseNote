@@ -11,6 +11,9 @@ class User < ApplicationRecord
   #dependent: :destroyでアカウント削除時に関連づいたメモも削除する
   has_many :memos, dependent: :destroy
 
+  #お問合せ関連付け
+  has_many :posts
+
   #ミッションとの関連付け
   has_many :user_missions, dependent: :destroy
   has_many :missions, through: :user_missions

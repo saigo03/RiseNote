@@ -25,6 +25,14 @@
       <li class="nav-item">
         <%= link_to 'メニュー', userInfo_select_path, class: 'nav-link text-white' %>
       </li>
+      <%# ナビを追加 %>
+      <li class="nav-item">
+        <%= link_to 'お問合せ', new_post_path, class: 'nav-link text-white' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'お問合せ一覧',  posts_path, class: 'nav-link text-white' %>
+      </li>
+      
 
       <!-- ノート内のみ表示する -->
       <% if @folder && @folder.persisted? %>

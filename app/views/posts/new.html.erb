@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="row justify-content-left">
+    <div class="col-md-8">
+      <h3 class="mb-3">お問合せの送信</h3>
+      <%= form_with model: @post, local: true, html: {class: 'needs-validation', novalidate: ''} do |form| %>
+        <div class="mb-3">
+          <%= form.label :title, '件名', class: 'form-label' %><span style="color: red; font-size: 0.8em;">※必須</span>
+          <%= form.text_field :title, class: 'form-control', required: '', placeholder: '15文字以内で入力してください' %>
+          <div class="invalid-feedback">
+            件名を入力してください。
+          </div>
+          <p style="font-size: 0.8em;">お問合せの概要を記載してください。</p>
+        </div>
+
+        <div class="mb-3">
+          <%= form.label :content, 'お問合せ内容', class: 'form-label' %><span style="color: red; font-size: 0.8em;">※必須</span>
+          <%= form.text_area :content, class: 'form-control form-control-textarea', required: '', placeholder: '200文字以内で入力してください' %>
+          <div class="invalid-feedback">
+            お問い合わせ内容を入力してください。
+          </div>
+        </div>
+
+        <%= form.submit "送信", class: 'btn btn-dark btn-wide' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+<style>
+/* 追加のCSSスタイル */
+.form-control {
+  border-color: black; /* 枠の色を指定 */
+  border-width: 1px; /* 枠の太さを指定 */
+}
+
+.form-control:focus {
+  border-color: black; /* 通常の枠色にリセット */
+  border-width: 1.5px; /* ボーダーの太さを2ピクセルに設定 */
+  box-shadow: none; /* フォーカス時の影を無効化 */
+}
+
+/* お問い合わせ内容のテキストエリアを縦に拡張 */
+.form-control-textarea {
+  height: 100px; /* 適切な高さを設定してください */
+}
+
+.btn-wide {
+  width: 35%; /* ボタンを親要素の100%の幅に広げる */
+}
+
+/* フォームの入力欄に余白を設定 */ 
+.mb-3 {
+  margin-bottom: 1rem;
+}
+
+</style>
