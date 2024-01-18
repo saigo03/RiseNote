@@ -1,3 +1,20 @@
 .nav-item .nav-link:hover {
   background-color: hsl(213, 4%, 60%); /* 薄いグレイ色 */
 }
+
+/* Webkitブラウザ用のスタイル */
+::-webkit-scrollbar {
+  width: 8px;  /* スクロールバーの幅 */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;  /* スクロールバーのトラックの色 */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;  /* スクロールバーのサムの色 */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;  /* ホバー時のスクロールバーのサムの色 */
+}

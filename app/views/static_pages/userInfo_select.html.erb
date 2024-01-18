@@ -5,12 +5,13 @@
   </div>
 
   <div class="link-column">
-    <a href="#">チュートリアル</a>
     <%= link_to 'アチーブメント', missions_path %>
+    <%= link_to 'お問合せ', new_post_path %>
+
   </div>
 </div>
 
-
+<%# 管理者のみ表示する %>
 <% if current_user.admin? %>
   <div class="links-container administrator">
     <div class="link-column">
@@ -18,7 +19,7 @@
     </div>
     <div class="link-column">
       <%= link_to 'タグ管理', tags_path %>
-      <%# link_to 'お問合せ管理', posts_path %>
+      <%= link_to 'お問合せ一覧',  posts_path%>
     </div>
   </div>
 <% end %>

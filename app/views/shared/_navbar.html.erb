@@ -3,15 +3,19 @@
     <!-- ログインしているユーザーのメールアドレスを表示 -->
     <div class="px-3 text-white">
       <button id="accounts-link" class="btn text-white text-decoration-none"><%= current_user.username %>さんがログイン中</button>
+
+      <p><%= link_to 'メニュー', userInfo_select_path, class: 'nav-link text-white' %></p>
     </div>
 
-    <ul class="nav flex-column text-white">
+    <ul class="nav text-white" style="border-top: 1px solid #ccc; max-height: 400px; overflow-y: auto;">
       <li class="nav-item">
         <%= link_to 'ノート一覧', folders_path, class: 'nav-link text-white' %>
-        <ul class="nav flex-column text-white" style="max-height: 200px; overflow-y: auto;">
+        <ul class="nav text-white">
           <% @folders.each do |folder| %>
             <li class="nav-item ms-4">
-              <%= link_to folder.name, folder_memos_path(folder), class: 'nav-link text-white'%>
+              <%= link_to folder_memos_path(folder), class: 'nav-link text-white' do %>
+                <i class="fas fa-book"></i> <%= folder.name %>
+              <% end %>
             </li>
           <% end %>
         </ul>
@@ -22,16 +26,6 @@
       </li>
       <li class="nav-item">
         <button id="mission-link" class="nav-link text-white text-decoration-none">ミッション一覧</button>
-      </li>
-      <li class="nav-item">
-        <%= link_to 'メニュー', userInfo_select_path, class: 'nav-link text-white' %>
-      </li>
-      <%# ナビを追加 %>
-      <li class="nav-item">
-        <%= link_to 'お問合せ', new_post_path, class: 'nav-link text-white' %>
-      </li>
-      <li class="nav-item">
-        <%= link_to 'お問合せ一覧',  posts_path, class: 'nav-link text-white' %>
       </li>
       
 
