@@ -1,0 +1,42 @@
+Date : 2024-01-18 01:06:00
+Directory : /workspaces/RiseNote/config
+Total : 15 files,  601 codes, 0 comments, 164 blanks, all 765 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| Ruby     |         15 |        601 |          0 |        164 |        765 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                 | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                    |         15 |        601 |          0 |        164 |        765 |
+| . (Files)                                                            |          6 |        105 |          0 |         29 |        134 |
+| environments                                                         |          3 |        172 |          0 |         68 |        240 |
+| initializers                                                         |          6 |        324 |          0 |         67 |        391 |
++----------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                             | language | code       | comment    | blank      | total      |
++----------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| /workspaces/RiseNote/config/application.rb                           | Ruby     |         19 |          0 |          5 |         24 |
+| /workspaces/RiseNote/config/boot.rb                                  | Ruby     |          3 |          0 |          2 |          5 |
+| /workspaces/RiseNote/config/environment.rb                           | Ruby     |          4 |          0 |          2 |          6 |
+| /workspaces/RiseNote/config/environments/development.rb              | Ruby     |         60 |          0 |         25 |         85 |
+| /workspaces/RiseNote/config/environments/production.rb               | Ruby     |         68 |          0 |         26 |         94 |
+| /workspaces/RiseNote/config/environments/test.rb                     | Ruby     |         44 |          0 |         17 |         61 |
+| /workspaces/RiseNote/config/importmap.rb                             | Ruby     |          9 |          0 |          2 |         11 |
+| /workspaces/RiseNote/config/initializers/assets.rb                   | Ruby     |         10 |          0 |          3 |         13 |
+| /workspaces/RiseNote/config/initializers/content_security_policy.rb  | Ruby     |         23 |          0 |          3 |         26 |
+| /workspaces/RiseNote/config/initializers/devise.rb                   | Ruby     |        259 |          0 |         55 |        314 |
+| /workspaces/RiseNote/config/initializers/filter_parameter_logging.rb | Ruby     |          7 |          0 |          2 |          9 |
+| /workspaces/RiseNote/config/initializers/inflections.rb              | Ruby     |         14 |          0 |          3 |         17 |
+| /workspaces/RiseNote/config/initializers/permissions_policy.rb       | Ruby     |         11 |          0 |          1 |         12 |
+| /workspaces/RiseNote/config/puma.rb                                  | Ruby     |         36 |          0 |          8 |         44 |
+| /workspaces/RiseNote/config/routes.rb                                | Ruby     |         34 |          0 |         10 |         44 |
+| Total                                                                |          |        601 |          0 |        164 |        765 |
++----------------------------------------------------------------------+----------+------------+------------+------------+------------+

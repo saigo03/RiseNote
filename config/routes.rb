@@ -3,6 +3,9 @@
 # ユーザーIDの自動番号の変更（デフォルトで４桁など)
 
 Rails.application.routes.draw do
+  get 'posts/index'
+  get 'posts/new'
+  get 'posts/show'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions'
@@ -34,4 +37,7 @@ Rails.application.routes.draw do
 
   # タグに関連するルートを追加
   resources :tags, only: [:index, :create, :destroy]
+
+  # お問い合わせルート追加
+  resources :posts, only: [:new, :create, :index, :show]
 end

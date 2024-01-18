@@ -1,0 +1,43 @@
+Date : 2024-01-18 01:02:03
+Directory : /workspaces/RiseNote/app/controllers
+Total : 17 files,  415 codes, 0 comments, 109 blanks, all 524 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| Ruby     |         17 |        415 |          0 |        109 |        524 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                        | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                           |         17 |        415 |          0 |        109 |        524 |
+| . (Files)                                                                   |         11 |        235 |          0 |         56 |        291 |
+| users                                                                       |          6 |        180 |          0 |         53 |        233 |
++-----------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                    | language | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| /workspaces/RiseNote/app/controllers/application_controller.rb              | Ruby     |         20 |          0 |          6 |         26 |
+| /workspaces/RiseNote/app/controllers/folders_controller.rb                  | Ruby     |         47 |          0 |          9 |         56 |
+| /workspaces/RiseNote/app/controllers/hello_controller.rb                    | Ruby     |          4 |          0 |          1 |          5 |
+| /workspaces/RiseNote/app/controllers/home_controller.rb                     | Ruby     |          4 |          0 |          1 |          5 |
+| /workspaces/RiseNote/app/controllers/learning_records_controller.rb         | Ruby     |         14 |          0 |          3 |         17 |
+| /workspaces/RiseNote/app/controllers/memos_controller.rb                    | Ruby     |         63 |          0 |         17 |         80 |
+| /workspaces/RiseNote/app/controllers/missions_controller.rb                 | Ruby     |          7 |          0 |          1 |          8 |
+| /workspaces/RiseNote/app/controllers/posts_controller.rb                    | Ruby     |         26 |          0 |          5 |         31 |
+| /workspaces/RiseNote/app/controllers/static_pages_controller.rb             | Ruby     |          8 |          0 |          3 |         11 |
+| /workspaces/RiseNote/app/controllers/tags_controller.rb                     | Ruby     |         24 |          0 |          5 |         29 |
+| /workspaces/RiseNote/app/controllers/users/confirmations_controller.rb      | Ruby     |         24 |          0 |          7 |         31 |
+| /workspaces/RiseNote/app/controllers/users/omniauth_callbacks_controller.rb | Ruby     |         23 |          0 |          8 |         31 |
+| /workspaces/RiseNote/app/controllers/users/passwords_controller.rb          | Ruby     |         27 |          0 |          8 |         35 |
+| /workspaces/RiseNote/app/controllers/users/registrations_controller.rb      | Ruby     |         56 |          0 |         15 |         71 |
+| /workspaces/RiseNote/app/controllers/users/sessions_controller.rb           | Ruby     |         26 |          0 |          8 |         34 |
+| /workspaces/RiseNote/app/controllers/users/unlocks_controller.rb            | Ruby     |         24 |          0 |          7 |         31 |
+| /workspaces/RiseNote/app/controllers/users_controller.rb                    | Ruby     |         18 |          0 |          5 |         23 |
+| Total                                                                       |          |        415 |          0 |        109 |        524 |
++-----------------------------------------------------------------------------+----------+------------+------------+------------+------------+
