@@ -12,6 +12,11 @@ class UsersController < ApplicationController
     redirect_to users_path, alert: 'ユーザーが削除されました。'
   end
 
+
+  def show
+    @user = User.find(params[:id])
+  end
+
   private
 
   def admin_only

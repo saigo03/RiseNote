@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   end
 
   # カスタムユーザーコントローラのルーティング
-  resources :users, only: [:index, :destroy]
+  resources :users, only: [:index, :destroy, :show]
   
   get 'mypage', to: 'static_pages#mypage'
   get 'userInfo_select', to: 'static_pages#userInfo_select'

@@ -10,7 +10,8 @@
     </thead>
     <tbody>
       <% @users.each do |user| %>
-        <tr>
+      <!--詳細ページへのリンクを追加-->
+        <tr style="cursor: pointer;" onclick="window.location='<%= user_path(user) %>'">
           <td><%= user.email %></td>
           <td>
             <% if current_user.admin? %>
@@ -23,3 +24,21 @@
     </tbody>
   </table>
 </div>
+
+
+<style>
+.table-responsive {
+  max-height: 500px; /* ここで高さを設定します */
+  overflow-y: auto; /* 縦方向にスクロール可能にします */
+}
+/* Chrome, Safari, Opera用 */
+.table-responsive::-webkit-scrollbar {
+  display: none; /* スクロールバーを非表示にします */
+}
+
+/* Firefox用 */
+.table-responsive {
+  scrollbar-width: none; /* スクロールバーを非表示にします */
+}
+
+</style>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ユーザー情報</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0; /* Bodyの余白を取り除く */
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column; /* 縦方向に配置 */
+      padding: 10px; /* 余白の追加（必要に応じて調整してください） */
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+    }
+
+    .bi-arrow-left {
+      font-size: 2rem;
+      color: gray;
+    }
+
+    .card {
+      width: 60%; /* カードを横幅いっぱいに広げる */
+    }
+
+    h3 {
+      text-align: left; /* h1要素を左寄せにする */
+      margin: 13px; /* h1要素の余白を取り除く */
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="header">
+      <a href="<%= users_path %>">
+        <i class="bi bi-arrow-left"></i> 
+      </a>
+      <h3>ユーザー情報</h3>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+        <p class="card-text"><strong>ユーザーID:</strong> <%= @user.id %></p>
+        <p class="card-text"><strong>ユーザーネーム:</strong> <%= @user.username %></p>
+        <p class="card-text"><strong>メールアドレス:</strong> <%= @user.email %></p>
+        <p class="card-text"><strong>アカウント登録日:</strong> <%= @user.created_at.strftime("%Y年%-m月%d日 %-H時%M分") %></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
