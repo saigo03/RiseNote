@@ -8,34 +8,27 @@
 <body>
   <div class="container mt-5">
     <div class="header">
-      <a href="<%= posts_path %>" class="back-arrow">
+      <a href="<%= users_path %>" class="back-arrow">
         <i class="bi bi-arrow-left"></i> 
       </a>
       <h3>ユーザー情報</h3>
     </div>
   </div>
-<div class="container">
-  <div class="card">
-    <div class="card-body">
-      <p class="card-text text-muted">お問合せ番号: <%= @post.id %></p>
-      <h4 class="card-title mb-4"><%= @post.title %></h4>
-      <p class="card-text"><%= @post.content %></p>
-      <% if @post.user %>
-        <div class="mt-4">
-          <p class="card-text text-muted">ユーザーID: <%= @post.user.id %></p>
-          <p class="card-text text-muted">ユーザーのメールアドレス: <%= @post.user.email %></p>
-        </div>
-      <% else %>
-        <p class="card-text text-muted">投稿者情報が見つかりません。</p>
-      <% end %>
+
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+        <p class="card-text"><strong>ユーザーID:</strong> <%= @user.id %></p>
+        <p class="card-text"><strong>ユーザーネーム:</strong> <%= @user.username %></p>
+        <p class="card-text"><strong>メールアドレス:</strong> <%= @user.email %></p>
+        <p class="card-text"><strong>アカウント登録日:</strong> <%= @user.created_at.strftime("%Y年%-m月%d日 %-H時%M分") %></p>
+      </div>
     </div>
   </div>
-</div>
-
 </body>
 </html>
 
-<style>
+  <style>
     body {
       margin: 0; /* Bodyの余白を取り除く */
     }
