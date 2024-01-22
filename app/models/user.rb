@@ -18,9 +18,15 @@ class User < ApplicationRecord
   has_many :user_missions, dependent: :destroy
   has_many :missions, through: :user_missions
 
-
-  # usernameに対するバリデーション
-  validates :username, presence: true, length: { minimum: 2 }
+  #文字数は２～８文字
+  validates :username, presence: true, length: { minimum: 2, maximum: 8 }
+  
+  # パスワードに関するバリデーション
+  validates :password, presence: true, length: { minimum: 8 }, on: :create
+  validates :password, format: { 
+    with: /\A(?=.*?[a-z])(?=.*?[A-Z])(?=.*?\d)[a-zA-Z\d]{8,}+\z/,
+    message: "は、最低8文字以上で、少なくとも1つの数字と大文字を含む必要があります" 
+  }, on: :create
 
 
    # 新規登録時にデフォルトランクを設定

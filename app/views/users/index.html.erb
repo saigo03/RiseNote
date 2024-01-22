@@ -11,13 +11,12 @@
     <tbody>
       <% @users.each do |user| %>
       <!--詳細ページへのリンクを追加-->
-        <tr style="cursor: pointer;" onclick="window.location='<%= user_path(user) %>'">
+        <tr>
           <td><%= user.email %></td>
+          <td style="margin-top: 8px;"><%= link_to '詳細', user_path(user), class: 'btn btn-primary btn-sm' %></td>
           <td>
-            <% if current_user.admin? %>
               <%= link_to '削除', user_path(user), 
                   data: {turbo_method: "delete", turbo_confirm: "削除してよろしいですか？"}, class: 'btn btn-danger btn-sm' %>
-            <% end %>
           </td>
         </tr>
       <% end %>

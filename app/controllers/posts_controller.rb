@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :check_admin, only: [:index, :show]
+
   def new
     @post = Post.new
   end
@@ -24,7 +26,15 @@ class PostsController < ApplicationController
   end
 
   private
+
   def post_params
     params.require(:post).permit(:title, :content, :user_id, :read)
+  end
+
+  
+  def check_admin
+    unless current_user.admin?
+      redirect_to root_path, alert: "管理者のみアクセスできます"
+    end
   end
 end

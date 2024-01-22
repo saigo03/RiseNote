@@ -46,3 +46,16 @@
     }
   }
 }
+
+/* deviseのエラーメッセージのスタイルを変更する */
+#error_explanation {
+  font-size: 0.9em; /* 文字サイズを小さく設定 */
+}
+
+#error_explanation h2 {
+  font-size: 1em; /* エラーのタイトルの文字サイズを小さく設定 */
+}
+
+#error_explanation ul li {
+  font-size: 0.9em; /* 各エラーメッセージの文字サイズを小さく設定 */
+}
