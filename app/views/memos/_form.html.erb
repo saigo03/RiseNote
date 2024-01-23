@@ -2,7 +2,8 @@
   
   <%# 現在のフォルダとメモのタイトルを表示 %>
   <div class="mb-3">
-    <p><%= @folder.name %>/<%= memo.title.present? ? memo.title : '新規メモ' %></p>
+    <%# @folder.name/<%= memo.title.present? ? memo.title : '新規メモ' %>
+    <p><%= link_to 'メモ一覧', folder_memos_path(@folder) %></p>
   </div>
 
   <% if memo.errors.any? %>

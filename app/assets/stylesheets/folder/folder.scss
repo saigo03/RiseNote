@@ -2,7 +2,7 @@
 .folders-container {
   position: fixed;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); /* サイズを小さく */
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* サイズを小さく */
   gap: 1rem;
   padding: 1rem;
   overflow-y: auto;
@@ -10,7 +10,7 @@
   border-radius: 10px;
   height: 350px; /* 高さを小さく */
   max-height: 350px; /* 最大高さも調整 */
-  width: 50%; /* 幅も小さく */
+  width: 40%; /* 幅も小さく */
 }
 
 /* 各フォルダカード */

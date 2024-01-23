@@ -49,3 +49,13 @@
     </div>
   <% end %>
 </div>
+
+<div>
+
+  <%# 管理者のみ表示する %>
+  <% if current_user.admin? %>
+    <%= link_to 'ユーザー管理', users_path %>
+    <%= link_to 'タグ管理', tags_path %>
+    <%= link_to 'お問合せ一覧',  posts_path%>
+  <% end %>
+</div>

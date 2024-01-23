@@ -4,10 +4,6 @@
     <div class="px-1 text-white">
       <button id="accounts-link" class="btn text-white text-decoration-none"><%= current_user.username %>さんがログイン中</button>
 
-      <%= link_to userInfo_select_path, class: 'nav-link text-white mb-3' do %>
-        <i class="fas fa-bars"></i> メニュー
-      <% end %>
-
       <%= link_to folders_path, class: 'nav-link text-white mb-3' do %>
         <i class="fas fa-home"></i> ホーム画面
       <% end %>
@@ -26,7 +22,6 @@
 
       <%# メモの新規作成、編集ページ内のみ表示する %>
       <% if controller_name == 'memos' && (action_name == 'new' || action_name == 'edit') %>
-          <p><%= link_to 'メモ一覧へ戻る', folder_memos_path(@folder), class: 'nav-link text-white' %></p>
         
           <p><%= link_to '#', class: 'text-white',id: 'template-link', class: 'text-white', data: { bs_toggle: 'modal', bs_target: '#templateModal' } do %>
             <i class="fas fa-file-alt"></i> テンプレート
