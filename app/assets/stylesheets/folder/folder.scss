@@ -1,15 +1,16 @@
 /* フォルダ一覧コンテナ */
 .folders-container {
-  position:fixed;
+  position: fixed;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); /* サイズを小さく */
   gap: 1rem;
   padding: 1rem;
   overflow-y: auto;
-  border: 2px solid #ccc; /* 枠線のスタイルを指定 */
-  height:500px;
-  max-height:500px;
-  width:80%;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  height: 350px; /* 高さを小さく */
+  max-height: 350px; /* 最大高さも調整 */
+  width: 50%; /* 幅も小さく */
 }
 
 /* 各フォルダカード */
@@ -17,12 +18,12 @@
   border: 1px solid #ccc;
   border-radius: 2px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  background-color: #e0f7fa; /* 薄い水色 */
+  background-color: #e0f7fa;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* 内容を上下に均等に分布 */
-  height: 180px;
+  justify-content: space-between;
+  height: 150px; /* 高さを小さく */
 }
 
 .folder-link {

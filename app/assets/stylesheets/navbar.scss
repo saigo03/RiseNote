@@ -16,10 +16,12 @@
 
 ::-webkit-scrollbar-track {
   background: #f1f1f1;  /* スクロールバーのトラックの色 */
+  border-radius: 10px; /* 10pxの角を丸くする（コンテナと同じ値に設定） */
 }
 
 ::-webkit-scrollbar-thumb {
   background: #888;  /* スクロールバーのサムの色 */
+  border-radius: 10px; /* 10pxの角を丸くする（コンテナと同じ値に設定） */
 }
 
 ::-webkit-scrollbar-thumb:hover {
