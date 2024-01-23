@@ -10,16 +10,34 @@
     </thead>
     <tbody>
       <% @users.each do |user| %>
+      <!--詳細ページへのリンクを追加-->
         <tr>
           <td><%= user.email %></td>
+          <td style="margin-top: 8px;"><%= link_to '詳細', user_path(user), class: 'btn btn-primary btn-sm' %></td>
           <td>
-            <% if current_user.admin? %>
               <%= link_to '削除', user_path(user), 
                   data: {turbo_method: "delete", turbo_confirm: "削除してよろしいですか？"}, class: 'btn btn-danger btn-sm' %>
-            <% end %>
           </td>
         </tr>
       <% end %>
     </tbody>
   </table>
 </div>
+
+
+<style>
+.table-responsive {
+  max-height: 500px; /* ここで高さを設定します */
+  overflow-y: auto; /* 縦方向にスクロール可能にします */
+}
+/* Chrome, Safari, Opera用 */
+.table-responsive::-webkit-scrollbar {
+  display: none; /* スクロールバーを非表示にします */
+}
+
+/* Firefox用 */
+.table-responsive {
+  scrollbar-width: none; /* スクロールバーを非表示にします */
+}
+
+</style>
