@@ -9,9 +9,6 @@ document.addEventListener("turbo:load", function() {
 説明:
 
 内容:
-
-
-
 `,
     'insert_text3': `
 タイトル: 
