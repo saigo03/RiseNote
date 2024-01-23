@@ -8,6 +8,10 @@
         <i class="fas fa-bars"></i> メニュー
       <% end %>
 
+      <%= link_to folders_path, class: 'nav-link text-white mb-3' do %>
+        <i class="fas fa-home"></i> ホーム画面
+      <% end %>
+
       <button id="mypage-link" class="nav-link text-white mb-3 text-decoration-none">
         <i class="fas fa-user"></i> マイページ
       </button>
@@ -29,24 +33,29 @@
           <% end %></p>
       <% end %>
 
-    <ul class="nav text-white" style="border-top: 1px solid #ccc; max-height: 400px; overflow-y: auto;">
-      
-      <li class="nav-item">
-        <%= link_to 'ノート一覧', folders_path, class: 'nav-link text-white' %>
-        <ul class="nav text-white">
-          <% @folders.each do |folder| %>
-            <li class="nav-item ms-4">
-              <%= link_to folder_memos_path(folder), class: 'nav-link text-white' do %>
-                <i class="fas fa-book"></i> <%= folder.name %>
-              <% end %>
-            </li>
-          <% end %>
-        </ul>
-      </li>
+<ul class="nav" style="border-top: 1px solid #ccc;">
 
-      <li class="nav-item">
-        <button id="mission-link" class="nav-link text-white text-decoration-none">ミッション一覧</button>
-      </li>
+  <!-- ドロップダウンの親要素 -->
+  <li class="dropdown">
+    <!-- ドロップダウントリガー -->
+    <%= link_to 'ノート一覧', '#', class: 'nav-link dropdown-toggle', id: 'foldersDropdown', data: { bs_toggle: 'dropdown' }, aria: { expanded: 'false' }, style: 'color: white;' %>
+    <!-- ドロップダウンメニュー -->
+    <ul class="dropdown-menu bg-dark" aria-labelledby="foldersDropdown">
+      <% @folders.each do |folder| %>
+        <li>
+          <%= link_to folder_memos_path(folder), class: 'dropdown-item', style: 'color: white;' do %>
+            <i class="fas fa-book"></i> <%= folder.name %>
+          <% end %>
+        </li>
+      <% end %>
     </ul>
+  </li>
+
+  <li class="nav-item">
+    <button id="mission-link" class="nav-link text-decoration-none" style="color: white;">ミッション一覧</button>
+  </li>
+</ul>
+
+
   </div>
 </nav>

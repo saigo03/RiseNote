@@ -3,6 +3,12 @@
   color: #fff; /* テキストの色を白色に変更する場合 */
 }
 
+.dropdown-menu .dropdown-item:hover, .dropdown-menu .dropdown-item:focus {
+  background-color: hsl(213, 4%, 60%); /* ホバー時の背景色を透明に */
+  color: inherit; /* 文字色を変更しない */
+}
+
+
 /* Webkitブラウザ用のスタイル */
 ::-webkit-scrollbar {
   width: 8px;  /* スクロールバーの幅 */
