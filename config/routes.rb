@@ -24,7 +24,6 @@ Rails.application.routes.draw do
   # カスタムユーザーコントローラのルーティング
   resources :users, only: [:index, :destroy, :show]
   
-  get 'registration_complete', to: 'static_pages#registration_complete', as: 'registration_complete'
   get 'learning_records', to: 'learning_records#show'
 
   resources :folders do
