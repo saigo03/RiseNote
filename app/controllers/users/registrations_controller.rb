@@ -9,7 +9,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # 新規登録フォームのオーバーライド
   def after_sign_up_path_for(resource)
     # 新規登録フォームのボタンを入力後に遷移するページを指定
-    registration_complete_path
+    folders_path
   end
 
   # GET /resource/sign_up

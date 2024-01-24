@@ -2,8 +2,8 @@
   
   <%# 現在のフォルダとメモのタイトルを表示 %>
   <div class="mb-3">
-    <%# @folder.name/<%= memo.title.present? ? memo.title : '新規メモ' %>
-    <p><%= link_to 'メモ一覧', folder_memos_path(@folder) %></p>
+    <%= link_to 'メモ一覧', folder_memos_path(@folder), class: 'memoList-link' %> | 
+    <%= @folder.name %>/<%= memo.title.present? ? memo.title : '新規メモ' %>
   </div>
 
   <% if memo.errors.any? %>
@@ -34,7 +34,7 @@
   </div>
 
   <div class="mb-3">
-    <%= form.text_area :content, id: 'memo_content', class: 'form-control custom-textarea', style: 'height: 80vh; border: none;' %>
+    <%= form.text_area :content, id: 'memo_content', class: 'form-control custom-textarea',placeholder: '文字の入力、テンプレートを使用できます', style: 'height: 80vh; border: none;' %>
   </div>
 
 <% end %>

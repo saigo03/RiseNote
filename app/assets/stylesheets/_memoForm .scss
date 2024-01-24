@@ -27,3 +27,14 @@
   padding: 10px;
   margin-bottom: 20px; /* エラーメッセージとフォームとの間に余白を設定 */
 }
+
+
+.memoList-link {
+  color: black; /* テキストの色 */
+  text-decoration: none; /* 下線を消す場合 */
+}
+
+/* カスタムリンクのホバー時のスタイル */
+.memoList-link:hover {
+  background-color: #f8f8f8; /* 薄い灰色の背景 */
+}
