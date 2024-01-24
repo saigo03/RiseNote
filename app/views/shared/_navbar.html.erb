@@ -22,7 +22,6 @@
 
       <%# メモの新規作成、編集ページ内のみ表示する %>
       <% if controller_name == 'memos' && (action_name == 'new' || action_name == 'edit') %>
-        
           <p><%= link_to '#', class: 'text-white',id: 'template-link', class: 'text-white', data: { bs_toggle: 'modal', bs_target: '#templateModal' } do %>
             <i class="fas fa-file-alt"></i> テンプレート
           <% end %></p>

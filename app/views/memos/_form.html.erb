@@ -1,8 +1,8 @@
 <%= form_with(model: [@folder, memo], local: true, class: 'needs-validation px-5', novalidate: true) do |form| %>
   
   <%# 現在のフォルダとメモのタイトルを表示 %>
-  <div class="mb-3">
-    <%= link_to 'メモ一覧', folder_memos_path(@folder), class: 'memoList-link' %> | 
+  <div class="mb-3" style="font-size: 18px;">
+    <a href="<%= folder_memos_path(@folder) %>" class="tag-a"><i class="fas fa-arrow-left"></i></a> | 
     <%= @folder.name %>/<%= memo.title.present? ? memo.title : '新規メモ' %>
   </div>
 
