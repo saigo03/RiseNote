@@ -2,9 +2,10 @@
   <div class="row justify-content-left">
     <div class="col-md-8">
       <h3 class="mb-3">お問合せの送信</h3>
+      <hr class="hr">
       <%= form_with model: @post, local: true, html: {class: 'needs-validation', novalidate: ''} do |form| %>
         <div class="mb-3">
-          <%= form.label :title, '件名', class: 'form-label' %><span style="color: red; font-size: 0.8em;">※必須</span>
+          <%= form.label :title, '件名', class: 'form-label' %><span style="color: red; font-size: 0.8em;"> *</span>
           <%= form.text_field :title, class: 'form-control', required: '', placeholder: '15文字以内で入力してください' %>
           <div class="invalid-feedback">
             件名を入力してください。
@@ -13,7 +14,7 @@
         </div>
 
         <div class="mb-3">
-          <%= form.label :content, 'お問合せ内容', class: 'form-label' %><span style="color: red; font-size: 0.8em;">※必須</span>
+          <%= form.label :content, 'お問合せ内容', class: 'form-label' %><span style="color: red; font-size: 0.8em;"> *</span>
           <%= form.text_area :content, class: 'form-control form-control-textarea', required: '', placeholder: '200文字以内で入力してください' %>
           <div class="invalid-feedback">
             お問い合わせ内容を入力してください。
@@ -58,4 +59,7 @@ h3 {
   margin-top: 1rem;
 }
 
+hr {
+  max-width: 100%;
+}
 </style>

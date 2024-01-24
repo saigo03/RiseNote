@@ -41,4 +41,11 @@
   scrollbar-width: none; /* スクロールバーを非表示にします */
 }
 
+thead th {
+  position: sticky;
+  top: 0;
+  background: white; /* 背景色を設定して、スクロール時に他の行が見えないようにします */
+  z-index: 10; /* 必要に応じて他の要素より前面に表示するためのz-indexを設定します */
+}
+
 </style>
