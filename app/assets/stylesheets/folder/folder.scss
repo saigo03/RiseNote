@@ -1,9 +1,25 @@
+.homeContent-container {
+  display: flex; /* Flexboxレイアウトを適用 */
+  justify-content: space-between; /* 要素間のスペースを均等に分配 */
+  align-items: start; /* 要素を上部で揃える */
+  gap: 50px; /* 要素間の間隔を設定 */
+}
+
 /* フォルダ一覧コンテナ */
 .folders-container {
+  flex: 1; /* 可用スペースを埋める */
+  max-width: calc(70% - 10px); /* 最大幅を設定し、間隔の分を引く */
+
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* サイズを小さく */
   gap: 1rem;
   padding: 1rem;
+  overflow-y: auto;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  height: 350px; /* 高さを小さく */
+  max-height: 350px; /* 最大高さも調整 */
+  width: 60%; /* 幅も小さく */
 }
 
 /* 各フォルダカード */
@@ -11,12 +27,12 @@
   border: 1px solid #ccc;
   border-radius: 2px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  background-color: #e0f7fa; /* 薄い水色 */
+  background-color: #e0f7fa;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* 内容を上下に均等に分布 */
-  height: 180px;
+  justify-content: space-between;
+  height: 150px; /* 高さを小さく */
 }
 
 .folder-link {
@@ -46,4 +62,26 @@
 
 .folder-delete-link:hover {
   text-decoration: underline;
+}
+
+/*学習記録の表示用CSS*/
+.records-container {
+  flex: 2; /* 可用スペースを埋める */
+  max-width: calc(30% - 10px);
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  overflow-y: auto;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  height: 350px; /* 高さを小さく */
+  max-height: 350px; /* 最大高さも調整 */
+  width: 30%; /* 幅も小さく */
+}
+
+/* 画面サイズが小さい場合に records-container を非表示にする */
+@media screen and (max-width: 768px) {
+  .records-container {
+    display: none;
+  }
 }

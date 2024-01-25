@@ -3,6 +3,9 @@
 # ユーザーIDの自動番号の変更（デフォルトで４桁など)
 
 Rails.application.routes.draw do
+  get 'posts/index'
+  get 'posts/new'
+  get 'posts/show'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions'
@@ -19,11 +22,8 @@ Rails.application.routes.draw do
   end
 
   # カスタムユーザーコントローラのルーティング
-  resources :users, only: [:index, :destroy]
+  resources :users, only: [:index, :destroy, :show]
   
-  get 'mypage', to: 'static_pages#mypage'
-  get 'userInfo_select', to: 'static_pages#userInfo_select'
-  get 'registration_complete', to: 'static_pages#registration_complete', as: 'registration_complete'
   get 'learning_records', to: 'learning_records#show'
 
   resources :folders do
@@ -34,4 +34,7 @@ Rails.application.routes.draw do
 
   # タグに関連するルートを追加
   resources :tags, only: [:index, :create, :destroy]
+
+  # お問い合わせルート追加
+  resources :posts, only: [:new, :create, :index, :show]
 end

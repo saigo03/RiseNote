@@ -5,6 +5,10 @@ class FoldersController < ApplicationController
   def index
     @folders = current_user.folders
     @folder = Folder.new
+
+    # 学習記録の取得
+    @total_memos = current_user.memos.count
+    @total_folders_created = current_user.folders.count
   end
 
   # GET /folders/1

@@ -1,0 +1,29 @@
+.nav-link:hover {
+  background-color: hsl(213, 4%, 60%); /* 薄いグレイ色 */
+  color: #fff; /* テキストの色を白色に変更する場合 */
+}
+
+.dropdown-menu .dropdown-item:hover, .dropdown-menu .dropdown-item:focus {
+  background-color: hsl(213, 4%, 60%); /* ホバー時の背景色を透明に */
+  color: inherit; /* 文字色を変更しない */
+}
+
+
+/* Webkitブラウザ用のスタイル */
+::-webkit-scrollbar {
+  width: 8px;  /* スクロールバーの幅 */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;  /* スクロールバーのトラックの色 */
+  border-radius: 10px; /* 10pxの角を丸くする（コンテナと同じ値に設定） */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;  /* スクロールバーのサムの色 */
+  border-radius: 10px; /* 10pxの角を丸くする（コンテナと同じ値に設定） */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;  /* ホバー時のスクロールバーのサムの色 */
+}

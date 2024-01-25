@@ -1,41 +1,55 @@
 <nav class="col-md-2 d-none d-md-block bg-dark sidebar vh-100">
   <div class="position-sticky pt-3 h-100">
     <!-- ログインしているユーザーのメールアドレスを表示 -->
-    <div class="px-3 text-white">
+    <div class="px-1 text-white">
       <button id="accounts-link" class="btn text-white text-decoration-none"><%= current_user.username %>さんがログイン中</button>
-    </div>
 
-    <ul class="nav flex-column text-white">
-      <li class="nav-item">
-        <%= link_to 'ノート一覧', folders_path, class: 'nav-link text-white' %>
-      </li>
-      <li class="nav-item">
-        <button id="mypage-link" class="btn text-white text-decoration-none">マイページ</button>
-      </li>
-      <li class="nav-item">
-        <button id="mission-link" class="btn text-white text-decoration-none">ミッション一覧</button>
-      </li>
-      <li class="nav-item">
-        <%= link_to 'メニュー', userInfo_select_path, class: 'nav-link text-white' %>
-      </li>
+      <%= link_to folders_path, class: 'nav-link text-white mb-3' do %>
+        <i class="fas fa-home"></i> ホーム画面
+      <% end %>
+
+      <button id="mypage-link" class="nav-link text-white mb-3 text-decoration-none">
+        <i class="fas fa-user"></i> マイページ
+      </button>
 
       <!-- ノート内のみ表示する -->
       <% if @folder && @folder.persisted? %>
-        <li class="nav-item">
-          <%= link_to '＋新規メモ', new_folder_memo_path(@folder), class: 'nav-link text-white' %>
-        </li>
+          <%= link_to new_folder_memo_path(@folder), class: 'nav-link text-white mb-3' do %>
+            <i class="fas fa-pencil-alt"></i> 新規ページ
+          <% end %>
       <% end %>
+    </div>
 
       <%# メモの新規作成、編集ページ内のみ表示する %>
       <% if controller_name == 'memos' && (action_name == 'new' || action_name == 'edit') %>
-        <li class="nav-item">
-          <%= link_to 'メモ一覧へ戻る', folder_memos_path(@folder), class: 'nav-link text-white' %>
-        </li>
-        
-        <li class="nav-item">
-          <%= link_to 'テンプレート', '#', id: 'template-link', class: 'text-white', data: { bs_toggle: 'modal', bs_target: '#templateModal' } %>
+          <p><%= link_to '#', class: 'text-white',id: 'template-link', class: 'text-white', data: { bs_toggle: 'modal', bs_target: '#templateModal' } do %>
+            <i class="fas fa-file-alt"></i> テンプレート
+          <% end %></p>
+      <% end %>
+
+<ul class="nav" style="border-top: 1px solid #ccc;">
+
+  <!-- ドロップダウンの親要素 -->
+  <li class="dropdown">
+    <!-- ドロップダウントリガー -->
+    <%= link_to 'ノート一覧', '#', class: 'nav-link dropdown-toggle', id: 'foldersDropdown', data: { bs_toggle: 'dropdown' }, aria: { expanded: 'false' }, style: 'color: white;' %>
+    <!-- ドロップダウンメニュー -->
+    <ul class="dropdown-menu bg-dark" aria-labelledby="foldersDropdown">
+      <% @folders.each do |folder| %>
+        <li>
+          <%= link_to folder_memos_path(folder), class: 'dropdown-item', style: 'color: white;' do %>
+            <i class="fas fa-book"></i> <%= folder.name %>
+          <% end %>
         </li>
       <% end %>
     </ul>
+  </li>
+
+  <li class="nav-item">
+    <button id="mission-link" class="nav-link text-decoration-none" style="color: white;">ミッション一覧</button>
+  </li>
+</ul>
+
+
   </div>
 </nav>

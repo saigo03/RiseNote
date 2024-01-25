@@ -1,8 +1,9 @@
 <%= form_with(model: [@folder, memo], local: true, class: 'needs-validation px-5', novalidate: true) do |form| %>
   
   <%# 現在のフォルダとメモのタイトルを表示 %>
-  <div class="mb-3">
-    <p><%= @folder.name %>/<%= memo.title.present? ? memo.title : '新規メモ' %></p>
+  <div class="mb-3" style="font-size: 18px;">
+    <a href="<%= folder_memos_path(@folder) %>" class="tag-a"><i class="fas fa-arrow-left"></i></a> | 
+    <%= @folder.name %>/<%= memo.title.present? ? memo.title : '新規メモ' %>
   </div>
 
   <% if memo.errors.any? %>
@@ -33,7 +34,7 @@
   </div>
 
   <div class="mb-3">
-    <%= form.text_area :content, id: 'memo_content', class: 'form-control custom-textarea', style: 'height: 80vh; border: none;' %>
+    <%= form.text_area :content, id: 'memo_content', class: 'form-control custom-textarea',placeholder: '文字の入力、テンプレートを使用できます', style: 'height: 80vh; border: none;' %>
   </div>
 
 <% end %>
@@ -52,7 +53,7 @@
           <%= button_tag '白紙にする', type: 'button', id: 'clear_textarea', class: 'btn btn-secondary w-100', data: { template_type: 'clear_textarea' } %>
         </div>
         <div class="d-flex justify-content-center mb-2">
-          <%= button_tag '貼り付け用テンプレート', type: 'button', id: 'insert_text2', class: 'btn btn-secondary w-100', data: { template_type: 'insert_text2' } %>
+          <%= button_tag 'プログラミング用テンプレート', type: 'button', id: 'insert_text2', class: 'btn btn-secondary w-100', data: { template_type: 'insert_text2' } %>
         </div>
         <div class="d-flex justify-content-center">
           <%= button_tag 'エラー用テンプレート', type: 'button', id: 'insert_text3', class: 'btn btn-secondary w-100', data: { template_type: 'insert_text3' } %>

@@ -1,0 +1,54 @@
+<div class="container mt-5">
+    <h3>お問合せ一覧</h3>
+  <div class="table-responsive mx-auto" style="max-width: 95%;">
+    <table class="table table-striped table-hover" style="table-layout: fixed;">
+      <colgroup>
+        <col style="width: 25%">
+        <col style="width: 25%">
+        <col style="width: 25%">
+        <col style="width: 25%">
+      </colgroup>
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">タイトル</th>
+          <th scope="col">作成日時</th>
+          <th scope="col">確認済み</th>
+        </tr>
+      </thead>
+      <tbody>
+  <% @posts.each do |post| %>
+    <tr style="cursor: pointer;" onclick="window.location='<%= post_path(post) %>'">
+      <th scope="row"><%= post.id %></th>
+      <td><%= post.title %></td>
+      <td><%= post.created_at.strftime("%-m月%d日 %-H時%M分") %></td>
+      <td><%= post.read ? '✓' : '' %></td>
+    </tr>
+  <% end %>
+</tbody>
+    </table>
+  </div>
+</div>
+
+<style>
+.table-responsive {
+  max-height: 500px; /* ここで高さを設定します */
+  overflow-y: auto; /* 縦方向にスクロール可能にします */
+}
+/* Chrome, Safari, Opera用 */
+.table-responsive::-webkit-scrollbar {
+  display: none; /* スクロールバーを非表示にします */
+}
+
+/* Firefox用 */
+.table-responsive {
+  scrollbar-width: none; /* スクロールバーを非表示にします */
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  background: white; /* 背景色を設定して、スクロール時に他の行が見えないようにします */
+  z-index: 10; /* 必要に応じて他の要素より前面に表示するためのz-indexを設定します */
+}
+</style>

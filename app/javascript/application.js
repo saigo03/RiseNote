@@ -12,4 +12,3 @@ import "./memo/memo_form"
 import "./memo/memo_records"
 import "./memo/context_menu"
 import "./popup/popup"
-

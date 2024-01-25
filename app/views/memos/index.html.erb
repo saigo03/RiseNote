@@ -2,7 +2,7 @@
   
   <!-- メモ一覧 -->
   <div class="col-md-12 px-3">
-    <h1 class="my-4">メモ一覧/<%= @folder.name %></h1>
+    <h3 class="my-4">ノート名：<%= @folder.name %></h3>
 
       <!-- 検索フォーム -->
       <div class="d-flex justify-content-between mb-3">
@@ -20,37 +20,46 @@
       <% end %>
   </div>
 
-<div class="row">
+<div class="row"  style="min-height: 70vh; display: flex;">
   <!-- メモリスト -->
-  <div class="col-md-5" style="border-right: 1px solid #dee2e6; overflow-y: auto; max-height: 70vh;">
-    <%= turbo_frame_tag 'memo_list' do %>
-      <div class="folder-group" data-folder-id="<%= @folder.id %>">
-        <% @memos.each do |memo| %>
-          <div class="folder-group-item list-group-item d-flex justify-content-between align-items-center border-bottom" style="padding: 1rem;">
-            <div style="font-size: 1rem;">
-              <!-- クリック時にメモ詳細を表示 -->
-              <%= link_to memo.title, folder_memo_path(@folder, memo), data: { turbo_frame: 'memo_detail' }, class: 'text-dark text-decoration-none' %>
-            </div>
-            <div style="font-size: 0.75rem;">
-              <!-- data: { turbo_frame: '_top' }で全ての変更 -->
-              <p><%= link_to '編集', edit_folder_memo_path(@folder, memo), data: { turbo_frame: '_top' } %></p>
-            </div>
-            <div>
-              <% memo.tags.each do |tag| %>
-                <span class="badge bg-secondary" style="font-size: 0.75rem;"><%= tag.name %></span>
-              <% end %>
-            </div>
+    <% if @memos.empty? %>
+      <div class="default-memo-ex col-md-5">
+        <i class="fas fa-pencil-alt fa-4x m-3"></i>
+        <p>最初のメモを作成する</p>
+        <p style="color: #777;">開始するには、サイドバーの「<%= link_to '新規ページ', new_folder_memo_path(@folder)%>」をクリックします。</p>
+      </div>
+    <% else %>
+      <div class="col-md-5" style="border-right: 1px solid #dee2e6; overflow-y: auto; max-height: 70vh;">
+        <%= turbo_frame_tag 'memo_list' do %>
+          <div class="folder-group" data-folder-id="<%= @folder.id %>">
+            <% @memos.each do |memo| %>
+              <div class="folder-group-item list-group-item d-flex justify-content-between align-items-center border-bottom" style="padding: 1rem;" data-memo-id="<%= memo.id %>">
+
+                <div style="font-size: 1rem;">
+                  <!-- クリック時にメモ詳細を表示 -->
+                  <%= link_to memo.title, folder_memo_path(@folder, memo), data: { turbo_frame: 'memo_detail' }, class: 'text-dark text-decoration-none' %>
+                </div>
+                <div style="font-size: 0.75rem;">
+                  <!-- data: { turbo_frame: '_top' }で全ての変更 -->
+                  <p><%= link_to '編集', edit_folder_memo_path(@folder, memo), data: { turbo_frame: '_top' } %></p>
+                </div>
+                <div>
+                  <% memo.tags.each do |tag| %>
+                    <span class="badge bg-secondary" style="font-size: 0.75rem;"><%= tag.name %></span>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
           </div>
         <% end %>
       </div>
-    <% end %>
-  </div>
 
-  <!-- メモ詳細 (show.html.erb)を表示-->
-  <div class="col-md-7">
-    <%= turbo_frame_tag 'memo_detail' do %>
+      <!-- メモ詳細 (show.html.erb)を表示-->
+      <div class="col-md-7">
+        <%= turbo_frame_tag 'memo_detail' do %>
+        <% end %>
+      </div>
     <% end %>
-  </div>
 </div>
 
 

@@ -1,22 +1,23 @@
 .devise-form {
-  max-width: 80%;
+  max-width: 45%;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
-  h2 {
+  h2, h3 {
     text-align: center;
     margin-bottom: 20px;
   }
 
   .field {
     margin-bottom: 20px;
+    text-align: left; /* 入力フィールドを中央に配置するためのスタイル */
 
     label {
-      display: block;
       margin-bottom: 5px;
+      text-align: left;
     }
 
     input[type="email"], input[type="password"] {
@@ -45,4 +46,17 @@
       }
     }
   }
+}
+
+/* deviseのエラーメッセージのスタイルを変更する */
+#error_explanation {
+  font-size: 0.9em; /* 文字サイズを小さく設定 */
+}
+
+#error_explanation h2 {
+  font-size: 1em; /* エラーのタイトルの文字サイズを小さく設定 */
+}
+
+#error_explanation ul li {
+  font-size: 0.9em; /* 各エラーメッセージの文字サイズを小さく設定 */
 }
