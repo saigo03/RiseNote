@@ -1,11 +1,66 @@
-/* その他のスタイリングは維持 */
+/* app/assets/stylesheets/admin/tag-mane.scss */
 
-.table-responsive {
-  max-width: 100%; /* テーブルの最大幅を親要素の幅に合わせる */
-  overflow-x: auto; /* 横スクロールを有効にする */
+/* タグと矢印の改行をなくす */
+.tagh3, .tag-a {
+  display: inline;
+  padding: 0;
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
-/* タグ名のセルのパディング調整 */
-td {
-  padding-right: 2rem; /* 右のセルとのスペースを開ける */
+.tag-a i {
+  font-size: 2rem; /* デフォルトのフォントサイズ */
+  transition: transform 0.3s; /* 変化のアニメーションを追加 */
+}
+
+.tag-a:hover i {
+  transform: scale(1.2); /* ホバー時に拡大 */
+}
+
+.tag-btn {
+  margin-top: 10px;
+  text-align: right;
+}
+
+/* 新規タグ登録 */
+.tag-registration {
+  float: right; /* 左寄せにする */
+  margin-right: 230px; /* 右側の余白を追加 */
+  margin-top: 13px; /* 上側の余白を追加 */
+}
+
+.tag-header {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+/* 現在のタグ一覧 */
+.tag-list {
+  float: left; /* 右寄せにする */
+  margin-left: 10px; /* 左側の余白を追加 */
+  margin-top: 10px; /* 右側の余白を追加 */
+  overflow:auto; /* 縦スクロールバーを常に表示 */
+  max-height: 350px; /* 最大の高さを指定 */
+  max-width: 500; /* 最大の幅を指定 */
+  padding-right: 20px; /* 左側の余白を追加 */
+}
+
+.tag-header {
+  margin-top: 30px;
+  margin-left: 35px;
+}
+
+.tag-thead, .tag-th {
+  padding : 10px;
+  position: sticky;
+  top: 0;
+  background: white;
+}
+
+.tag-table {
+  margin-left: 20px;
+  width: 95%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid #ddd;
 }
