@@ -9,6 +9,7 @@ import "@hotwired/turbo-rails"
 // Turbo.session.drive = false
 import "controllers/folder"
 import "./memo/memo_form"
+import "./memo/memo_records"
 import "./memo/context_menu"
 import "./popup/popup"
 

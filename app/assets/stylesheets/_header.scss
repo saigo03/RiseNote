@@ -1,12 +1,11 @@
 header {
-	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	width: 100%;
 	line-height: 60px;
 	display: inline-block;
 	vertical-align: middle;
-  background: rgba(60, 60, 60, 0.8); /* 背景色に透明度を追加 */
+  background: rgba(0, 0, 0, 0.8);
 }
 /* ロゴ */
 header .system-name {
@@ -15,22 +14,12 @@ font-size: 18px;
 color: #fff;
 letter-spacing: .2em;
 }
-#fixed-header {
-position: fixed;
-width: 100%;
-top: 0;
-z-index: 1000;
-}
 .header-container {
 display: flex;
 justify-content: space-between;
 align-items: center;
 }
 
-.header-buttons {
-display: flex;
-align-items: center;
-}
 .header-buttons a {
 font-weight:bold;
 position: relative;
