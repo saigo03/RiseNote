@@ -1,0 +1,9 @@
+.table-responsive {
+  max-width: 100%; /* テーブルの最大幅を親要素の幅に合わせる */
+  overflow-x: auto; /* 横スクロールを有効にする */
+}
+
+/* タグ名のセルのパディング調整 */
+td {
+  padding-right: 2em; /* 右のセルとのスペースを開ける */
+}
