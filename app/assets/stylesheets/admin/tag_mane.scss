@@ -4,7 +4,7 @@
 .tagh3, .tag-a {
   display: inline;
   padding: 0;
-  margin-top: 10px;
+  margin-top: 12px;
   margin-left: 10px;
 }
 
@@ -34,6 +34,20 @@
   margin-left: 10px;
 }
 
+/* 新規タグ登録をレスポンシブにする */
+@media (max-width: 1200px) {
+  .tag-registration {
+    float: none; /* float 解除 */
+    margin-right: 0; /* 右側の余白を解除 */
+    margin-top: 10px; /* 上側の余白を調整 */
+    width: 100%; /* 幅100%に調整 */
+  }
+
+  .tag-btn {
+    text-align: center; /* ボタンを中央寄せにする */
+  }
+}
+
 /* 現在のタグ一覧 */
 .tag-list {
   float: left; /* 右寄せにする */
@@ -50,8 +64,7 @@
   margin-left: 35px;
 }
 
-.tag-thead, .tag-th {
-  padding : 10px;
+.tag-thead{
   position: sticky;
   top: 0;
   background: white;
@@ -62,5 +75,4 @@
   width: 95%;
   border-collapse: collapse;
   border-spacing: 0;
-  border: 1px solid #ddd;
 }
