@@ -1,23 +1,20 @@
-<h1>ユーザー一覧</h1>
+<h4>　</h4>
+<a href="<%= folders_path %>" class="tag-a"><i class="fas fa-arrow-left"></i></a>
+<h3 style="display: inline;" >ユーザー管理</h3>
+<hr>
 
 <div class="table-responsive">
-  <table class="table table-hover">
+  <table class="table table-hover" style="max-width: 75%; float: left;">
     <thead class="thead-light">
       <tr>
         <th scope="col">ユーザー名</th>
-        <th scope="col">操作</th>
       </tr>
     </thead>
     <tbody>
       <% @users.each do |user| %>
       <!--詳細ページへのリンクを追加-->
-        <tr>
+        <tr style="cursor: pointer;" onclick="window.location='<%= user_path(user) %>'">
           <td><%= user.email %></td>
-          <td style="margin-top: 8px;"><%= link_to '詳細', user_path(user), class: 'btn btn-primary btn-sm' %></td>
-          <td>
-              <%= link_to '削除', user_path(user), 
-                  data: {turbo_method: "delete", turbo_confirm: "削除してよろしいですか？"}, class: 'btn btn-danger btn-sm' %>
-          </td>
         </tr>
       <% end %>
     </tbody>
@@ -26,18 +23,21 @@
 
 
 <style>
-.table-responsive {
-  max-height: 500px; /* ここで高さを設定します */
-  overflow-y: auto; /* 縦方向にスクロール可能にします */
-}
-/* Chrome, Safari, Opera用 */
-.table-responsive::-webkit-scrollbar {
-  display: none; /* スクロールバーを非表示にします */
-}
+  h3,.tag-a {
+        display: inline;
+        padding: 0;
+        margin-top: 20px;
+        margin-left: 5px;
+    }
+    thead th {
+        position: sticky;
+        top: 0;
+        background: white;
+    }
 
-/* Firefox用 */
 .table-responsive {
-  scrollbar-width: none; /* スクロールバーを非表示にします */
+  max-height: 480px; /* ここで高さを設定します */
+  overflow-y: auto; /* 縦方向にスクロール可能にします */
 }
 
 </style>

@@ -1,3 +1,5 @@
+<!-- app/views/users/show.html.erb -->
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -22,43 +24,46 @@
         <p class="card-text"><strong>ユーザーネーム:</strong> <%= @user.username %></p>
         <p class="card-text"><strong>メールアドレス:</strong> <%= @user.email %></p>
         <p class="card-text"><strong>アカウント登録日:</strong> <%= @user.created_at.strftime("%Y年%-m月%d日 %-H時%M分") %></p>
+        <!-- 削除ボタンの追加 -->
+        <%= link_to '削除', user_path(@user), 
+            data: {turbo_method: "delete", turbo_confirm: "削除してよろしいですか？"}, class: 'btn btn-danger btn-sm' %>
       </div>
     </div>
   </div>
 </body>
 </html>
 
-  <style>
-    body {
-      margin: 0; /* Bodyの余白を取り除く */
-    }
+<style>
+  body {
+    margin: 0; /* Bodyの余白を取り除く */
+  }
 
-    .container {
-      display: flex;
-      flex-direction: column; /* 縦方向に配置 */
-      padding: 10px; /* 余白の追加（必要に応じて調整してください） */
-    }
+  .container {
+    display: flex;
+    flex-direction: column; /* 縦方向に配置 */
+    padding: 10px; /* 余白の追加（必要に応じて調整してください） */
+  }
 
-    .header {
-      display: flex;
-      align-items: center;
-    }
+  .header {
+    display: flex;
+    align-items: center;
+  }
 
-    .bi-arrow-left {
-      font-size: 2rem;
-      color: gray;
-    }
+  .bi-arrow-left {
+    font-size: 2rem;
+    color: gray;
+  }
 
-    .card {
-      width: 60%; /* カードを横幅いっぱいに広げる */
-    }
+  .card {
+    width: 60%; /* カードを横幅いっぱいに広げる */
+  }
 
-    h3 {
-      text-align: left; /* h1要素を左寄せにする */
-      margin: 13px; /* h1要素の余白を取り除く */
-    }
-     .back-arrow:hover {
-      transform: scale(1.3); /* ホバー時に拡大する */
-    }
-    
-  </style>
+  h3 {
+    text-align: left; /* h1要素を左寄せにする */
+    margin: 13px; /* h1要素の余白を取り除く */
+  }
+
+  .back-arrow:hover {
+    transform: scale(1.3); /* ホバー時に拡大する */
+  }
+</style>

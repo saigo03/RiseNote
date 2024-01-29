@@ -1,0 +1,82 @@
+Date : 2024-01-24 01:46:28
+Directory : /workspaces/RiseNote/app/views
+Total : 39 files,  896 codes, 0 comments, 171 blanks, all 1067 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| erb      |         39 |        896 |          0 |        171 |      1,067 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                              | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                 |         39 |        896 |          0 |        171 |      1,067 |
+| devise                                                                            |         14 |        196 |          0 |         66 |        262 |
+| devise/confirmations                                                              |          1 |         12 |          0 |          5 |         17 |
+| devise/mailer                                                                     |          5 |         20 |          0 |         15 |         35 |
+| devise/passwords                                                                  |          2 |         32 |          0 |         11 |         43 |
+| devise/registrations                                                              |          2 |         60 |          0 |         16 |         76 |
+| devise/sessions                                                                   |          1 |         25 |          0 |          7 |         32 |
+| devise/shared                                                                     |          2 |         35 |          0 |          7 |         42 |
+| devise/unlocks                                                                    |          1 |         12 |          0 |          5 |         17 |
+| folders                                                                           |          2 |         52 |          0 |         10 |         62 |
+| hello                                                                             |          1 |          1 |          0 |          1 |          2 |
+| home                                                                              |          1 |         22 |          0 |          3 |         25 |
+| layouts                                                                           |          3 |         52 |          0 |          9 |         61 |
+| learning_records                                                                  |          1 |          5 |          0 |          5 |         10 |
+| memos                                                                             |          5 |        118 |          0 |         23 |        141 |
+| missions                                                                          |          1 |         25 |          0 |          2 |         27 |
+| posts                                                                             |          3 |        168 |          0 |         22 |        190 |
+| shared                                                                            |          5 |        118 |          0 |         14 |        132 |
+| tags                                                                              |          1 |         39 |          0 |          2 |         41 |
+| users                                                                             |          2 |        100 |          0 |         14 |        114 |
++-----------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                          | language | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| /workspaces/RiseNote/app/views/devise/confirmations/new.html.erb                  | erb      |         12 |          0 |          5 |         17 |
+| /workspaces/RiseNote/app/views/devise/mailer/confirmation_instructions.html.erb   | erb      |          3 |          0 |          3 |          6 |
+| /workspaces/RiseNote/app/views/devise/mailer/email_changed.html.erb               | erb      |          6 |          0 |          2 |          8 |
+| /workspaces/RiseNote/app/views/devise/mailer/password_change.html.erb             | erb      |          2 |          0 |          2 |          4 |
+| /workspaces/RiseNote/app/views/devise/mailer/reset_password_instructions.html.erb | erb      |          5 |          0 |          4 |          9 |
+| /workspaces/RiseNote/app/views/devise/mailer/unlock_instructions.html.erb         | erb      |          4 |          0 |          4 |          8 |
+| /workspaces/RiseNote/app/views/devise/passwords/edit.html.erb                     | erb      |         20 |          0 |          6 |         26 |
+| /workspaces/RiseNote/app/views/devise/passwords/new.html.erb                      | erb      |         12 |          0 |          5 |         17 |
+| /workspaces/RiseNote/app/views/devise/registrations/edit.html.erb                 | erb      |         30 |          0 |          8 |         38 |
+| /workspaces/RiseNote/app/views/devise/registrations/new.html.erb                  | erb      |         30 |          0 |          8 |         38 |
+| /workspaces/RiseNote/app/views/devise/sessions/new.html.erb                       | erb      |         25 |          0 |          7 |         32 |
+| /workspaces/RiseNote/app/views/devise/shared/_error_messages.html.erb             | erb      |         15 |          0 |          1 |         16 |
+| /workspaces/RiseNote/app/views/devise/shared/_links.html.erb                      | erb      |         20 |          0 |          6 |         26 |
+| /workspaces/RiseNote/app/views/devise/unlocks/new.html.erb                        | erb      |         12 |          0 |          5 |         17 |
+| /workspaces/RiseNote/app/views/folders/index.html.erb                             | erb      |         52 |          0 |          9 |         61 |
+| /workspaces/RiseNote/app/views/folders/new.html.erb                               | erb      |          0 |          0 |          1 |          1 |
+| /workspaces/RiseNote/app/views/hello/index.html.erb                               | erb      |          1 |          0 |          1 |          2 |
+| /workspaces/RiseNote/app/views/home/index.html.erb                                | erb      |         22 |          0 |          3 |         25 |
+| /workspaces/RiseNote/app/views/layouts/application.html.erb                       | erb      |         39 |          0 |          6 |         45 |
+| /workspaces/RiseNote/app/views/layouts/mailer.html.erb                            | erb      |         12 |          0 |          2 |         14 |
+| /workspaces/RiseNote/app/views/layouts/mailer.text.erb                            | erb      |          1 |          0 |          1 |          2 |
+| /workspaces/RiseNote/app/views/learning_records/show.html.erb                     | erb      |          5 |          0 |          5 |         10 |
+| /workspaces/RiseNote/app/views/memos/_form.html.erb                               | erb      |         54 |          0 |         11 |         65 |
+| /workspaces/RiseNote/app/views/memos/edit.html.erb                                | erb      |          1 |          0 |          0 |          1 |
+| /workspaces/RiseNote/app/views/memos/index.html.erb                               | erb      |         49 |          0 |          9 |         58 |
+| /workspaces/RiseNote/app/views/memos/new.html.erb                                 | erb      |          1 |          0 |          0 |          1 |
+| /workspaces/RiseNote/app/views/memos/show.html.erb                                | erb      |         13 |          0 |          3 |         16 |
+| /workspaces/RiseNote/app/views/missions/index.html.erb                            | erb      |         25 |          0 |          2 |         27 |
+| /workspaces/RiseNote/app/views/posts/index.html.erb                               | erb      |         50 |          0 |          4 |         54 |
+| /workspaces/RiseNote/app/views/posts/new.html.erb                                 | erb      |         55 |          0 |         10 |         65 |
+| /workspaces/RiseNote/app/views/posts/show.html.erb                                | erb      |         63 |          0 |          8 |         71 |
+| /workspaces/RiseNote/app/views/shared/_accounts.html.erb                          | erb      |          5 |          0 |          0 |          5 |
+| /workspaces/RiseNote/app/views/shared/_contextMenu.html.erb                       | erb      |         11 |          0 |          1 |         12 |
+| /workspaces/RiseNote/app/views/shared/_missionList.html.erb                       | erb      |         29 |          0 |          2 |         31 |
+| /workspaces/RiseNote/app/views/shared/_mypage.html.erb                            | erb      |         27 |          0 |          1 |         28 |
+| /workspaces/RiseNote/app/views/shared/_navbar.html.erb                            | erb      |         46 |          0 |         10 |         56 |
+| /workspaces/RiseNote/app/views/tags/index.html.erb                                | erb      |         39 |          0 |          2 |         41 |
+| /workspaces/RiseNote/app/views/users/index.html.erb                               | erb      |         44 |          0 |          6 |         50 |
+| /workspaces/RiseNote/app/views/users/show.html.erb                                | erb      |         56 |          0 |          8 |         64 |
+| Total                                                                             |          |        896 |          0 |        171 |      1,067 |
++-----------------------------------------------------------------------------------+----------+------------+------------+------------+------------+

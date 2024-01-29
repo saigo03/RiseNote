@@ -1,29 +1,18 @@
-<h1>タグ管理</h1>
-
-<div class="card mt-4">
-  <div class="card-header">
-    <h2>新しいタグを作成</h2>
-  </div>
-  <div class="card-body">
-    <%= form_with(model: @tag, local: true, class: "form-inline") do |form| %>
-      <div class="form-group mb-3"> <!-- ここでマージンボトムを追加 -->
-        <%= form.label :name, 'タグ名', class: "mr-2" %>
-        <%= form.text_field :name, autocomplete: 'off', class: "form-control mr-2" %>
-        <%= form.submit "作成", class: "btn btn-primary" %>
-      </div>
-    <% end %>
-  </div>
-</div>
+<h4>　</h4> <!-- 空白追加 -->
+<a href="<%= folders_path %>" class="tag-a"><i class="fas fa-arrow-left"></i></a><h3 class="tagh3"> タグ管理</h3>
+<hr>
 
 <!-- 現在のタグ一覧 -->
-<div class="mt-5">
-  <h2>現在のタグ一覧</h2>
+  <div class="tag-header">
+    <h4>現在のタグ一覧</h4>
+  </div>
+<div class="tag-list w-50">
   <div class="table-responsive"> <!-- ここでtable-responsiveを追加 -->
-    <table class="tag-table">
-      <thead>
-        <tr>
-          <th>タグ名</th>
-          <th>操作</th>
+    <table class="table tag-table" style="table-layout: fixed;"> <!-- .table クラスを追加 -->
+      <thead class="tag-thead">
+        <tr style="background-color: gray;">
+          <th class="tag-th">タグ名</th>
+          <th class="tag-th">操作</th>
         </tr>
       </thead>
       <tbody>
@@ -37,5 +26,25 @@
         <% end %>
       </tbody>
     </table>
+  </div>
+</div>
+
+
+
+<!-- 新規タグ登録 -->
+<div class="card w-25 tag-registration">
+  <div class="card-header">
+    <h5>新しいタグを追加</h5>
+  </div>
+  <div class="card-body">
+    <%= form_with(model: @tag, local: true, class: "form-inline") do |form| %>
+      <div class="form-group mb-3"> <!-- ここでマージンボトムを追加 -->
+        <%= form.label :name, '追加するタグ名', class: "mr-2" %>
+        <%= form.text_field :name, autocomplete: 'off', class: "form-control mr-2" %>
+          <div class="tag-btn">
+            <%= form.submit "追加", class: "btn btn-info w-50" %>
+          </div>
+      </div>
+    <% end %>
   </div>
 </div>
