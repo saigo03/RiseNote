@@ -1,10 +1,10 @@
 # Details
 
-Date : 2024-01-18 01:02:24
+Date : 2024-01-26 03:13:06
 
 Directory /workspaces/RiseNote/app
 
-Total : 80 files,  1307 codes, 0 comments, 301 blanks, all 1608 lines
+Total : 79 files,  1513 codes, 0 comments, 344 blanks, all 1857 lines
 
 [Summary](results.md) / Details / [Diff Summary](diff.md) / [Diff Details](diff-details.md)
 
@@ -14,22 +14,22 @@ Total : 80 files,  1307 codes, 0 comments, 301 blanks, all 1608 lines
 | [app/channels/application_cable/channel.rb](/app/channels/application_cable/channel.rb) | Ruby | 4 | 0 | 1 | 5 |
 | [app/channels/application_cable/connection.rb](/app/channels/application_cable/connection.rb) | Ruby | 4 | 0 | 1 | 5 |
 | [app/controllers/application_controller.rb](/app/controllers/application_controller.rb) | Ruby | 20 | 0 | 6 | 26 |
-| [app/controllers/folders_controller.rb](/app/controllers/folders_controller.rb) | Ruby | 47 | 0 | 9 | 56 |
+| [app/controllers/folders_controller.rb](/app/controllers/folders_controller.rb) | Ruby | 50 | 0 | 10 | 60 |
 | [app/controllers/hello_controller.rb](/app/controllers/hello_controller.rb) | Ruby | 4 | 0 | 1 | 5 |
 | [app/controllers/home_controller.rb](/app/controllers/home_controller.rb) | Ruby | 4 | 0 | 1 | 5 |
 | [app/controllers/learning_records_controller.rb](/app/controllers/learning_records_controller.rb) | Ruby | 14 | 0 | 3 | 17 |
-| [app/controllers/memos_controller.rb](/app/controllers/memos_controller.rb) | Ruby | 63 | 0 | 17 | 80 |
+| [app/controllers/memos_controller.rb](/app/controllers/memos_controller.rb) | Ruby | 64 | 0 | 17 | 81 |
 | [app/controllers/missions_controller.rb](/app/controllers/missions_controller.rb) | Ruby | 7 | 0 | 1 | 8 |
-| [app/controllers/posts_controller.rb](/app/controllers/posts_controller.rb) | Ruby | 26 | 0 | 5 | 31 |
+| [app/controllers/posts_controller.rb](/app/controllers/posts_controller.rb) | Ruby | 32 | 0 | 9 | 41 |
 | [app/controllers/static_pages_controller.rb](/app/controllers/static_pages_controller.rb) | Ruby | 8 | 0 | 3 | 11 |
-| [app/controllers/tags_controller.rb](/app/controllers/tags_controller.rb) | Ruby | 24 | 0 | 5 | 29 |
+| [app/controllers/tags_controller.rb](/app/controllers/tags_controller.rb) | Ruby | 30 | 0 | 6 | 36 |
 | [app/controllers/users/confirmations_controller.rb](/app/controllers/users/confirmations_controller.rb) | Ruby | 24 | 0 | 7 | 31 |
 | [app/controllers/users/omniauth_callbacks_controller.rb](/app/controllers/users/omniauth_callbacks_controller.rb) | Ruby | 23 | 0 | 8 | 31 |
 | [app/controllers/users/passwords_controller.rb](/app/controllers/users/passwords_controller.rb) | Ruby | 27 | 0 | 8 | 35 |
 | [app/controllers/users/registrations_controller.rb](/app/controllers/users/registrations_controller.rb) | Ruby | 56 | 0 | 15 | 71 |
 | [app/controllers/users/sessions_controller.rb](/app/controllers/users/sessions_controller.rb) | Ruby | 26 | 0 | 8 | 34 |
 | [app/controllers/users/unlocks_controller.rb](/app/controllers/users/unlocks_controller.rb) | Ruby | 24 | 0 | 7 | 31 |
-| [app/controllers/users_controller.rb](/app/controllers/users_controller.rb) | Ruby | 18 | 0 | 5 | 23 |
+| [app/controllers/users_controller.rb](/app/controllers/users_controller.rb) | Ruby | 21 | 0 | 7 | 28 |
 | [app/helpers/application_helper.rb](/app/helpers/application_helper.rb) | Ruby | 2 | 0 | 1 | 3 |
 | [app/helpers/folders_helper.rb](/app/helpers/folders_helper.rb) | Ruby | 2 | 0 | 1 | 3 |
 | [app/helpers/hello_codespaces_helper.rb](/app/helpers/hello_codespaces_helper.rb) | Ruby | 2 | 0 | 1 | 3 |
@@ -44,12 +44,12 @@ Total : 80 files,  1307 codes, 0 comments, 301 blanks, all 1608 lines
 | [app/jobs/application_job.rb](/app/jobs/application_job.rb) | Ruby | 6 | 0 | 2 | 8 |
 | [app/mailers/application_mailer.rb](/app/mailers/application_mailer.rb) | Ruby | 4 | 0 | 1 | 5 |
 | [app/models/application_record.rb](/app/models/application_record.rb) | Ruby | 3 | 0 | 1 | 4 |
-| [app/models/folder.rb](/app/models/folder.rb) | Ruby | 10 | 0 | 2 | 12 |
+| [app/models/folder.rb](/app/models/folder.rb) | Ruby | 8 | 0 | 2 | 10 |
 | [app/models/memo.rb](/app/models/memo.rb) | Ruby | 5 | 0 | 2 | 7 |
 | [app/models/mission.rb](/app/models/mission.rb) | Ruby | 4 | 0 | 1 | 5 |
 | [app/models/post.rb](/app/models/post.rb) | Ruby | 6 | 0 | 2 | 8 |
 | [app/models/tag.rb](/app/models/tag.rb) | Ruby | 3 | 0 | 2 | 5 |
-| [app/models/user.rb](/app/models/user.rb) | Ruby | 54 | 0 | 21 | 75 |
+| [app/models/user.rb](/app/models/user.rb) | Ruby | 60 | 0 | 21 | 81 |
 | [app/models/user_mission.rb](/app/models/user_mission.rb) | Ruby | 6 | 0 | 2 | 8 |
 | [app/views/devise/confirmations/new.html.erb](/app/views/devise/confirmations/new.html.erb) | erb | 12 | 0 | 5 | 17 |
 | [app/views/devise/mailer/confirmation_instructions.html.erb](/app/views/devise/mailer/confirmation_instructions.html.erb) | erb | 3 | 0 | 3 | 6 |
@@ -60,36 +60,35 @@ Total : 80 files,  1307 codes, 0 comments, 301 blanks, all 1608 lines
 | [app/views/devise/passwords/edit.html.erb](/app/views/devise/passwords/edit.html.erb) | erb | 20 | 0 | 6 | 26 |
 | [app/views/devise/passwords/new.html.erb](/app/views/devise/passwords/new.html.erb) | erb | 12 | 0 | 5 | 17 |
 | [app/views/devise/registrations/edit.html.erb](/app/views/devise/registrations/edit.html.erb) | erb | 30 | 0 | 8 | 38 |
-| [app/views/devise/registrations/new.html.erb](/app/views/devise/registrations/new.html.erb) | erb | 28 | 0 | 8 | 36 |
-| [app/views/devise/sessions/new.html.erb](/app/views/devise/sessions/new.html.erb) | erb | 22 | 0 | 8 | 30 |
+| [app/views/devise/registrations/new.html.erb](/app/views/devise/registrations/new.html.erb) | erb | 30 | 0 | 8 | 38 |
+| [app/views/devise/sessions/new.html.erb](/app/views/devise/sessions/new.html.erb) | erb | 25 | 0 | 7 | 32 |
 | [app/views/devise/shared/_error_messages.html.erb](/app/views/devise/shared/_error_messages.html.erb) | erb | 15 | 0 | 1 | 16 |
 | [app/views/devise/shared/_links.html.erb](/app/views/devise/shared/_links.html.erb) | erb | 20 | 0 | 6 | 26 |
 | [app/views/devise/unlocks/new.html.erb](/app/views/devise/unlocks/new.html.erb) | erb | 12 | 0 | 5 | 17 |
-| [app/views/folders/index.html.erb](/app/views/folders/index.html.erb) | erb | 43 | 0 | 7 | 50 |
+| [app/views/folders/index.html.erb](/app/views/folders/index.html.erb) | erb | 66 | 0 | 11 | 77 |
+| [app/views/folders/new.html.erb](/app/views/folders/new.html.erb) | erb | 0 | 0 | 1 | 1 |
 | [app/views/hello/index.html.erb](/app/views/hello/index.html.erb) | erb | 1 | 0 | 1 | 2 |
 | [app/views/home/index.html.erb](/app/views/home/index.html.erb) | erb | 22 | 0 | 3 | 25 |
-| [app/views/layouts/application.html.erb](/app/views/layouts/application.html.erb) | erb | 38 | 0 | 5 | 43 |
+| [app/views/layouts/application.html.erb](/app/views/layouts/application.html.erb) | erb | 39 | 0 | 6 | 45 |
 | [app/views/layouts/mailer.html.erb](/app/views/layouts/mailer.html.erb) | erb | 12 | 0 | 2 | 14 |
 | [app/views/layouts/mailer.text.erb](/app/views/layouts/mailer.text.erb) | erb | 1 | 0 | 1 | 2 |
 | [app/views/learning_records/show.html.erb](/app/views/learning_records/show.html.erb) | erb | 5 | 0 | 5 | 10 |
-| [app/views/memos/_form.html.erb](/app/views/memos/_form.html.erb) | erb | 53 | 0 | 11 | 64 |
+| [app/views/memos/_form.html.erb](/app/views/memos/_form.html.erb) | erb | 54 | 0 | 11 | 65 |
 | [app/views/memos/edit.html.erb](/app/views/memos/edit.html.erb) | erb | 1 | 0 | 0 | 1 |
-| [app/views/memos/index.html.erb](/app/views/memos/index.html.erb) | erb | 49 | 0 | 8 | 57 |
+| [app/views/memos/index.html.erb](/app/views/memos/index.html.erb) | erb | 57 | 0 | 9 | 66 |
 | [app/views/memos/new.html.erb](/app/views/memos/new.html.erb) | erb | 1 | 0 | 0 | 1 |
 | [app/views/memos/show.html.erb](/app/views/memos/show.html.erb) | erb | 13 | 0 | 3 | 16 |
 | [app/views/missions/index.html.erb](/app/views/missions/index.html.erb) | erb | 25 | 0 | 2 | 27 |
-| [app/views/posts/index.html.erb](/app/views/posts/index.html.erb) | erb | 31 | 0 | 1 | 32 |
-| [app/views/posts/new.html.erb](/app/views/posts/new.html.erb) | erb | 18 | 0 | 3 | 21 |
-| [app/views/posts/show.html.erb](/app/views/posts/show.html.erb) | erb | 18 | 0 | 1 | 19 |
+| [app/views/posts/index.html.erb](/app/views/posts/index.html.erb) | erb | 64 | 0 | 5 | 69 |
+| [app/views/posts/new.html.erb](/app/views/posts/new.html.erb) | erb | 55 | 0 | 10 | 65 |
+| [app/views/posts/show.html.erb](/app/views/posts/show.html.erb) | erb | 67 | 0 | 9 | 76 |
 | [app/views/shared/_accounts.html.erb](/app/views/shared/_accounts.html.erb) | erb | 5 | 0 | 0 | 5 |
 | [app/views/shared/_contextMenu.html.erb](/app/views/shared/_contextMenu.html.erb) | erb | 11 | 0 | 1 | 12 |
 | [app/views/shared/_missionList.html.erb](/app/views/shared/_missionList.html.erb) | erb | 29 | 0 | 2 | 31 |
 | [app/views/shared/_mypage.html.erb](/app/views/shared/_mypage.html.erb) | erb | 27 | 0 | 1 | 28 |
-| [app/views/shared/_navbar.html.erb](/app/views/shared/_navbar.html.erb) | erb | 51 | 0 | 5 | 56 |
-| [app/views/static_pages/mypage.html.erb](/app/views/static_pages/mypage.html.erb) | erb | 23 | 0 | 4 | 27 |
-| [app/views/static_pages/registration_complete.html.erb](/app/views/static_pages/registration_complete.html.erb) | erb | 8 | 0 | 0 | 8 |
-| [app/views/static_pages/userInfo_select.html.erb](/app/views/static_pages/userInfo_select.html.erb) | erb | 21 | 0 | 4 | 25 |
-| [app/views/tags/index.html.erb](/app/views/tags/index.html.erb) | erb | 40 | 0 | 4 | 44 |
-| [app/views/users/index.html.erb](/app/views/users/index.html.erb) | erb | 24 | 0 | 2 | 26 |
+| [app/views/shared/_navbar.html.erb](/app/views/shared/_navbar.html.erb) | erb | 49 | 0 | 10 | 59 |
+| [app/views/tags/index.html.erb](/app/views/tags/index.html.erb) | erb | 46 | 0 | 4 | 50 |
+| [app/views/users/index.html.erb](/app/views/users/index.html.erb) | erb | 38 | 0 | 5 | 43 |
+| [app/views/users/show.html.erb](/app/views/users/show.html.erb) | erb | 60 | 0 | 10 | 70 |
 
 [Summary](results.md) / Details / [Diff Summary](diff.md) / [Diff Details](diff-details.md)
