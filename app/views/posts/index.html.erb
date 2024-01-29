@@ -4,7 +4,7 @@
 <hr>
 <div class="container mt-5">
     <div class="table-responsive mx-auto" style="max-width: 75%; float: left;">
-        <table class="table table-hover" style="table-layout: fixed;">
+        <table class="table table-hover bordered-table sticky-header-table" style="table-layout: fixed;">
             <colgroup>
                 <col style="width: 10%">
                 <col style="width: 30%">
@@ -14,7 +14,7 @@
             </colgroup>
             <thead >
                 <tr>
-                    <th scope="col">ID</th>
+                    <th scope="col" style="text-align: center;">ID</th>
                     <th scope="col">タイトル</th>
                     <th scope="col">送信日時</th>
                     <th scope="col" style="padding-left: 0px;">確認</th>
@@ -24,7 +24,7 @@
             <tbody>
                 <% @posts.each do |post| %>
                     <tr style="cursor: pointer;" onclick="window.location='<%= post_path(post) %>'">
-                        <th scope="row"><%= post.id %></th>
+                        <th scope="row" style="text-align: center;"><%= post.id %></th>
                         <td><%= post.title %></td>
                         <td><%= post.created_at.strftime("%-m月%d日 %-H時%M分") %></td>
                         <td>
@@ -65,4 +65,9 @@
     .tbody tr td {
         border: 1px solid black; /* テーブル全体に枠線を追加 */
     }
+      .sticky-header-table th {
+    position: sticky;
+    top: 0;
+    background-color: #f9f9f9; /* ヘッダーの背景色を指定 */
+        }
 </style>

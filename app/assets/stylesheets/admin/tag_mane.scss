@@ -76,3 +76,9 @@
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+.tag-thead {
+  position: sticky;
+  top: 0;
+  background-color: #f9f9f9; /* ヘッダーの背景色を指定 */
+}

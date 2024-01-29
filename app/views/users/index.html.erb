@@ -7,7 +7,7 @@
   <table class="table table-hover bordered-table sticky-header-table" style="max-width: 40%; float: left;">
     <thead class="thead-light">
       <tr>
-        <th scope="col">ユーザー名</th>
+        <th scope="col">メールアドレス</th>
         <th scope="col">　</th>
       </tr>
     </thead>
@@ -15,7 +15,7 @@
       <% @users.each do |user| %>
       <!--詳細ページへのリンクを追加-->
         <tr style="cursor: pointer;" onclick="window.location='<%= user_path(user) %>'">
-          <td class="border-right"><%= user.username %></td>
+          <td class="border-right"><%= user.email %></td>
           <td class="border-left"><i class="fas fa-angle-right fa-lg" style="color: #9fa0a3;"></i></td>
         </tr>
       <% end %>
@@ -30,6 +30,11 @@
     margin-top: 20px;
     margin-left: 5px;
   }
+
+  .table tr td {
+      height: 50px;  /* テーブルの高さを指定 */
+      vertical-align: middle;
+      }
 
   .table-responsive {
     max-height: 480px; /* ここで高さを設定します */
