@@ -1,4 +1,11 @@
 /* ポップアップの背景 */
+.folders-back {
+  background-image: url('note10.png');
+  background-size: 100%;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
 .overlay {
   display: none;
   position: fixed;
@@ -37,6 +44,11 @@
   border: 1px solid #ddd; /* 枠線のスタイル */
   border-radius: 4px;
   box-sizing: border-box;
+}
+
+.mt-3 {
+  color:rgb(0, 0, 0);
+  text-shadow: 1px 1px 0 #ffffff, -1px 1px 0 #ffffff, 1px -1px 0 #ffffff, -1px -1px 0 #ffffff;
 }
 
 //ノート作成ボタンデザイン

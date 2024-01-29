@@ -1,25 +1,33 @@
-body {
-  margin: 0;  
-  // overflow: hidden;（画面の固定)
+body{
+  background-color: #ffffff;
+  overflow-x: hidden;
 }
 
+body .home-back {
+  background-color: #000000;
+  margin: 0;
+  padding: 0;
+}
+
+
 .home-body {
-background: image-url('root_home.jpg');
+background: image-url('note4.png');
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat; /* 画像の繰り返しを防ぐための設定 */
-height: 700px;
+height: 100vh;
+margin-bottom: 30px;
 }
 
 
 .home-input-container {
   text-align: center; /* 中央揃え */
-  padding-top: 130px;
 }
 .input-title {
+  padding-top: 130px;
   font-size: 60px;
   font-family: 'Noto Sans JP', sans-serif;
-  color: #d9d8d8;
+  color: #ffffff;
   font-weight:bold;
 }
 h2.input-title::before {
@@ -27,7 +35,7 @@ h2.input-title::before {
   display: block;
   font-size: 16px;
   margin-bottom: -5px;
-  color: #d9d8d8;
+  color: #ffffff;
   font-family: 'Noto Serif JP', sans-serif;
 }
 
@@ -47,38 +55,190 @@ h2.input-title::before {
   border-radius: 4px;
   margin: 0 auto;
 }
-.start-button a {
-background-color: #d9d8d8;
+.arrow-button {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #5e5d5d;
+  border-radius: 50%;
+  padding: 15px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 999; /* ボタンが他の要素の上に表示されるように */
+}
+
+/* スクロール時に表示する要素のスタイル */
+.scrolling-element {
+  height: 100vh;
+  background-color: rgb(132, 104, 76);
+  margin-top: 10px;
+}
+.circle-frame {
+  width: 55%; /* 枠の幅 */
+  height: 95%; /* 枠の高さ */
+  /* 画像が枠からはみ出さないようにするための設定 */
+}
+.centered-container {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  height: 100%;
+  margin-left: 30px;
+}
+
+.circle-frame img {
+  width: 100%; /* 画像の幅を枠に合わせる */
+  height: 100%; /* 画像の高さを枠に合わせる */
+  object-fit: cover; /* 画像が枠にピッタリ収まるようにする */
+}
+.explanation-text {
+  width: 450px;
+  height: 95%;
+  margin-left: 40px;
+  padding: 0 20px;
+  color: #fff;
+  font-size: 18px;
+  font-family: 'Noto Sans JP', sans-serif;
+  background:#313131
+}
+.explanation-text h2 {
+  font-size: 50px;
+  margin: 40px 67px;
+}
+.explanation-text p {
+  font-size: 17px;
+  letter-spacing: 2px;
+  line-height: 2;
+}
+.scrolling-element2 {
+  height: 100vh;
+  margin-top: 30px;
+  background-image: url('note5.png');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+text-align: center;
+padding-top: 200px;
+}
+.scrolling-element2 {
+  h1,p{
+  font-family: 'Noto Sans JP', sans-serif;
+  color: #ddd;
+  text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+  }
+}
+.scrolling-element2  {
+  p {
+  margin: -10px;
+  }
+}
+.scrolling-element2 .highlight-text {
+  color: rgb(252, 206, 100); /* 緑に変更 */
+}
+.scrolling-element2 .start-button {
+margin-top: 5px; /* 適切なマージンを設定してください */
+}
+
+/* 新規登録ボタンのテキストスタイル */
+.scrolling-element2  {
+  a{
+  display: inline-block;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px; /* 適切なマージンを設定してください */
+  }
+}
+.scrolling-element2 .start-button {
+  a{
+position: relative;
+border: rgb(0, 0, 0);
+background-color: rgb(240, 185, 57);
 border-radius: 50px;
 position: relative;
-display: flex;
 justify-content: space-around;
 align-items: center;
-margin: 0 auto;
-max-width: 260px;
-padding: 10px 25px;
-color: #313131;
+padding: 10px 50px;
+color: #ffffff;
 transition: 0.3s ease-in-out;
 font-weight: 500;
 text-decoration: none;
+  }
 }
-.start-button a:hover {
-background: #5e5d5d;
-color: #FFF;
-}
-.start-button a:after {
-content: '';
-width: 5px;
-height: 5px;
-border-top: 3px solid #313131;
-border-right: 3px solid #313131;
-transform: rotate(45deg) translateY(-50%);
-position: absolute;
-top: 50%;
-right: 20px;
-border-radius: 1px;
+.scrolling-element2 .log-color {
+  a{
+position: relative;
+border: 2px solid rgb(240, 185, 57);
+background-color: rgb(255, 255, 255);
+border-radius: 50px;
+position: relative;
+justify-content: space-around;
+align-items: center;
+padding: 10px 50px;
+color:rgb(240, 185, 57);
 transition: 0.3s ease-in-out;
+font-weight: 600;
+text-decoration: none;
+  }
 }
-.start-button a:hover:after {
+
+.scrolling-element2 .start-button  {
+  a:hover{
+background: #5e5d5d;
+color: #fff;
+  }
+}
+
+
+
+.scrolling-element2 .start-button  {
+  a:hover:after{
 border-color: #FFF;
+  }
+}
+.home-footer {
+  display: flex;
+justify-content: flex-end; /* ここを変更 */
+align-items: center;
+margin-top: 10px;
+  width: 100%;
+height: 60px;
+color: #ffffff;
+}
+
+.footer-buttons  {
+  a{
+font-weight:bold;
+position: relative;
+display: inline-block;
+transition: .3s;
+text-decoration: none;
+color:#fff;
+margin-right: 20px;
+  }
+}
+.footer-buttons  { 
+  a::after{
+position: absolute;
+bottom: 1px;
+left: 0;
+content: '';
+width: 0;
+height: 2px;/*下線の太さ*/
+background-color:rgb(249, 212, 112);/*下線の色*/
+transition: .3s;
+  }
+}
+.footer-buttons  {
+  a:hover::after{
+width: 100%;
+  }
+}
+.footer-buttons { 
+  a:hover{
+color:rgb(249, 212, 112);/*ホバー時の文字色*/
+  }
+}
+.container-fluid {
+  padding: 0px;
 }
