@@ -1,3 +1,4 @@
+<div class="home-back" >
 <div class="home-body">
 <header>
   <div class="header-container">
@@ -25,7 +26,7 @@
 <div class="scrolling-element">
       <div class="centered-container">
       <div class="circle-frame">
-        <img src="note3.png">
+        <%= image_tag 'note3.png' %>
       </div>
       <div class="explanation-text">
         <h2>RISE NOTE</h2>
@@ -39,9 +40,8 @@
       <p>アカウントをお持ちの場合、こちらからログイン</p>
       </div>
       <div class="start-button">
-      <a href="#">新規登録</a>
-
-      <span class="log-color"><a href="#">ログイン</a></span>
+      <%= link_to '新規登録', new_user_registration_path, class: "next_new_user_button" %>
+      <span><%= link_to 'ログイン', new_user_session_path  %></span>
       </div>
     </div>
     
@@ -54,8 +54,9 @@
       <div>
     </footer>
     </div>
+</div>
     <script>
-    document.addEventListener('DOMContentLoaded', function () {
+     document.addEventListener('DOMContentLoaded', function () {
       const arrowButton = document.querySelector('.arrow-button');
 
       function updateArrowButton() {
@@ -96,5 +97,4 @@
         behavior: 'smooth',
       });
     }
-    
   </script>

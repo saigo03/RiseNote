@@ -9,13 +9,13 @@
 .folders-container {
   flex: 1; /* 可用スペースを埋める */
   max-width: calc(70% - 10px); /* 最大幅を設定し、間隔の分を引く */
-
+  background: rgba(255, 255, 255, 0.8);
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* サイズを小さく */
   gap: 1rem;
   padding: 1rem;
   overflow-y: auto;
-  border: 2px solid #ccc;
+  border: 2px solid #5a7f4d;
   border-radius: 10px;
   height: 350px; /* 高さを小さく */
   max-height: 350px; /* 最大高さも調整 */
@@ -24,10 +24,10 @@
 
 /* 各フォルダカード */
 .folder-card {
-  border: 1px solid #ccc;
+  border-left: solid 6px #3c3c3c;
   border-radius: 2px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  background-color: #e0f7fa;
+  background-color: #af9d74;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -50,8 +50,6 @@
 .folder-actions {
   text-align: center;
   padding: 0.5rem 0;
-  background-color: #fafafa; /* ノートの下側の色 */
-  border-top: 1px solid #ccc; /* 上の線を表す */
 }
 
 .folder-delete-link {
@@ -66,13 +64,14 @@
 
 /*学習記録の表示用CSS*/
 .records-container {
+  background: rgba(255, 255, 255, 0.8);
   flex: 2; /* 可用スペースを埋める */
   max-width: calc(30% - 10px);
   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   gap: 1rem;
   padding: 1rem;
   overflow-y: auto;
-  border: 2px solid #ccc;
+  border: 2px solid #5a7f4d;
   border-radius: 10px;
   height: 350px; /* 高さを小さく */
   max-height: 350px; /* 最大高さも調整 */

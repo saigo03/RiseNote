@@ -1,11 +1,17 @@
-body {
-  margin: 0;  
-  background-color: #000000;
+body{
+  background-color: #ffffff;
   overflow-x: hidden;
 }
 
+body .home-back {
+  background-color: #000000;
+  margin: 0;
+  padding: 0;
+}
+
+
 .home-body {
-background: image-url('root_home.jpg');
+background: image-url('note4.png');
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat; /* 画像の繰り返しを防ぐための設定 */
@@ -98,7 +104,7 @@ h2.input-title::before {
 }
 .explanation-text h2 {
   font-size: 50px;
-  margin-left: 100px;
+  margin: 40px 67px;
 }
 .explanation-text p {
   font-size: 17px;
@@ -106,7 +112,7 @@ h2.input-title::before {
   line-height: 2;
 }
 .scrolling-element2 {
-  height: 70vh;
+  height: 100vh;
   margin-top: 30px;
   background-image: url('note5.png');
 background-size: cover;
@@ -115,13 +121,17 @@ background-repeat: no-repeat;
 text-align: center;
 padding-top: 200px;
 }
-.scrolling-element2 h1,p{
+.scrolling-element2 {
+  h1,p{
   font-family: 'Noto Sans JP', sans-serif;
   color: #ddd;
   text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+  }
 }
-.scrolling-element2 p {
+.scrolling-element2  {
+  p {
   margin: -10px;
+  }
 }
 .scrolling-element2 .highlight-text {
   color: rgb(252, 206, 100); /* 緑に変更 */
@@ -131,13 +141,16 @@ margin-top: 5px; /* 適切なマージンを設定してください */
 }
 
 /* 新規登録ボタンのテキストスタイル */
-.scrolling-element2 a {
+.scrolling-element2  {
+  a{
   display: inline-block;
   justify-content: space-between;
   align-items: center;
   margin-top: 40px; /* 適切なマージンを設定してください */
+  }
 }
-.scrolling-element2 .start-button a {
+.scrolling-element2 .start-button {
+  a{
 position: relative;
 border: rgb(0, 0, 0);
 background-color: rgb(240, 185, 57);
@@ -150,8 +163,10 @@ color: #ffffff;
 transition: 0.3s ease-in-out;
 font-weight: 500;
 text-decoration: none;
+  }
 }
-.scrolling-element2 .log-color a {
+.scrolling-element2 .log-color {
+  a{
 position: relative;
 border: 2px solid rgb(240, 185, 57);
 background-color: rgb(255, 255, 255);
@@ -164,17 +179,22 @@ color:rgb(240, 185, 57);
 transition: 0.3s ease-in-out;
 font-weight: 600;
 text-decoration: none;
+  }
 }
 
-.scrolling-element2 .start-button a:hover {
+.scrolling-element2 .start-button  {
+  a:hover{
 background: #5e5d5d;
 color: #fff;
+  }
 }
 
 
 
-.scrolling-element2 .start-button a:hover:after {
+.scrolling-element2 .start-button  {
+  a:hover:after{
 border-color: #FFF;
+  }
 }
 .home-footer {
   display: flex;
@@ -186,7 +206,8 @@ height: 60px;
 color: #ffffff;
 }
 
-.footer-buttons a {
+.footer-buttons  {
+  a{
 font-weight:bold;
 position: relative;
 display: inline-block;
@@ -194,20 +215,30 @@ transition: .3s;
 text-decoration: none;
 color:#fff;
 margin-right: 20px;
+  }
 }
-.footer-buttons a::after {
+.footer-buttons  { 
+  a::after{
 position: absolute;
 bottom: 1px;
 left: 0;
 content: '';
 width: 0;
-height: 3px;/*下線の太さ*/
+height: 2px;/*下線の太さ*/
 background-color:rgb(249, 212, 112);/*下線の色*/
 transition: .3s;
+  }
 }
-.footer-buttons a:hover::after {
+.footer-buttons  {
+  a:hover::after{
 width: 100%;
+  }
 }
-.footer-buttons a:hover{
+.footer-buttons { 
+  a:hover{
 color:rgb(249, 212, 112);/*ホバー時の文字色*/
+  }
+}
+.container-fluid {
+  padding: 0px;
 }

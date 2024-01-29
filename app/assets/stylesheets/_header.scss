@@ -20,7 +20,8 @@ justify-content: space-between;
 align-items: center;
 }
 
-.header-buttons a {
+.header-buttons  {
+	a{
 font-weight:bold;
 position: relative;
 display: inline-block;
@@ -28,20 +29,27 @@ transition: .3s;
 text-decoration: none;
 color:#fff;
 margin-right: 20px;
+	}
 }
-.header-buttons a::after {
+.header-buttons  {
+	a::after{
 position: absolute;
 bottom: 20px;
 left: 0;
 content: '';
 width: 0;
-height: 1px;/*下線の太さ*/
+height: 2px;/*下線の太さ*/
 background-color:rgb(249, 212, 112);/*下線の色*/
 transition: .3s;
+	}
 }
-.header-buttons a:hover::after {
+.header-buttons {
+	a:hover::after{
 width: 100%;
+	}
 }
-.header-buttons a:hover{
+.header-buttons {
+	a:hover{
 color:rgb(249, 212, 112);/*ホバー時の文字色*/
+	}
 }
