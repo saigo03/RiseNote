@@ -16,18 +16,54 @@
     <%= f.email_field :email, autofocus: true, autocomplete: "email" , placeholder: '例）Rise@risenote.com'%>
   </div>
 
-  <div class="field">
-    <%= f.label :password %><span style="color: red; font-size: 0.8em;"> *</span>
-    <% if @minimum_password_length %>
-    <% end %><br />
-    <span style="font-size: 0.9em;">大文字を含んだ8文字以上で作成してください</span>
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+<div class="field">
+  <%= f.label :password, for: "password" %><span style="color: red; font-size: 0.8em;"> *</span>
+  <% if @minimum_password_length %>
+  <% end %><br />
+  <span style="font-size: 0.9em;">8文字以上で、大文字と小文字を含むように作成してください。</span><br>
+  <%= f.password_field :password, id: "password", autocomplete: "new-password" %>
+  <i id="togglePassword" class="fas fa-eye"></i>
+</div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><span style="color: red; font-size: 0.8em;"> *</span><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+<div class="field">
+  <%= f.label :password_confirmation, for: "password_confirmation" %><span style="color: red; font-size: 0.8em;"> *</span><br />
+  <%= f.password_field :password_confirmation, id: "password_confirmation", autocomplete: "new-password" %>
+  <i id="togglePasswordConfirmation" class="fas fa-eye"></i>
+</div>
+
+<script>
+  var togglePassword = document.querySelector('#togglePassword');
+  var password = document.querySelector('#password');
+  var togglePasswordConfirmation = document.querySelector('#togglePasswordConfirmation');
+  var passwordConfirmation = document.querySelector('#password_confirmation');
+
+  // 初期状態のアイコンを設定
+  togglePassword.classList.remove('fa-eye');
+  togglePassword.classList.add('fa-eye-slash');
+  togglePasswordConfirmation.classList.remove('fa-eye');
+  togglePasswordConfirmation.classList.add('fa-eye-slash');
+
+  togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+    this.classList.toggle('fa-eye');
+  });
+
+  togglePasswordConfirmation.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = passwordConfirmation.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordConfirmation.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+    this.classList.toggle('fa-eye');
+  });
+</script>
+
+
+
 
   <div class="actions">
     <%= f.submit "Sign up" %>
