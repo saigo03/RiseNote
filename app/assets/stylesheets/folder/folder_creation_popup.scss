@@ -1,10 +1,9 @@
 /* ポップアップの背景 */
 .folders-back {
-  background-image: url('note10.png');
-  background-size: 100%;
-  background-position: bottom;
+  background-image: url('note.png');
+  background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
+  height:100vh;
 }
 .overlay {
   display: none;
@@ -49,6 +48,10 @@
 .mt-3 {
   color:rgb(0, 0, 0);
   text-shadow: 1px 1px 0 #ffffff, -1px 1px 0 #ffffff, 1px -1px 0 #ffffff, -1px -1px 0 #ffffff;
+}
+
+.note-title {
+  color:rgb(0, 0, 0);
 }
 
 //ノート作成ボタンデザイン

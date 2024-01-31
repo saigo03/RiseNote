@@ -55,17 +55,45 @@ h2.input-title::before {
   border-radius: 4px;
   margin: 0 auto;
 }
-.arrow-button {
+.arrow-button{
+  vertical-align: middle;
+  color: #d9d5d5;
+  line-height: 1;
+  width: 1em;
+  height: 1em;
+  border: 0.1em solid currentColor;
+  border-left: 0;
+  border-bottom: 0;
+  box-sizing: border-box;
   position: fixed;
   bottom: 20px;
   left: 50%;
-  transform: translateX(-50%);
-  background-color: #5e5d5d;
-  border-radius: 50%;
-  padding: 15px;
-  color: #fff;
   cursor: pointer;
-  z-index: 999; /* ボタンが他の要素の上に表示されるように */
+  transform: translateY(-25%) rotate(135deg);
+}
+.arrow-button2 {
+  vertical-align: middle;
+  color: #d9d5d5;
+  line-height: 1;
+  width: 1em;
+  height: 1em;
+  border: 0.1em solid currentColor;
+  border-left: 0;
+  border-bottom: 0;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  cursor: pointer;
+  transform: translateY(25%) rotate(-45deg);
+}
+.arrow-button:hover,
+.arrow-button2:hover {
+  background-color: #000000; /* カーソルを合わせたときの背景色 */
+  color: #fff; /* カーソルを合わせたときの文字色 */
+}
+.arrow-button2 {
+  bottom: 75px; /* 下矢印ボタンとの重なりを避けるために位置を変更 */
 }
 
 /* スクロール時に表示する要素のスタイル */
