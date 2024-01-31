@@ -1,10 +1,14 @@
 <div class="sessions-form">
 <h1>　</h1> <%# 上に空白を入れています。 %>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "devise-form" }) do |f| %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "devise-session" }) do |f| %>
   
   <%= render "devise/shared/error_messages", resource: resource %>
 <h2>ログイン</h2>
+    <%# ログインページエラーメッセージを表示 %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
   <div class="field session-field">
     <%= f.label :email %><br/>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
