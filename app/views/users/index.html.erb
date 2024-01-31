@@ -1,43 +1,59 @@
 <h4>　</h4>
 <a href="<%= folders_path %>" class="tag-a"><i class="fas fa-arrow-left"></i></a>
-<h3 style="display: inline;" >ユーザー管理</h3>
+<h3 style="display: inline;">ユーザー管理</h3>
 <hr>
 
 <div class="table-responsive">
-  <table class="table table-hover" style="max-width: 75%; float: left;">
+  <table class="table table-hover bordered-table sticky-header-table" style="max-width: 40%; float: left;">
     <thead class="thead-light">
       <tr>
-        <th scope="col">ユーザー名</th>
+        <th scope="col">メールアドレス</th>
+        <th scope="col">　</th>
       </tr>
     </thead>
     <tbody>
       <% @users.each do |user| %>
       <!--詳細ページへのリンクを追加-->
         <tr style="cursor: pointer;" onclick="window.location='<%= user_path(user) %>'">
-          <td><%= user.email %></td>
+          <td class="border-right"><%= user.email %></td>
+          <td class="border-left"><i class="fas fa-angle-right fa-lg" style="color: #9fa0a3;"></i></td>
         </tr>
       <% end %>
     </tbody>
   </table>
 </div>
 
-
 <style>
-  h3,.tag-a {
-        display: inline;
-        padding: 0;
-        margin-top: 20px;
-        margin-left: 5px;
-    }
-    thead th {
-        position: sticky;
-        top: 0;
-        background: white;
-    }
+  h3, .tag-a {
+    display: inline;
+    padding: 0;
+    margin-top: 20px;
+    margin-left: 5px;
+  }
 
-.table-responsive {
-  max-height: 480px; /* ここで高さを設定します */
-  overflow-y: auto; /* 縦方向にスクロール可能にします */
-}
+  .table tr td {
+      height: 50px;  /* テーブルの高さを指定 */
+      vertical-align: middle;
+      }
 
+  .table-responsive {
+    max-height: 480px; /* ここで高さを設定します */
+    overflow-y: auto; /* 縦方向にスクロール可能にします */
+  }
+
+  .bordered-table {
+    border-collapse: collapse; /* セルのボーダーを結合 */
+  }
+
+  .bordered-table th,
+  .bordered-table td {
+    border-top: 1px solid #ddd; /* 上側にボーダーを追加 */
+    border-bottom: 1px solid #ddd; /* 下側にボーダーを追加 */
+  }
+
+  .sticky-header-table th {
+    position: sticky;
+    top: 0;
+    background-color: #f9f9f9; /* ヘッダーの背景色を指定 */
+  }
 </style>

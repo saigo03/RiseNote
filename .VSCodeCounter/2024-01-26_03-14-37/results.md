@@ -1,23 +1,23 @@
 # Summary
 
-Date : 2024-01-18 01:02:03
+Date : 2024-01-26 03:14:37
 
-Directory /workspaces/RiseNote/app/controllers
+Directory /workspaces/RiseNote/db
 
-Total : 17 files,  415 codes, 0 comments, 109 blanks, all 524 lines
+Total : 16 files,  229 codes, 0 comments, 41 blanks, all 270 lines
 
 Summary / [Details](details.md) / [Diff Summary](diff.md) / [Diff Details](diff-details.md)
 
 ## Languages
 | language | files | code | comment | blank | total |
 | :--- | ---: | ---: | ---: | ---: | ---: |
-| Ruby | 17 | 415 | 0 | 109 | 524 |
+| Ruby | 16 | 229 | 0 | 41 | 270 |
 
 ## Directories
 | path | files | code | comment | blank | total |
 | :--- | ---: | ---: | ---: | ---: | ---: |
-| . | 17 | 415 | 0 | 109 | 524 |
-| . (Files) | 11 | 235 | 0 | 56 | 291 |
-| users | 6 | 180 | 0 | 53 | 233 |
+| . | 16 | 229 | 0 | 41 | 270 |
+| . (Files) | 2 | 97 | 0 | 11 | 108 |
+| migrate | 14 | 132 | 0 | 30 | 162 |
 
 Summary / [Details](details.md) / [Diff Summary](diff.md) / [Diff Details](diff-details.md)
