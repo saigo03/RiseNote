@@ -30,12 +30,17 @@ class MemosController < ApplicationController
     @memo = @folder.memos.new(memo_params)
     @memo.user = current_user  # ログインしているユーザーをメモに関連付け
 
-    if @memo.save
-      # ミッション達成のチェックとフラッシュメッセージの設定
-      mission_message = current_user.check_mission
-      flash[:notice] = mission_message if mission_message
+    # メモ保存前にミッションチェックを行う
+    memo_count_before_save = current_user.memos.count
 
-      redirect_to edit_folder_memo_path(@folder, @memo),notice: 'メモが保存されました。'
+    # メモが保存される前にミッションチェックを行う
+    mission_message = current_user.check_mission(memo_count_before_save)
+
+    if @memo.save
+       # フラッシュメッセージの設定
+      flash[:notice] = 'メモが保存されました。' + mission_message.to_s
+
+      redirect_to edit_folder_memo_path(@folder, @memo)
     else
       render :new, status: :unprocessable_entity
     end
