@@ -1,21 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Cormorant:ital,wght@1,300&family=Kosugi+Maru&family=Orbitron&family=Roboto:wght@100&family=Varela+Round&display=swap');
 .homeContent-container {
   display: flex; /* Flexboxレイアウトを適用 */
   justify-content: space-between; /* 要素間のスペースを均等に分配 */
-  align-items: start; /* 要素を上部で揃える */
+  align-items: center; /* 要素を上部で揃える */
   gap: 50px; /* 要素間の間隔を設定 */
+  margin-left: 30px;
+}
+.note-list{
+  padding-top:20px;
+  color:#3a3939;
+  font-family: 'Varela Round', sans-serif;
 }
 
+.note-create-container {
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+}
+.btn_01 {
+  margin-left:45%;
+}
+.btn_01 {
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	margin: auto;
+	padding: 5px 10px;
+  border:none;
+	border-radius: 5px;
+	color: #ffffff;
+	transition: 0.5s;
+  background:#535151;
+}
+.btn_01:hover {
+	color: #fff;
+	background: #000000;
+}
 /* フォルダ一覧コンテナ */
 .folders-container {
   flex: 1; /* 可用スペースを埋める */
   max-width: calc(70% - 10px); /* 最大幅を設定し、間隔の分を引く */
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(230, 228, 228, 0.5);
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* サイズを小さく */
   gap: 1rem;
   padding: 1rem;
   overflow-y: auto;
-  border: 2px solid #5a7f4d;
+  border: 2px solid #4a4b4a;
   border-radius: 10px;
   height: 350px; /* 高さを小さく */
   max-height: 350px; /* 最大高さも調整 */
@@ -64,18 +95,19 @@
 
 /*学習記録の表示用CSS*/
 .records-container {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(230, 228, 228, 0.5);
   flex: 2; /* 可用スペースを埋める */
   max-width: calc(30% - 10px);
   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   gap: 1rem;
   padding: 1rem;
   overflow-y: auto;
-  border: 2px solid #5a7f4d;
+  border: 2px solid #4a4b4a;
   border-radius: 10px;
   height: 350px; /* 高さを小さく */
   max-height: 350px; /* 最大高さも調整 */
   width: 30%; /* 幅も小さく */
+  margin-right: 20px;
 }
 
 /* 画面サイズが小さい場合に records-container を非表示にする */

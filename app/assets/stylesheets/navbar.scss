@@ -1,3 +1,9 @@
+.row > * {
+  padding: 0; /* padding-left を削除 */
+}
+.row {
+  margin: 0;
+}
 .nav-link:hover {
   background-color: hsl(213, 4%, 60%); /* 薄いグレイ色 */
   color: #fff; /* テキストの色を白色に変更する場合 */

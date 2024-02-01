@@ -1,0 +1,17 @@
+"filename", "language", "Ruby", "comment", "blank", "total"
+"/workspaces/RiseNote/config/application.rb", "Ruby", 19, 0, 5, 24
+"/workspaces/RiseNote/config/boot.rb", "Ruby", 3, 0, 2, 5
+"/workspaces/RiseNote/config/environment.rb", "Ruby", 4, 0, 2, 6
+"/workspaces/RiseNote/config/environments/development.rb", "Ruby", 60, 0, 25, 85
+"/workspaces/RiseNote/config/environments/production.rb", "Ruby", 68, 0, 26, 94
+"/workspaces/RiseNote/config/environments/test.rb", "Ruby", 44, 0, 17, 61
+"/workspaces/RiseNote/config/importmap.rb", "Ruby", 10, 0, 2, 12
+"/workspaces/RiseNote/config/initializers/assets.rb", "Ruby", 10, 0, 3, 13
+"/workspaces/RiseNote/config/initializers/content_security_policy.rb", "Ruby", 23, 0, 3, 26
+"/workspaces/RiseNote/config/initializers/devise.rb", "Ruby", 259, 0, 55, 314
+"/workspaces/RiseNote/config/initializers/filter_parameter_logging.rb", "Ruby", 7, 0, 2, 9
+"/workspaces/RiseNote/config/initializers/inflections.rb", "Ruby", 14, 0, 3, 17
+"/workspaces/RiseNote/config/initializers/permissions_policy.rb", "Ruby", 11, 0, 1, 12
+"/workspaces/RiseNote/config/puma.rb", "Ruby", 36, 0, 8, 44
+"/workspaces/RiseNote/config/routes.rb", "Ruby", 31, 0, 10, 41
+"Total", "-", 599, 0, 164, 763
