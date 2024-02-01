@@ -33,21 +33,18 @@ class User < ApplicationRecord
    before_create :set_default_rank
 
   # ユーザーのミッション達成状況をチェックし、必要に応じてポイントを加算する
-  def check_mission
+  def check_mission(memo_count_before_save)
     self.points ||= 0
   
-    # メモ作成時のミッションチェック
     # 初めてのメモ作成時のミッションチェック
-    message = check_and_complete_mission(1, 1) if self.memos.count == 1
+    message = check_and_complete_mission(1, 1) if memo_count_before_save == 1
 
     # メモ作成回数が3回に達した時のミッションチェック
-    message ||= check_and_complete_mission(2, 3) if self.memos.count == 3
+    message ||= check_and_complete_mission(2, 3) if memo_count_before_save == 3
   
     self.save if self.points_changed?
     message
   end
-
-
 
   private
 
