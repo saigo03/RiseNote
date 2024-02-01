@@ -10,9 +10,5 @@ import "@hotwired/turbo-rails"
 import "controllers/folder"
 import "./memo/memo_form"
 import "./memo/context_menu"
-<<<<<<< HEAD
 import "./popup/popup"
 import "./login_form/login"
-=======
-import "./popup/popup"
->>>>>>> origin/main
