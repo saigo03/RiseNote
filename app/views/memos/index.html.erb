@@ -1,8 +1,9 @@
+  <div class="folders-back">
   <%= render 'shared/contextMenu' %>
   
   <!-- メモ一覧 -->
   <div class="col-md-12 px-3">
-    <h3 class="my-4">ノート名：<%= @folder.name %></h3>
+    <h3 class="note-name"><%= @folder.name %></h3>
 
       <!-- 検索フォーム -->
       <div class="d-flex justify-content-between mb-3">
@@ -60,6 +61,7 @@
         <% end %>
       </div>
     <% end %>
+</div>
 </div>
 
 
