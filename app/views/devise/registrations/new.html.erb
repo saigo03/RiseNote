@@ -1,13 +1,29 @@
-<h3>Rise noteに登録</h3>
+<%# ヘッダーとホームページへのリンクを追加 %>
+<header style="margin-bottom: 55px;">
+  <div class="header-container">
+    <a href="<%= root_path %>" style="text-decoration: none;">
+    <div class="system-name">❍Rise note</div>
+    </a>
+    <div class="header-buttons">
+        <%= link_to 'ログイン', new_user_session_path  %>
+      </div>
+  </div>
+</header>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "devise-form" }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+
+<h4>Rise noteに登録する</h4>
+
+  <div class="error-message">
+    <%= render "devise/shared/error_messages", resource: resource %>
+  </div>
+
 
   <!-- ユーザー名のフィールドを追加 -->
   <div class="field">
-    <%= f.label :username %><span style="color: red; font-size: 0.8em;"> *</span><br />
-    <span style="font-size: 0.9em;">2文字以上8文字以内で記入してください</span> <br />
-    <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
+    <%= f.label :username, "ユーザネーム", for: "username_field" %><span style="color: red; font-size: 0.8em;"> *</span><br />
+    <span style="font-size: 0.9em;">2文字以上8文字以内で作成してください。</span> <br />
+    <%= f.text_field :username, id: "username_field", autofocus: true, autocomplete: "username" %>
   </div>
 
   <div class="field">
@@ -66,8 +82,13 @@
 
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "登録する" %>
+  </div>
+  
+  <div class="link-new">
+    アカウントをお持ちの方は<%= render "devise/shared/links" %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<h1>　</h1>
+
