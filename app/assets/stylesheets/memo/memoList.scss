@@ -13,3 +13,24 @@
 .note-name {
   padding-top: 10px;
 }
+.memo-content {
+  background: rgba(255, 255, 255, 0.5);
+  margin-left: 15px;
+}
+.col-md-5 {
+  
+  border-right: 1px solid #747474
+}
+.memo-detail{
+  margin-left: 15px;
+}
+.custom-button {
+  color: rgb(40, 40, 40);
+  background: #dfdfdf;
+  transition: color 0.2s, background 0.2s;
+}
+
+.custom-button:hover {
+  color: rgb(40, 40, 40);
+  background: #bbbaba;
+}

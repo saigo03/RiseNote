@@ -21,14 +21,11 @@
           </div>
         </div>
 
-        <%= form.submit "送信", class: 'btn btn-success btn-wide' %>
+        <%= form.submit "送信", class: 'btn btn-success btn-wide'%>
       <% end %>
     </div>
   </div>
 </div>
-
-
-
 
 <style>
 /* 追加のCSSスタイル */
@@ -45,7 +42,8 @@
 
 /* お問い合わせ内容のテキストエリアを縦に拡張 */
 .form-control-textarea {
-  height: 100px; /* 適切な高さを設定してください */
+  height: 150px; /* 適切な高さを設定してください */
+  resize: none;
 }
 
 .btn-wide {
