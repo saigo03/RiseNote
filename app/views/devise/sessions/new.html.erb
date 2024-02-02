@@ -1,36 +1,63 @@
+<%# ヘッダーとホームページへのリンクを追加 %>
+<header style="margin-bottom: 55px;">
+  <div class="header-container">
+    <a href="<%= root_path %>" style="text-decoration: none;">
+    <div class="system-name">❍Rise note</div> 
+    </a>
+
+    <div class="header-buttons">
+        <%= link_to '新規登録', new_user_registration_path, class: "next_new_user_button" %>
+      </div>
+  </div>
+</header>
 <div class="sessions-form">
-<h1>　</h1> <%# 上に空白を入れています。 %>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "devise-session" }) do |f| %>
   
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= render "devise/shared/error_messages", resource: resource, class: "error-message" %>
 <h2>ログイン</h2>
     <%# ログインページエラーメッセージを表示 %>
+    <div class="error-message">
+    <% if notice.present? %>
       <p class="notice"><%= notice %></p>
+    <% end %>
+
+    <% if alert.present? %>
       <p class="alert"><%= alert %></p>
+    <% end %>
+    </div>
 
   <div class="field session-field">
+    <div class="email-text">
     <%= f.label :email %><br/>
+    </div>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="field">
+    <div class="password-text">
     <%= f.label :password %><br />
+    </div>
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
 
+  <div class="remember-f">
   <% if devise_mapping.rememberable? %>
-    <div class="field">
+    <div class="field1">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
     </div>
   <% end %>
 
   <div class="actions">
-    <%= f.submit "ログイン" %>
+    <%= f.submit "Rise noteにログイン" %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<div class="link-new">
+アカウントをお持ちでない方は<%= render "devise/shared/links" %>
+</div>
 
 </div>
+
+<h1>　</h1>
