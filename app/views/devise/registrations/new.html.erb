@@ -21,9 +21,9 @@
 
   <!-- ユーザー名のフィールドを追加 -->
   <div class="field">
-    <%= f.label :"ユーザネーム" %><span style="color: red; font-size: 0.8em;"> *</span><br />
+    <%= f.label :username, "ユーザネーム", for: "username_field" %><span style="color: red; font-size: 0.8em;"> *</span><br />
     <span style="font-size: 0.9em;">2文字以上8文字以内で作成してください。</span> <br />
-    <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
+    <%= f.text_field :username, id: "username_field", autofocus: true, autocomplete: "username" %>
   </div>
 
   <div class="field">
