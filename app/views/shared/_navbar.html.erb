@@ -49,9 +49,11 @@
     <button id="mission-link" class="nav-link text-decoration-none" style="color: white;">ミッション一覧</button>
   </li>
 
+  <% unless current_user&.admin? %>
     <%= link_to new_post_path, class: 'nav-link text-white mb-3' do %>
       <i class="fas fa-envelope"></i> お問い合わせ
     <% end %>
+  <% end %>
 </ul>
 
 
