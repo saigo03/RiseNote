@@ -1,13 +1,16 @@
-  <div class="folders-back">
+<div class="folders-back">
+
+  <!-- 右クリック削除用のメニュー -->
   <%= render 'shared/contextMenu' %>
-  
+
   <!-- メモ一覧 -->
   <div class="col-md-12 px-3">
+  <!-- 現在のアクセス中のノート名表示 -->
     <h3 class="note-name"><%= @folder.name %></h3>
 
-      <!-- 検索フォーム -->
-      <div class="d-flex justify-content-between mb-3">
-        <%= form_with(url: folder_memos_path(@folder), method: :get, local: true, class: "d-flex flex-grow-1 me-2") do |form| %>
+    <!-- 検索フォーム -->
+    <div class="d-flex justify-content-between mb-3">
+      <%= form_with(url: folder_memos_path(@folder), method: :get, local: true, class: "d-flex flex-grow-1 me-2") do |form| %>
         <%= form.label :search, "メモ検索", class: "visually-hidden" %>
         <%= form.text_field :search, class: "form-control me-2", placeholder: "タイトルで検索", style: "max-width: 200px;" %> <!-- 幅をカスタムで調整 -->
         <%= form.submit "検索", class: "btn btn-outline-secondary custom-button" %>
@@ -19,10 +22,11 @@
         <%= form.collection_select :tag_id, Tag.all, :id, :name, { prompt: 'タグで選択' }, { class: "form-select me-2" } %>
         <%= form.submit "検索", class: "btn btn-outline-secondary custom-button" %>
       <% end %>
-  </div>
+    </div>
 
-<div class="row"  style="min-height: 70vh; display: flex;">
-  <!-- メモリスト -->
+  <!-- メモ一覧 -->
+  <div class="row"  style="min-height: 70vh; display: flex;">
+    <!-- メモが存在しない場合のメッセージ -->
     <% if @memos.empty? %>
       <div class="default-memo-ex col-md-5">
         <i class="fas fa-pencil-alt fa-4x m-3"></i>
@@ -34,7 +38,6 @@
         <%= turbo_frame_tag 'memo_list' do %>
           <div class="folder-group" data-folder-id="<%= @folder.id %>">
             <% @memos.each do |memo| %>
-            
               <div class="folder-group-item list-group-item d-flex justify-content-between align-items-center border-bottom" style="padding: 1rem; border-color: black !important; background-color: rgba(255, 255, 255, 0.5);" data-memo-id="<%= memo.id %>">
 
                 <div style="font-size: 1rem;">
@@ -58,11 +61,10 @@
 
       <!-- メモ詳細 (show.html.erb)を表示-->
       <div class="col-md-7">
-        <%= turbo_frame_tag 'memo_detail' do %>
-        <% end %>
+        <%= turbo_frame_tag 'memo_detail' do %><% end %>
       </div>
     <% end %>
-</div>
+  </div>
 </div>
 
 

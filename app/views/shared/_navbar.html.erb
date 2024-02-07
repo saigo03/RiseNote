@@ -1,18 +1,21 @@
 <nav class="col-md-2 d-none d-md-block bg-dark sidebar vh-100">
   <div class="position-sticky pt-3 h-100">
-    <!-- ログインしているユーザーのメールアドレスを表示 -->
+    <!-- ユーザーの表示セクション -->
     <div class="px-1 text-white">
+      <!-- 現在のユーザー名を表示 -->
       <button id="accounts-link" class="btn text-white text-decoration-none"><%= current_user.username %>さんがログイン中</button>
 
+      <!-- ホーム画面へのリンク -->
       <%= link_to folders_path, class: 'nav-link text-white mb-3' do %>
         <i class="fas fa-home"></i> ホーム画面
       <% end %>
 
+      <!-- マイページへのリンク -->
       <button id="mypage-link" class="nav-link text-white mb-3 text-decoration-none">
         <i class="fas fa-user"></i> マイページ
       </button>
 
-      <!-- ノート内のみ表示する -->
+      <!-- ノートがある場合に新規メモ作成へのリンクを表示 -->
       <% if @folder && @folder.persisted? %>
           <%= link_to new_folder_memo_path(@folder), class: 'nav-link text-white mb-3' do %>
             <i class="fas fa-pencil-alt"></i> 新規ページ
@@ -20,42 +23,42 @@
       <% end %>
     </div>
 
-      <%# メモの新規作成、編集ページ内のみ表示する %>
-      <% if controller_name == 'memos' && (action_name == 'new' || action_name == 'edit') %>
-          <p><%= link_to '#', class: 'text-white',id: 'template-link', class: 'text-white', data: { bs_toggle: 'modal', bs_target: '#templateModal' } do %>
-            <i class="fas fa-file-alt"></i> テンプレート
-          <% end %></p>
-      <% end %>
+    <!-- メモの新規作成または編集ページでのみテンプレート選択リンクを表示 -->
+    <% if controller_name == 'memos' && (action_name == 'new' || action_name == 'edit') %>
+        <p><%= link_to '#', class: 'text-white',id: 'template-link', class: 'text-white', data: { bs_toggle: 'modal', bs_target: '#templateModal' } do %>
+          <i class="fas fa-file-alt"></i> テンプレート
+        <% end %></p>
+    <% end %>
 
-<ul class="nav" style="border-top: 1px solid #ccc;">
-
-  <!-- ドロップダウンの親要素 -->
-  <li class="dropdown">
-    <!-- ドロップダウントリガー -->
-    <%= link_to 'ノート一覧', '#', class: 'nav-link dropdown-toggle', id: 'foldersDropdown', data: { bs_toggle: 'dropdown' }, aria: { expanded: 'false' }, style: 'color: white;' %>
-    <!-- ドロップダウンメニュー -->
-    <ul class="dropdown-menu bg-dark" aria-labelledby="foldersDropdown">
-      <% @folders.each do |folder| %>
-        <li>
-          <%= link_to folder_memos_path(folder), class: 'dropdown-item', style: 'color: white;' do %>
-            <i class="fas fa-book"></i> <%= folder.name %>
+    <!-- ナビゲーションメニュー項目 -->
+    <ul class="nav" style="border-top: 1px solid #ccc;">
+      <!-- ドロップダウンの親要素 -->
+      <li class="dropdown">
+        <!-- ドロップダウントリガー -->
+        <%= link_to 'ノート一覧', '#', class: 'nav-link dropdown-toggle', id: 'foldersDropdown', data: { bs_toggle: 'dropdown' }, aria: { expanded: 'false' }, style: 'color: white;' %>
+        <!-- ドロップダウンメニュー -->
+        <ul class="dropdown-menu bg-dark" aria-labelledby="foldersDropdown">
+          <% @folders.each do |folder| %>
+            <li>
+              <%= link_to folder_memos_path(folder), class: 'dropdown-item', style: 'color: white;' do %>
+                <i class="fas fa-book"></i> <%= folder.name %>
+              <% end %>
+            </li>
           <% end %>
-        </li>
+        </ul>
+      </li>
+
+      <!-- ミッション一覧へのリンク -->
+      <li class="nav-item">
+        <button id="mission-link" class="nav-link text-decoration-none" style="color: white;"><i class="fas fa-clipboard"></i> ミッション一覧</button>
+      </li>
+
+      <!-- 管理者でないユーザーのみにお問い合わせリンクを表示 -->
+      <% unless current_user&.admin? %>
+        <%= link_to new_post_path, class: 'nav-link text-white mb-3' do %>
+          <i class="fas fa-envelope"></i> お問い合わせ
+        <% end %>
       <% end %>
     </ul>
-  </li>
-
-  <li class="nav-item">
-    <button id="mission-link" class="nav-link text-decoration-none" style="color: white;"><i class="fas fa-clipboard"></i> ミッション一覧</button>
-  </li>
-
-  <% unless current_user&.admin? %>
-    <%= link_to new_post_path, class: 'nav-link text-white mb-3' do %>
-      <i class="fas fa-envelope"></i> お問い合わせ
-    <% end %>
-  <% end %>
-</ul>
-
-
   </div>
 </nav>
