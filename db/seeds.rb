@@ -21,6 +21,7 @@ if Rails.env.production?
   # すでに存在しない場合のみ作成
   unless User.exists?(email: admin_email)
     User.create!(
+      username: '管理者',
       email: admin_email,
       password: admin_password,
       password_confirmation: admin_password,
