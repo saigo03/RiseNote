@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
+  include AdminAccessControl
   before_action :authenticate_user!
-  before_action :check_admin
 
   def index
     @users = User.all
@@ -19,9 +19,4 @@ class UsersController < ApplicationController
 
   private
 
-  def check_admin
-    unless current_user.admin?
-      redirect_to root_path, alert: "管理者のみアクセスできます"
-    end
-  end
 end

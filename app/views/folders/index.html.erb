@@ -78,19 +78,8 @@
       </div>
     </div>
   </div>
+</div>
+
 
   <!-- 利用頻度の多いメモ -->
   <!-- ３日以内に更新したメモを表示する機能を追加（予定) -->
-
-  
-<!-- 管理者ユーザー専用のセクション -->
-  <% if current_user.admin? %>
-    <div class="admin-container mt-3">
-      <h3 style="font-size: 18px;">管理者システム</h3>
-      <!-- 管理者専用ページへのリンク -->
-      <%= link_to 'ユーザー管理', users_path%>
-      <%= link_to 'タグ管理', tags_path %>
-      <%= link_to 'お問合せ一覧', posts_path %>
-    </div>
-  <% end %>
-</div>
