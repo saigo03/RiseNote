@@ -11,7 +11,7 @@ module NonAdminAccessControl
 
   def check_not_admin
     if current_user&.admin?
-      redirect_to admin_dashboard_path , alert: "管理者はこの機能を利用できません。"
+      redirect_to admin_dashboard_path , alert: "管理者はアクセスできません"
     end
   end
 end
