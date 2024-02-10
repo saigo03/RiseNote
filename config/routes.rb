@@ -32,9 +32,9 @@ Rails.application.routes.draw do
 
   resources :missions, only: [:index]
 
-  # タグに関連するルートを追加
+  # タグに関連するルート
   resources :tags, only: [:index, :create, :destroy]
 
-  # お問い合わせルート追加
+  # お問い合わせルート
   resources :posts, only: [:new, :create, :index, :show]
 end
