@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   include AdminAccessControl
+  skip_before_action :check_admin, only: [:new, :create]
 
   def new
     @post = Post.new
