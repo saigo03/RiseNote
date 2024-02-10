@@ -1,4 +1,5 @@
 class MemosController < ApplicationController
+  include NonAdminAccessControl
   before_action :set_folder
   before_action :set_memo, only: [:show, :edit, :update, :destroy]
 

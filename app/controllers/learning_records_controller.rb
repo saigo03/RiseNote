@@ -1,4 +1,5 @@
 class LearningRecordsController < ApplicationController
+  include NonAdminAccessControl
   before_action :authenticate_user!
 
   def show
