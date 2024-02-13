@@ -23,10 +23,12 @@
   .current-month {}
  
   .has-events {}
-  .calendar-heading a {
+  .calendar-heading {
+    padding-left:20px;
+  }
+  a{
     text-decoration: none;
     color:black;
-    padding-left:20px;
   }
 }
 .calendar-back {

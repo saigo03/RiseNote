@@ -45,9 +45,11 @@
                     <!-- クリック時にメモ詳細を表示 -->
                     <%= link_to memo.title, folder_memo_path(@folder, memo), data: { turbo_frame: 'memo_detail' }, class: 'text-dark text-decoration-none' %>
                   </div>
-                  <div style="font-size: 0.75rem;">
+                  <div class="edit-button" style="font-size: 0.75rem;">
                     <!-- data: { turbo_frame: '_top' }で全ての変更 -->
-                    <p><%= link_to '編集', edit_folder_memo_path(@folder, memo), data: { turbo_frame: '_top' } %></p>
+                    <%= link_to edit_folder_memo_path(@folder, memo), data: { turbo_frame: '_top' } do %>
+                    <i class="fas fa-edit "style="font-size: 1em;"> 編集</i> 
+                    <% end %>
                   </div>
 
                   <!-- メモに関連付けられたタグの表示 -->

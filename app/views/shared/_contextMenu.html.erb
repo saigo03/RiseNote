@@ -1,12 +1,16 @@
 <div id="custom-context-menu" class="d-none">
   <%# フォルダ一覧のコンテキストメニュー %>
   <% if controller_name == 'folders' %>
-    <%= link_to '削除', '#', data: { turbo_method: "delete", turbo_confirm: "本当に削除しますか？" },
-    id: "delete-folder", class: 'dropdown-item' %>
+    <%= link_to '#', data: { turbo_method: "delete", turbo_confirm: "本当に削除しますか？" },
+                id: "delete-folder", class: 'dropdown-item' do %>
+      <i class="fas fa-trash-alt"></i> 削除
+    <% end %>
 
   <%# メモ一覧のコンテキストメニュー %>
   <% elsif controller_name == 'memos' %>
-    <%= link_to '削除', '#', data: { turbo_method: "delete", turbo_confirm: "本当に削除しますか？" },
-    id: "delete-memo", class: 'dropdown-item' %>
+    <%= link_to '#', data: { turbo_method: "delete", turbo_confirm: "本当に削除しますか？" },
+                id: "delete-memo", class: 'dropdown-item' do %>
+      <i class="fas fa-trash-alt"></i> 削除
+    <% end %>
   <% end %>
 </div>

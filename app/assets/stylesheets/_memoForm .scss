@@ -38,3 +38,14 @@
 .memoList-link:hover {
   background-color: #f8f8f8; /* 薄い灰色の背景 */
 }
+.edit-button a {
+  position: relative;
+  display: inline-block;
+  transition: .3s;
+  text-decoration: none;
+  color:rgb(109, 107, 107);
+}
+
+.edit-button a:hover{
+  color:rgb(0, 0, 0);/*ホバー時の文字色*/
+  }
