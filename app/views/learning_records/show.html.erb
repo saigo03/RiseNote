@@ -1,11 +1,13 @@
-
-<h2>メモ学習記録</h2>
-  <p>作成したフォルダ数 : <%= @total_folders_created %>回</p>
-
-  <p>メモの作成合計数 : <%= @total_memos %>回</p>
-
-  <p>アプリ利用日数合計 : <%= @total_days_used %>日</p>
-
-
-  <p>ミッション状況やメモ記録の詳細を追加予定</p>
-
+<div class="calendar-back">
+<h3>学習記録</h3>
+ 
+<%= month_calendar do |date| %>
+  <%= date.day %>
+ 
+  <% if @memos_by_date[date] %>
+    <% @memos_by_date[date].each do |daily_creation| %>
+      <p>作成したメモ数: <%= daily_creation.memos_count %></p>
+    <% end %>
+  <% end %>
+<% end %>
+<div>

@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_15_021156) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_08_010457) do
+  create_table "daily_creations", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.date "date"
+    t.integer "memos_count", default: 0
+    t.integer "folders_count", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_daily_creations_on_user_id"
+  end
+
   create_table "folders", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -89,6 +99,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_15_021156) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "daily_creations", "users"
   add_foreign_key "folders", "users"
   add_foreign_key "memos", "folders"
   add_foreign_key "memos", "users"

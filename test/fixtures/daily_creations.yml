@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  date: 2024-02-08
+  memos_count: 1
+  folders_count: 1
+
+two:
+  user: two
+  date: 2024-02-08
+  memos_count: 1
+  folders_count: 1

@@ -14,6 +14,9 @@ class User < ApplicationRecord
   #お問合せ関連付け
   has_many :posts
 
+  #作成記録関連
+  has_many :daily_creations
+
   #ミッションとの関連付け
   has_many :user_missions, dependent: :destroy
   has_many :missions, through: :user_missions

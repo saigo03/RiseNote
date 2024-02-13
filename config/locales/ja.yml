@@ -13,3 +13,14 @@ ja:
             username:
               blank: "を入力してください"
               too_short: "は%{count}文字以上で入力してください"
+  date:
+    abbr_day_names:
+      - 日
+      - 月
+      - 火
+      - 水
+      - 木
+      - 金
+      - 土
+    month_names: [nil, 1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月]
+ 

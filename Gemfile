@@ -18,6 +18,7 @@ gem 'devise-i18n'
 gem 'bootstrap', '~> 5.3.0'
 gem 'mini_racer', '~> 0.8.0'
 gem 'jquery-rails', '~> 4.6'
+gem "simple_calendar"
 
 group :development, :test do
   gem "debug",   "1.7.1", platforms: %i[ mri mingw x64_mingw ]

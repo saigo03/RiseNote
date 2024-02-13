@@ -1,3 +1,4 @@
+<div class="memos-back">
 <%= form_with(model: [@folder, memo], local: true, class: 'needs-validation px-5', novalidate: true) do |form| %>
   
   <%# 現在のフォルダとメモのタイトルを表示 %>
@@ -17,11 +18,11 @@
       </ul>
     </div>
   <% end %>
-
+<div>
 
  <div class="row">
     <div class="col-md-8 mb-3">
-      <%= form.text_field :title, class: 'form-control', placeholder: '無題', style: 'border: none; border-bottom: 0.5px solid grey;' %>
+      <%= form.text_field :title, class: 'form-control', placeholder: '無題', style: 'border: none; border-bottom: 0.5px solid grey; background: rgba(255, 255, 255, 0.8);' %>
     </div>
 
     <div class="col-md-2 mb-3">
@@ -34,7 +35,7 @@
   </div>
 
   <div class="mb-3">
-    <%= form.text_area :content, id: 'memo_content', class: 'form-control custom-textarea',placeholder: '文字の入力、テンプレートを使用できます', style: 'height: 80vh; border: none;' %>
+    <%= form.text_area :content, id: 'memo_content', class: 'form-control custom-textarea',placeholder: '文字の入力、テンプレートを使用できます', style: 'height: 80vh; border: none; background: rgba(255, 255, 255, 0.8);' %>
   </div>
 
 <% end %>
