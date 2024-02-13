@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Sample App</title>
+    <title>Rise Note</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <!-- Font Awesomeのアイコン用スタイルシートの読み込み -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
   </head>
 
   <body>
-
-
-    <!-- オーバーレイ -->
+    <!-- アプリケーション内のオーバーレイ要素 -->
     <div id="overlay" style="display: none;"></div>
 
     <div class="container-fluid">
@@ -28,16 +26,19 @@
           <%= render 'shared/accounts' %>
           <%= render 'shared/missionList' %>
           
+          <!-- メインコンテンツ領域のカラム指定 -->
           <div class="<%= 'col-md-10' %>">
-            <!-- 通知を表示する -->
+            <!-- フラッシュメッセージの表示 -->
             <% flash.each do |key, message| %>
               <div class="alert alert-<%= key == 'notice' ? 'success' : 'danger' %>">
                 <%= message %>
               </div>
             <% end %>
         <% else %>
+          <!-- ログインしていない場合のメインコンテンツ領域のカラム指定 -->
           <div class="<%= 'col-md-12'%>">
         <% end %>
+          <!-- ページのメインコンテンツを表示 -->
           <%= yield %>
         </div>
       </div>

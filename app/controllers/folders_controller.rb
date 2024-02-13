@@ -1,4 +1,5 @@
 class FoldersController < ApplicationController
+  include NonAdminAccessControl
   before_action :set_folder, only: [:show, :edit, :update, :destroy]
 
   # GET /folders

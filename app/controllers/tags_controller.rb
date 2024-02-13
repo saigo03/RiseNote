@@ -1,5 +1,5 @@
 class TagsController < ApplicationController
-  before_action :check_admin
+  include AdminAccessControl
 
   def index
     @tags = Tag.all
@@ -26,11 +26,5 @@ class TagsController < ApplicationController
 
   def tag_params
     params.require(:tag).permit(:name)
-  end
-
-  def check_admin
-    unless current_user.admin?
-      redirect_to root_path, alert: "管理者のみアクセスできます"
-    end
   end
 end

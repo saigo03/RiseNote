@@ -1,73 +1,44 @@
-<h4>　</h4>
-<a href="<%= folders_path %>" class="tag-a"><i class="fas fa-arrow-left"></i></a>
 <h3> お問合せ管理</h3>
 <hr>
-<div class="container mt-5">
-    <div class="table-responsive mx-auto" style="max-width: 75%; float: left;">
-        <table class="table table-hover bordered-table sticky-header-table" style="table-layout: fixed;">
-            <colgroup>
-                <col style="width: 10%">
-                <col style="width: 30%">
-                <col style="width: 30%">
-                <col style="width: 16%">
-                <col style="width: 4%">
-            </colgroup>
-            <thead >
-                <tr>
-                    <th scope="col" style="text-align: center;">ID</th>
-                    <th scope="col">タイトル</th>
-                    <th scope="col">送信日時</th>
-                    <th scope="col" style="padding-left: 0px;">確認</th>
-                    <th scope="col">　</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% @posts.each do |post| %>
-                    <tr style="cursor: pointer;" onclick="window.location='<%= post_path(post) %>'">
-                        <th scope="row" style="text-align: center;"><%= post.id %></th>
-                        <td><%= post.title %></td>
-                        <td><%= post.created_at.strftime("%-m月%d日 %-H時%M分") %></td>
-                        <td>
-                        <%= raw(post.read ? '<i class="fas fa-solid fa-check" style="color: #04be45;"></i>' : '') %>
-                        </td>
-                        <td><i class="fas fa-angle-right fa-lg" style="color: #9fa0a3;"></i></td>
-                    </tr>
-                <% end %>
-            </tbody>
-        </table>
-    </div>
+
+<!-- お問い合わせ一覧テーブルコンテナ -->
+<div class="post-admin-container mt-5">
+  <div class="table-responsive mx-auto" style="max-width: 75%; float: left;">
+    <!-- お問い合わせ一覧テーブル -->
+    <table class="table table-hover bordered-table sticky-header-table" style="table-layout: fixed;">
+      <colgroup>
+        <col style="width: 10%">
+        <col style="width: 30%">
+        <col style="width: 30%">
+        <col style="width: 16%">
+        <col style="width: 4%">
+      </colgroup>
+
+      <thead>
+        <tr>
+          <th scope="col" style="text-align: center;">ID</th>
+          <th scope="col">タイトル</th>
+          <th scope="col">送信日時</th>
+          <th scope="col" style="padding-left: 0px;">確認</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <!-- 送られてきたお問合せ内容を表示 -->
+        <% @posts.each do |post| %>
+            <tr style="cursor: pointer;" onclick="window.location='<%= post_path(post) %>'">
+            <th scope="row" style="text-align: center;"><%= post.id %></th>
+              <td><%= post.title %></td>
+              <td><%= post.created_at.strftime("%-m月%d日 %-H時%M分") %></td>
+              <td><%= raw(post.read ? '<i class="fas fa-solid fa-check" style="color: #04be45;"></i>' : '') %></td>
+              <td><i class="fas fa-angle-right fa-lg" style="color: #9fa0a3;"></i></td>
+            </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
 
-<style>
-    h3,
-    .tag-a {
-        display: inline;
-        padding: 0;
-        margin-top: 0px;
-        margin-left: 5px;
-    }
 
-    .table-responsive {
-        max-height: 450px; /* ここで高さを設定します */
-        overflow-y: auto; /* 縦方向にスクロール可能にします */
-    }
-
-    thead th {
-        position: sticky;
-        top: 0;
-        background: white; /* 背景色を設定して、スクロール時に他の行が見えないようにします */
-    }
-    .table tr td {
-      height: 50px;  /* テーブルの高さを指定 */
-      vertical-align: middle;
-      }
-    
-    .tbody tr td {
-        border: 1px solid black; /* テーブル全体に枠線を追加 */
-    }
-      .sticky-header-table th {
-    position: sticky;
-    top: 0;
-    background-color: #f9f9f9; /* ヘッダーの背景色を指定 */
-        }
-</style>

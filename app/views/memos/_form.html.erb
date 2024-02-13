@@ -1,7 +1,7 @@
 <div class="memos-back">
 <%= form_with(model: [@folder, memo], local: true, class: 'needs-validation px-5', novalidate: true) do |form| %>
   
-  <%# 現在のフォルダとメモのタイトルを表示 %>
+  <%# 現在アクセスしているノートとメモのタイトルを表示 %>
   <div class="mb-3" style="font-size: 18px;">
     <a href="<%= folder_memos_path(@folder) %>" class="tag-a"><i class="fas fa-arrow-left"></i></a> | 
     <%= @folder.name %>/<%= memo.title.present? ? memo.title : '新規メモ' %>
@@ -20,11 +20,14 @@
   <% end %>
 <div>
 
- <div class="row">
+  <!-- メモ入力フォーム -->
+  <div class="row">
+    <!-- タイトル入力フィールド -->
     <div class="col-md-8 mb-3">
       <%= form.text_field :title, class: 'form-control', placeholder: '無題', style: 'border: none; border-bottom: 0.5px solid grey; background: rgba(255, 255, 255, 0.8);' %>
     </div>
 
+    <!-- タグ選択セレクトボックス -->
     <div class="col-md-2 mb-3">
       <%= form.collection_select :tag_ids, Tag.all, :id, :name, {include_blank: 'タグを選択...'}, class: 'form-select' %>
     </div>
@@ -34,10 +37,10 @@
     </div>
   </div>
 
+  <!-- メモ本文入力テキストエリア -->
   <div class="mb-3">
     <%= form.text_area :content, id: 'memo_content', class: 'form-control custom-textarea',placeholder: '文字の入力、テンプレートを使用できます', style: 'height: 80vh; border: none; background: rgba(255, 255, 255, 0.8);' %>
   </div>
-
 <% end %>
 
 
@@ -49,6 +52,8 @@
         <h5 class="modal-title" id="templateModalLabel">テンプレート選択</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+
+      <!-- テンプレート選択ボタン -->
       <div class="modal-body">
         <div class="d-flex justify-content-center mb-2">
           <%= button_tag '白紙にする', type: 'button', id: 'clear_textarea', class: 'btn btn-secondary w-100', data: { template_type: 'clear_textarea' } %>

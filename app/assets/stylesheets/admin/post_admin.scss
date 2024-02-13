@@ -1,0 +1,90 @@
+/* ユーザー用お問い合わせページ */
+.post-container{
+  .form-control {
+    border-color: black; /* 枠の色を指定 */
+    border-width: 1px; /* 枠の太さを指定 */
+  }
+
+  .form-control:focus {
+    border-color: black; /* 通常の枠色にリセット */
+    border-width: 1.5px; /* ボーダーの太さを2ピクセルに設定 */
+    box-shadow: none; /* フォーカス時の影を無効化 */
+  }
+
+  /* お問い合わせ内容のテキストエリアを縦に拡張 */
+  .form-control-textarea {
+    height: 150px; /* 適切な高さを設定してください */
+    resize: none;
+  }
+
+  .btn-wide {
+    width: 35%; /* ボタンを親要素の100%の幅に広げる */
+  }
+
+  /* フォームの入力欄に余白を設定 */ 
+  .mb-3 {
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    margin-top: 1rem;
+  }
+
+  hr {
+    max-width: 100%;
+  }
+}
+
+
+/*管理者お問合せ確認ページ*/
+.post-admin-container{
+    h3,
+    .tag-a {
+        display: inline;
+        padding: 0;
+        margin-top: 0px;
+        margin-left: 5px;
+    }
+
+    .table-responsive {
+        max-height: 450px; /* ここで高さを設定します */
+        overflow-y: auto; /* 縦方向にスクロール可能にします */
+    }
+
+    thead th {
+        position: sticky;
+        top: 0;
+        background: white; /* 背景色を設定して、スクロール時に他の行が見えないようにします */
+    }
+    .table tr td {
+      height: 50px;  /* テーブルの高さを指定 */
+      vertical-align: middle;
+      }
+    
+    .tbody tr td {
+        border: 1px solid black; /* テーブル全体に枠線を追加 */
+    }
+
+    .sticky-header-table th {
+      position: sticky;
+      top: 0;
+      background-color: #f9f9f9; /* ヘッダーの背景色を指定 */
+    }
+}
+
+
+/* お問合せ詳細ページ */
+.post-show-container{
+      display: flex;
+      flex-direction: column; /* 縦方向に配置 */
+      padding: 10px; /* 余白の追加（必要に応じて調整してください） */
+
+    .bi-arrow-left {
+      font-size: 2rem;
+      color: gray;
+    }
+
+    .card {
+      width: 60%; /* カードを横幅いっぱいに広げる */
+    }
+  }

@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  before_action :check_admin, only: [:index, :show]
+  include AdminAccessControl
+  skip_before_action :check_admin, only: [:new, :create]
 
   def new
     @post = Post.new
@@ -31,10 +32,4 @@ class PostsController < ApplicationController
     params.require(:post).permit(:title, :content, :user_id, :read).merge(user_id: current_user.id)
   end
 
-  
-  def check_admin
-    unless current_user.admin?
-      redirect_to root_path, alert: "管理者のみアクセスできます"
-    end
-  end
 end

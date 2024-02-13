@@ -3,11 +3,15 @@
 class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
 
-    # ログインフォームのオーバーライド
-    def after_sign_in_path_for(resource)
-      # ログインフォームのボタンを入力後に遷移するページを指定
+  # ログイン後ページ遷移のオーバーライド
+  def after_sign_in_path_for(resource)
+    # 管理者権限がある場合は管理者ダッシュボードに、そうでない場合はノート一覧に遷移
+    if resource.admin?
+      admin_dashboard_path
+    else
       folders_path
     end
+  end
 
   # GET /resource/sign_in
   # def new
