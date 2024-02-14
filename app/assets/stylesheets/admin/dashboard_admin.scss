@@ -1,0 +1,87 @@
+.dashboard-back {
+  background-image: url('note.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height:100vh;
+}
+.dashboard {
+  background: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+}
+
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex; /* 追加 */
+  flex-wrap: wrap; /* 追加 */
+  justify-content: space-between; /* 追加 */
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin-bottom: 10px 0;
+  flex-basis: calc(33.33% - 20px); /* 追加 */
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column; /* 追加 */
+  margin-left: 10px;
+}
+
+.card-content p {
+  margin:0;
+  font-size: 15px;
+}
+.dashboard-header {
+  background: rgba(255, 255, 255, 0.5);
+  color:rgb(0, 0, 0);
+  
+}
+.dashboard-header p {
+  font-size: 25px;
+  padding: 5px;
+ 
+}
+.activity-log {
+  background: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  margin-top:20px;
+}
+
+.log-item {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  margin-bottom: 10px;
+}
+
+.timestamp {
+  font-size: 0.8em;
+  color: #999;
+}
+
+.manager-message {
+  margin: 5px 0;
+}
+.detail-button {
+position: relative;
+display: inline-block;
+text-decoration: none;
+color:#504f4f;
+}
+.icon-and-text {
+  display: flex;
+  align-items: center; /* アイコンとテキストを中央揃え */
+  margin-left: 10px;
+}
+
+.dashboard-title {
+  font-size: 20px;
+  margin-left: 30px; /* アイコンとテキストの間隔を設定 */
+  padding-top: 20px;
+}
