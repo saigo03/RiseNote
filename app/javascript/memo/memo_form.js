@@ -10,20 +10,26 @@ document.addEventListener("turbo:load", function() {
 
 内容:
 `,
-    'insert_text3': `
-タイトル: 
-
-原因:
-
-説明:
-
-環境情報:
-　プログラムのバージョン:
-　使用中のフレームワーク:
-
-内容:
-`
-  };
+    'insert_text3': `##エラー概要(コード貼り付け）
+    -
+    
+    
+## エラー詳細
+    -
+    
+    
+## 原因
+    -
+     
+    
+## 解決策
+    -
+    
+    
+-----------------------------------------
+参考Link : 
+    
+`};
 
   // モーダル内のボタンにイベントリスナーを設定
   document.querySelectorAll('#templateModal .btn').forEach(function(button) {
