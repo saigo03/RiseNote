@@ -38,7 +38,7 @@
   unless User.exists?(email: user_email)
     user = User.new(
       username: username,
-      email: email,
+      email: user_email,
       password: password,
       password_confirmation: password,
       admin: false
