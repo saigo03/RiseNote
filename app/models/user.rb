@@ -12,10 +12,10 @@ class User < ApplicationRecord
   has_many :memos, dependent: :destroy
 
   #お問合せ関連付け
-  has_many :posts
+  has_many :posts, dependent: :destroy
 
   #作成記録関連
-  has_many :daily_creations
+  has_many :daily_creations, dependent: :destroy
 
   #ミッションとの関連付け
   has_many :user_missions, dependent: :destroy
