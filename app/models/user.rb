@@ -47,20 +47,26 @@ class User < ApplicationRecord
     # メモ作成回数が3回に達した時のミッションチェック
     message ||= check_and_complete_mission(2, 3) if memo_count_before_save == 3
 
+    # メモ作成回数が5回に達した時のミッションチェック
+    message ||= check_and_complete_mission(3, 5) if memo_count_before_save == 5
+
     # メモ作成回数が10回に達した時のミッションチェック
-    message ||= check_and_complete_mission(3, 10) if memo_count_before_save == 10
+    message ||= check_and_complete_mission(4, 10) if memo_count_before_save == 10
 
     # メモ作成回数が20回に達した時のミッションチェック
-    message ||= check_and_complete_mission(4, 20) if memo_count_before_save == 20
+    message ||= check_and_complete_mission(5, 20) if memo_count_before_save == 20
 
     # メモ作成回数が30回に達した時のミッションチェック
-    message ||= check_and_complete_mission(5, 30) if memo_count_before_save == 30
-
-    # メモ作成回数が40回に達した時のミッションチェック
-    message ||= check_and_complete_mission(6, 40) if memo_count_before_save == 40
+    message ||= check_and_complete_mission(6, 30) if memo_count_before_save == 30
 
     # メモ作成回数が50回に達した時のミッションチェック
-    message ||= check_and_complete_mission(7, 50) if memo_count_before_save == 40
+    message ||= check_and_complete_mission(7, 50) if memo_count_before_save == 50
+
+    # メモ作成回数が77回に達した時のミッションチェック
+    message ||= check_and_complete_mission(7, 77) if memo_count_before_save == 77
+
+    # メモ作成回数が100回に達した時のミッションチェック
+    message ||= check_and_complete_mission(7, 100) if memo_count_before_save == 100
   
     self.save if self.points_changed?
     message

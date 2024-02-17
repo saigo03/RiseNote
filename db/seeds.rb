@@ -63,3 +63,26 @@ if Rails.env.production?
     )
   end
 end
+
+# Mission データの追加
+# ミッション１の作成
+missions = [
+  { name: "ミッション1", description: "メモの作成", completion_criteria: "メモを1回作成する", point_value: 1 },
+  { name: "ミッション2", description: "メモの作成", completion_criteria: "メモを3回作成する", point_value: 1 },
+  { name: "ミッション3", description: "メモの作成", completion_criteria: "メモを5回作成する", point_value: 1 },
+  { name: "ミッション4", description: "メモの作成", completion_criteria: "メモを10回作成する", point_value: 1 },
+  { name: "ミッション5", description: "メモの作成", completion_criteria: "メモを20回作成する", point_value: 1 },
+  { name: "ミッション6", description: "メモの作成", completion_criteria: "メモを30回作成する", point_value: 1 },
+  { name: "ミッション7", description: "メモの作成", completion_criteria: "メモを50回作成する", point_value: 1 },
+  { name: "ミッション8", description: "メモの作成", completion_criteria: "メモを77回作成する", point_value: 1 },
+  { name: "ミッション9", description: "メモの作成", completion_criteria: "メモを100作成する", point_value: 1 },
+]
+
+missions.each do |mission_attributes|
+  Mission.find_or_create_by(name: mission_attributes[:name]) do |mission|
+    mission.description = mission_attributes[:description]
+    mission.completion_criteria = mission_attributes[:completion_criteria]
+    mission.point_value = mission_attributes[:point_value]
+  end
+end
+
