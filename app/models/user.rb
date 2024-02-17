@@ -34,6 +34,8 @@ class User < ApplicationRecord
 
    # 新規登録時にデフォルトランクを設定
    before_create :set_default_rank
+   # ポイントの変更後にランクを更新する
+  after_save :update_rank_if_needed
 
   # ユーザーのミッション達成状況をチェックし、必要に応じてポイントを加算する
   def check_mission(memo_count_before_save)
@@ -69,6 +71,13 @@ class User < ApplicationRecord
     # 新規登録時にデフォルトランクを設定する
     def set_default_rank
       self.rank = '一般人' unless self.rank
+    end
+
+    # ポイントに応じてランクを更新する
+    def update_rank_if_needed
+      if self.points && self.points >= 3 && self.rank != '努力家'
+        self.update(rank: '努力家')
+      end
     end
 
     # 特定のミッションIDに対して、ユーザーが条件を満たしているかチェックし、

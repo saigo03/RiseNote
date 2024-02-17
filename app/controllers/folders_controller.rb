@@ -10,6 +10,8 @@ class FoldersController < ApplicationController
     # 学習記録の取得
     @total_memos = current_user.memos.count
     @total_folders_created = current_user.folders.count
+
+    @recent_memo = current_user.memos.order(updated_at: :desc).first
   end
 
   # GET /folders/1
