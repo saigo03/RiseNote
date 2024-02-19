@@ -4,9 +4,10 @@
   <%= render 'shared/contextMenu' %>
 
   <!-- メモ一覧 -->
-  <div class="col-md-12 px-3">
+  <div class="col-md-12">
   <!-- 現在のアクセス中のノート名表示 -->
     <h3 class="note-name"><%= @folder.name %></h3>
+    <hr>
 
     <!-- 検索フォーム -->
     <div class="d-flex justify-content-between mb-3">
@@ -28,7 +29,7 @@
     <div class="row"  style="min-height: 70vh; display: flex;">
       <!-- メモが存在しない場合のメッセージ -->
       <% if @memos.empty? %>
-        <div class="default-memo-ex col-md-5">
+        <div class="default-memo-ex col-md-5"style="margin-left: 10px;">
           <i class="fas fa-pencil-alt fa-4x m-3"></i>
           <p>最初のメモを作成する</p>
           <p style="color: #777;">開始するには、サイドバーの「<%= link_to '新規ページ', new_folder_memo_path(@folder)%>」をクリックします。</p>
@@ -39,7 +40,7 @@
             <div class="folder-group" data-folder-id="<%= @folder.id %>">
               <% @memos.each do |memo| %>
                 <!-- メモ一覧の各項目 -->
-                <div class="folder-group-item list-group-item d-flex justify-content-between align-items-center border-bottom" style="padding: 1rem; border-color: black !important; background-color: rgba(255, 255, 255, 0.5);" data-memo-id="<%= memo.id %>">
+                <div class="folder-group-item list-group-item d-flex justify-content-between align-items-center border-bottom" style="padding: 1rem; border-color: black !important; background-color: rgba(255, 255, 255, 0.5);margin-left:20px;" data-memo-id="<%= memo.id %>">
 
                   <div style="font-size: 1rem;">
                     <!-- クリック時にメモ詳細を表示 -->

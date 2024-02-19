@@ -2,6 +2,7 @@
 body {
   font-family: 'Varela Round', sans-serif;
 }
+
 .homeContent-container {
   display: flex; /* Flexboxレイアウトを適用 */
   justify-content: space-between; /* 要素間のスペースを均等に分配 */
@@ -21,14 +22,9 @@ body {
   display: flex;
   align-items: center;
   margin-left: 3%;
-
-}
-.btn_01 {
-  margin-left:34%;
 }
 .btn_01 {
 	display: block;
-	text-align: center;
 	text-decoration: none;
 	padding: 5px 10px;
   border:none;
@@ -36,6 +32,9 @@ body {
 	color: #ffffff;
 	transition: 0.5s;
   background:#535151;
+  margin-top: 10px;
+  position: absolute;
+  right: 20px; /* 右端に配置 */
 }
 .btn_01:hover {
 	color: #fff;
@@ -57,14 +56,20 @@ body {
 	color: #3a3939;
 	background: #dad9d9;
 }
+.note-btn {
+  border: none; /* 枠線をなくす */
+  background-color: transparent; /* 背景色をなくす */
+  font-weight: bold;
+  color:#646363
+}
 
 /* フォルダ一覧コンテナ */
 .folders-container {
   flex: 1; /* 可用スペースを埋める */
   max-width: calc(70% - 10px); /* 最大幅を設定し、間隔の分を引く */
   background: rgba(230, 228, 228, 0.5);
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* サイズを小さく */
+  display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   padding: 1rem;
   overflow-y: auto;
@@ -73,6 +78,9 @@ body {
   height: 350px; /* 高さを小さく */
   max-height: 350px; /* 最大高さも調整 */
   width: 60%; /* 幅も小さく */
+  p{
+    color:#484848;
+  }
 }
 
 /* 各フォルダカード */
@@ -86,6 +94,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   height: 150px; /* 高さを小さく */
+  width:130px;
 }
 
 .folder-link {

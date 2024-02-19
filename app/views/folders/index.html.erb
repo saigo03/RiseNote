@@ -35,10 +35,12 @@
 </div>
 
 <div>
+
   <div class="note-create-container">
       <h3 class="note-list"><i class="fas fa-book"></i> ノート一覧</h3>
       <button class="btn_01" id="create-folder-btn"><i class="fas fa-file-signature"></i> ノートを作成</button>
   </div>
+  <hr>
 
   <!-- ノート一覧と学習記録の表示コンテナ -->
   <div class="homeContent-container">
@@ -46,8 +48,7 @@
     <div class="folders-container">
       <!-- フォルダが存在しない場合のメッセージ -->
       <% if @folders.empty? %>
-        <p>まずはノートを作成しましょう</br>
-        上の「ノートの作成」から作成ができます</p>
+        <p>まずはノートを作成しましょう。<br>右上の「<button class="note-btn" id=""> ノートを作成</button>」から作成ができます。</p>
       <% else %>
         <!-- 各フォルダへのリンクとフォルダ情報表示 -->
         <% @folders.each do |folder| %>

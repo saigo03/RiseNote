@@ -1,6 +1,12 @@
 /* app/assets/stylesheets/admin/tag-mane.scss */
 
 /* タグと矢印の改行をなくす */
+.tag-back {
+  background-image: url('note.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height:100vh;
+}
 .tagh3, .tag-a {
   display: inline;
   padding: 0;
@@ -30,8 +36,7 @@
 }
 
 .tag-header {
-  margin-top: 10px;
-  margin-left: 10px;
+  margin: 0 !important
 }
 
 /* 新規タグ登録をレスポンシブにする */
@@ -57,6 +62,9 @@
   max-height: 350px; /* 最大の高さを指定 */
   max-width: 500; /* 最大の幅を指定 */
   padding-right: 20px; /* 左側の余白を追加 */
+  h4 {
+    margin-left:20px;
+  }
 }
 
 .tag-header {

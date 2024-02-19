@@ -24,7 +24,7 @@
  
   .has-events {}
   .calendar-heading {
-    padding-left:20px;
+    padding-left:10px;
   }
   a{
     text-decoration: none;
@@ -36,8 +36,20 @@
   background-size: cover;
   background-repeat: no-repeat;
   height:100vh;
-  h3{
-    padding-top:10px;
-    padding-left:20px;
-  }
+}
+.icon-text {
+  display: flex;
+  align-items: center; /* アイコンとテキストを中央揃え */
+  margin-left: 20px;
+}
+
+.learning-title {
+  font-size: 30px;
+  padding-top: 15px;
+  color: #3e3e3e;
+  margin-left: 5px;
+}
+hr {
+  margin-bottom:20px !important;
+  margin-top:0!important;
 }

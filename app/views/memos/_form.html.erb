@@ -24,7 +24,7 @@
   <div class="row">
     <!-- タイトル入力フィールド -->
     <div class="col-md-8 mb-3">
-      <%= form.text_field :title, class: 'form-control', placeholder: '無題', style: 'border: none; border-bottom: 0.5px solid grey; background: rgba(255, 255, 255, 0.8);' %>
+      <%= form.text_field :title, class: 'form-control', placeholder: '無題', style: 'border: none; border-bottom: 0.5px solid grey; background: rgba(255, 255, 255, 0.8);margin-left:0px!important;' %>
     </div>
 
     <!-- タグ選択セレクトボックス -->
@@ -39,7 +39,7 @@
 
   <!-- メモ本文入力テキストエリア -->
   <div class="mb-3">
-    <%= form.text_area :content, id: 'memo_content', class: 'form-control custom-textarea',placeholder: '文字の入力、テンプレートを使用できます', style: 'height: 80vh; border: none; background: rgba(255, 255, 255, 0.8);' %>
+    <%= form.text_area :content, id: 'memo_content', class: 'form-control custom-textarea',placeholder: '文字の入力、テンプレートを使用できます', style: 'height: 80vh; border: none; background: rgba(255, 255, 255, 0.8);margin-left:0px!important;' %>
   </div>
 <% end %>
 

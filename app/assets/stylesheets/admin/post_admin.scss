@@ -1,8 +1,15 @@
 /* ユーザー用お問い合わせページ */
 .post-container{
+  background-image: url('note.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height:100vh;
   .form-control {
     border-color: black; /* 枠の色を指定 */
     border-width: 1px; /* 枠の太さを指定 */
+  }
+  .form-label {
+    margin-left: 20px;
   }
 
   .form-control:focus {
@@ -18,6 +25,7 @@
   }
 
   .btn-wide {
+    margin-left: 20px;
     width: 35%; /* ボタンを親要素の100%の幅に広げる */
   }
 
@@ -28,15 +36,25 @@
 
   h3 {
     margin-top: 1rem;
+    margin-left: 20px;
   }
 
-  hr {
-    max-width: 100%;
-  }
 }
 
 
 /*管理者お問合せ確認ページ*/
+.contact-detail-back {
+  background-image: url('note.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height:100vh;
+}
+.contact-back{
+  background-image: url('note.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height:100vh;
+}
 .post-admin-container{
     h3,
     .tag-a {

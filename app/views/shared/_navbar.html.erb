@@ -8,18 +8,18 @@
     <% unless current_user&.admin? %>
     
       <!-- ホーム画面へのリンク -->
-      <%= link_to folders_path, class: 'nav-link text-white mb-3' do %>
+      <%= link_to folders_path, class: 'nav-link text-white mb-3',style: 'margin-left: 17px;' do %>
         <i class="fas fa-home"></i> ホーム画面
       <% end %>
 
       <!-- マイページへのリンク -->
-      <button id="mypage-link" class="nav-link text-white mb-3 text-decoration-none">
+      <button id="mypage-link" class="nav-link text-white mb-3 text-decoration-none"style="margin-left: 17px;">
         <i class="fas fa-user"></i> マイページ
       </button>
 
       <!-- ノートがある場合に新規メモ作成へのリンクを表示 -->
       <% if @folder && @folder.persisted? %>
-          <%= link_to new_folder_memo_path(@folder), class: 'nav-link text-white mb-3' do %>
+          <%= link_to new_folder_memo_path(@folder), class: 'nav-link text-white mb-3',style: 'margin-left: 17px;' do %>
             <i class="fas fa-pencil-alt"></i> 新規ページ
           <% end %>
       <% end %>
@@ -27,7 +27,7 @@
 
       <!-- メモの新規作成または編集ページでのみテンプレート選択リンクを表示 -->
       <% if controller_name == 'memos' && (action_name == 'new' || action_name == 'edit') %>
-        <p><%= link_to '#', class: 'text-white',id: 'template-link', class: 'text-white', data: { bs_toggle: 'modal', bs_target: '#templateModal' } do %>
+        <p><%= link_to '#', class: 'text-white',id: 'template-link', class: 'text-white', data: { bs_toggle: 'modal', bs_target: '#templateModal' },style: 'margin-left: 17px;' do %>
           <i class="fas fa-file-alt"></i> テンプレート
         <% end %></p>
       <% end %>
