@@ -4,5 +4,6 @@ class Admin::DashboardController < ApplicationController
   def index
     @user_count = User.count
     @tag_count = Tag.count
+    @post_count = Post.count
   end
 end

@@ -38,7 +38,7 @@
         <p class="dashboard-title">お問合せ管理</p>
         </div>
         <div class="card-content">
-          <p>未読の閲覧件数: 2</p>
+          <p>メッセージ件数: <%= @post_count %></p>
           <%= link_to posts_path, class: 'detail-button' do %>
             詳細<i class="fas fa-angle-right"></i>
           <% end %>
