@@ -10,8 +10,8 @@
 <body>
 <div class="detail-user">
   <div class="container mt-5"style="margin:0!important;">
-    <div class="header"><a href="<%= users_path %>" class="tag-a"><i class="fas fa-arrow-left"></i></a>
-      </a>
+    <div class="post-show-container"style="padding-bottom: 10px;">
+      <a href="<%= users_path %>" class="tag-a"><i class="fas fa-arrow-left"></i></a>
       <h3>ユーザー情報</h3>
     </div>
   </div>
@@ -44,13 +44,8 @@
   .container {
     display: flex;
     flex-direction: column; /* 縦方向に配置 */
-    padding: 10px; /* 余白の追加（必要に応じて調整してください） */
   }
 
-  .header {
-    display: flex;
-    align-items: center;
-  }
 
   .bi-arrow-left {
     font-size: 2rem;

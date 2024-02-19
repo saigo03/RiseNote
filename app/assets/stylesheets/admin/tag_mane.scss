@@ -27,6 +27,10 @@
   margin-top: 10px;
   text-align: right;
 }
+table {
+  border-radius: 5px; /* 丸みの半径を指定します */
+  overflow: hidden; /* 丸みのために不要な部分を隠します */
+}
 
 /* 新規タグ登録 */
 .tag-registration {
@@ -37,6 +41,7 @@
 
 .tag-header {
   margin: 0 !important
+  
 }
 
 /* 新規タグ登録をレスポンシブにする */

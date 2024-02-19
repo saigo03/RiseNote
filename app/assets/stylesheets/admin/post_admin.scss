@@ -48,12 +48,20 @@
   background-size: cover;
   background-repeat: no-repeat;
   height:100vh;
+  .card {
+    width: 70%;
+    margin-left: 20px;
+  }
 }
 .contact-back{
   background-image: url('note.png');
   background-size: cover;
   background-repeat: no-repeat;
   height:100vh;
+  h3 {
+    margin-left:20px;
+    padding-top:10px;
+  }
 }
 .post-admin-container{
     h3,
@@ -94,15 +102,12 @@
 /* お問合せ詳細ページ */
 .post-show-container{
       display: flex;
-      flex-direction: column; /* 縦方向に配置 */
-      padding: 10px; /* 余白の追加（必要に応じて調整してください） */
-
+      align-items: baseline;
+      a{
+        margin-left:20px;
+      }
     .bi-arrow-left {
       font-size: 2rem;
       color: gray;
-    }
-
-    .card {
-      width: 60%; /* カードを横幅いっぱいに広げる */
     }
   }
