@@ -12,10 +12,10 @@ class User < ApplicationRecord
   has_many :memos, dependent: :destroy
 
   #お問合せ関連付け
-  has_many :posts
+  has_many :posts, dependent: :destroy
 
   #作成記録関連
-  has_many :daily_creations
+  has_many :daily_creations, dependent: :destroy
 
   #ミッションとの関連付け
   has_many :user_missions, dependent: :destroy
@@ -34,6 +34,8 @@ class User < ApplicationRecord
 
    # 新規登録時にデフォルトランクを設定
    before_create :set_default_rank
+   # ポイントの変更後にランクを更新する
+  after_save :update_rank_if_needed
 
   # ユーザーのミッション達成状況をチェックし、必要に応じてポイントを加算する
   def check_mission(memo_count_before_save)
@@ -44,6 +46,27 @@ class User < ApplicationRecord
 
     # メモ作成回数が3回に達した時のミッションチェック
     message ||= check_and_complete_mission(2, 3) if memo_count_before_save == 3
+
+    # メモ作成回数が5回に達した時のミッションチェック
+    message ||= check_and_complete_mission(3, 5) if memo_count_before_save == 5
+
+    # メモ作成回数が10回に達した時のミッションチェック
+    message ||= check_and_complete_mission(4, 10) if memo_count_before_save == 10
+
+    # メモ作成回数が20回に達した時のミッションチェック
+    message ||= check_and_complete_mission(5, 20) if memo_count_before_save == 20
+
+    # メモ作成回数が30回に達した時のミッションチェック
+    message ||= check_and_complete_mission(6, 30) if memo_count_before_save == 30
+
+    # メモ作成回数が50回に達した時のミッションチェック
+    message ||= check_and_complete_mission(7, 50) if memo_count_before_save == 50
+
+    # メモ作成回数が77回に達した時のミッションチェック
+    message ||= check_and_complete_mission(7, 77) if memo_count_before_save == 77
+
+    # メモ作成回数が100回に達した時のミッションチェック
+    message ||= check_and_complete_mission(7, 100) if memo_count_before_save == 100
   
     self.save if self.points_changed?
     message
@@ -54,6 +77,13 @@ class User < ApplicationRecord
     # 新規登録時にデフォルトランクを設定する
     def set_default_rank
       self.rank = '一般人' unless self.rank
+    end
+
+    # ポイントに応じてランクを更新する
+    def update_rank_if_needed
+      if self.points && self.points >= 3 && self.rank != '努力家'
+        self.update(rank: '努力家')
+      end
     end
 
     # 特定のミッションIDに対して、ユーザーが条件を満たしているかチェックし、

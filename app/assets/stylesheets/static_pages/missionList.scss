@@ -1,27 +1,47 @@
 .missionList {
   h1 {
-    color: #007bff; // ヘッダーの色
+    color: #007bff;
     margin-bottom: 20px;
   }
 
   .table {
-    // テーブルのスタイル
     thead {
-      background-color: #007bff; // テーブルヘッダーの背景色
+      background-color: #007bff;
       color: white;
     }
 
-    tbody tr:nth-child(odd) {
-      background-color: #f8f9fa; // 交互の行の背景色
-    }
+    tbody {
+      tr:nth-child(odd) {
+        background-color: #f8f9fa;
+      }
 
-    td, th {
-      padding: 12px; // セルのパディング
-      border-bottom: 1px solid #dee2e6; // 下線
-    }
+      td, th {
+        padding: 12px;
+        border-bottom: 1px solid #dee2e6;
+      }
 
-    td:last-child {
-      font-weight: bold; // ステータスの強調
+      td:last-child {
+        font-weight: bold;
+      }
     }
   }
+}
+
+.scrollable-table-container .table {
+  display: block;
+  width: 100%;
+}
+
+.scrollable-table-container .table thead {
+  display: table;
+  width: 100%;
+  table-layout: fixed; /* 列幅を固定 */
+}
+
+.scrollable-table-container .table tbody {
+  display: block;
+  max-height: 300px; /* ここで高さを制限 */
+  overflow-y: auto;  /* 縦方向のスクロールバーを有効にする */
+  width: 100%;
+  padding-left: 30px;
 }

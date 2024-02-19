@@ -31,8 +31,7 @@ class MemosController < ApplicationController
     if @memo.save
       # メモが保存されたら、DailyCreationモデルを使用して日別の作成数を更新
       DailyCreation.record_creation(current_user.id, Date.today, 1, 0)
- 
-      # メモ保存前にミッションチェックを行う
+
       memo_count_before_save = current_user.memos.count
       mission_message = current_user.check_mission(memo_count_before_save)
  

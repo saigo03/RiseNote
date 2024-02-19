@@ -1,15 +1,14 @@
-<div class="missionList popup" id="mission-popup" style="display: none;">
+<div class="missionList popup scrollable-table-container" id="mission-popup" style="display: none;">
   <h1>Missions</h1>
 
   <table class="table">
     <thead>
       <tr>
         <th scope="col">ID</th>
-        <th scope="col">Name</th>
-        <th scope="col">Description</th>
-        <th scope="col">Completion Criteria</th>
-        <th scope="col">Point Value</th>
-        <th scope="col">Status</th>
+        <th scope="col">ミッション名</th>
+        <th scope="col">説明</th>
+        <th scope="col">達成条件</th>
+        <th scope="col">状態</th>
       </tr>
     </thead>
     <tbody>
@@ -19,7 +18,6 @@
           <td><%= mission.name %></td>
           <td><%= mission.description %></td>
           <td><%= mission.completion_criteria %></td>
-          <td><%= mission.point_value %></td>
           <td class="<%= @completed_missions.include?(mission) ? 'text-success' : 'text-danger' %>">
             <%= @completed_missions.include?(mission) ? '達成済み' : '未達成' %>
           </td>
