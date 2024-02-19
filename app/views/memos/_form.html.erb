@@ -6,18 +6,6 @@
     <a href="<%= folder_memos_path(@folder) %>" class="tag-a"><i class="fas fa-arrow-left"></i></a> | 
     <%= @folder.name %>/<%= memo.title.present? ? memo.title : '新規メモ' %>
   </div>
-
-  <% if memo.errors.any? %>
-    <!-- エラーメッセージをBootstrapのアラートスタイルで表示 -->
-    <div class="alert alert-danger" role="alert">
-      <h4 class="alert-heading"><%= pluralize(memo.errors.count, "error") %> prohibited this memo from being saved:</h4>
-      <ul>
-        <% memo.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
 <div>
 
   <!-- メモ入力フォーム -->

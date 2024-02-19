@@ -2,6 +2,7 @@ class MemosController < ApplicationController
   include NonAdminAccessControl
   before_action :set_folder
   before_action :set_memo, only: [:show, :edit, :update, :destroy]
+  before_action :set_title_if_blank, only: [:update]
  
   def index
     if params[:tag_id].present?
@@ -27,6 +28,9 @@ class MemosController < ApplicationController
   def create
     @memo = @folder.memos.new(memo_params)
     @memo.user = current_user  # ログインしているユーザーをメモに関連付け
+
+    # タイトルが空白時「無題」を入力
+    @memo.title = '無題' if @memo.title.blank?
  
     if @memo.save
       # メモが保存されたら、DailyCreationモデルを使用して日別の作成数を更新
@@ -50,6 +54,10 @@ class MemosController < ApplicationController
  
   def update
     @memo = Memo.find(params[:id])
+
+    # タイトルが空白時「無題」を入力
+    params[:memo][:title] = '無題' if params[:memo][:title].blank?
+
     if @memo.update(memo_params)
       redirect_to edit_folder_memo_path(@folder, @memo), notice: 'メモが保存されました。'
     else
@@ -75,5 +83,10 @@ class MemosController < ApplicationController
  
   def memo_params
     params.require(:memo).permit(:title, :content, :tag_ids)
+  end
+
+  #空白の時に無題を入力
+  def set_title_if_blank
+    @memo.title = '無題' if @memo.title.blank?
   end
 end

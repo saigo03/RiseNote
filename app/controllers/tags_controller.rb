@@ -12,7 +12,7 @@ class TagsController < ApplicationController
     if @tag.save
       redirect_to tags_path, notice: '新しいタグを作成しました'
     else
-      render :new
+      flash.now[:alert] = 'タグの作成に失敗しました'
     end
   end
 

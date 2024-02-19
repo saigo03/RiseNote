@@ -1,5 +1,11 @@
 ja:
   activerecord:
+    attributes:
+      user:
+       email: "メールアドレス"
+       username: "ユーザーネーム"
+      memo:
+        title: "タイトル"
     errors:
       models:
         user:
@@ -10,9 +16,18 @@ ja:
             password:
               blank: "を入力してください"
               too_short: "は%{count}文字以上で入力してください"
+            password_confirmation:
+              confirmation: "とパスワードが一致しません"
+            current_password:
+              blank: "パスワードが違います"
             username:
               blank: "を入力してください"
               too_short: "は%{count}文字以上で入力してください"
+              too_long: "は%{count}文字以下でなければなりません"
+        memo:
+          attributes:
+            title:
+              too_long: "は%{count}文字以下で作成してください"
   date:
     abbr_day_names:
       - 日
