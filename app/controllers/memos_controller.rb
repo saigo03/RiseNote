@@ -6,11 +6,11 @@ class MemosController < ApplicationController
  
   def index
     if params[:tag_id].present?
-      # 単一のタグIDに基づいてメモをフィルタリング
-      @memos = current_user.memos.joins(:tags).where(tags: { id: params[:tag_id] }).where(folder: @folder).distinct
+      tag_id = params.require(:tag_id).to_i
+      @memos = current_user.memos.joins(:tags).where(tags: { id: tag_id }).where(folder: @folder).distinct
     elsif params[:search].present?
-      # テキストでの検索
-      @memos = @folder.memos.where('title LIKE ?', "%#{params[:search]}%")
+      search_term = "%#{params.require(:search)}%"
+      @memos = @folder.memos.where('title LIKE ?', search_term)
     else
       # すべてのメモを表示
       @memos = current_user.memos.where(folder: @folder)
